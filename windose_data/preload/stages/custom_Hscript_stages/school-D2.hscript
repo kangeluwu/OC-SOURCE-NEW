@@ -1,0 +1,162 @@
+var bg2;
+var school2;
+var street2;
+var treesBack2;
+var trees2;
+var loki;
+function start(song) {
+    var bg = new FlxSprite().loadGraphic(hscriptPath + 'weebSky.png');
+    bg.scrollFactor.set(0.1,0.1);
+    var widShit = Std.int(bg.width * 6);
+    bg.setGraphicSize(Std.int(6*bg.width));
+    bg.updateHitbox();
+	addSprite(bg, BEHIND_ALL);
+    trace(": )");
+    var school = new FlxSprite(-200).loadGraphic(hscriptPath + 'weebSchool.png');
+    school.setGraphicSize(widShit);
+    school.updateHitbox();
+    school.scrollFactor.set(0.6, 0.9);
+    addSprite(school, BEHIND_ALL);
+    var street = new FlxSprite(-200).loadGraphic(hscriptPath + 'weebStreet.png');
+    street.scrollFactor.set(0.95, 0.95);
+    street.setGraphicSize(widShit);
+    street.updateHitbox();
+    addSprite(street, BEHIND_ALL);
+    var treesBack = new FlxSprite(-30, 130).loadGraphic(hscriptPath + 'weebTreesBack.png');
+    treesBack.setGraphicSize(Std.int(widShit * 0.8));
+    treesBack.updateHitbox();
+    treesBack.scrollFactor.set(0.9, 0.9);
+    trace(": (");
+    addSprite(treesBack, BEHIND_ALL);
+    var trees = new FlxSprite(-580, -800);
+    trace(": /");
+    var tex = FlxAtlasFrames.fromSpriteSheetPacker(hscriptPath + 'weebTrees.png', hscriptPath + 'weebTrees.txt');
+    trace(": O");
+    trees.frames = tex;
+    trees.animation.add("treeLoop", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 12);
+    trees.animation.play("treeLoop");
+    trees.setGraphicSize(Std.int(widShit * 1.4));
+    trees.updateHitbox();
+    trees.scrollFactor.set(0.85, 0.85);
+    addSprite(trees, BEHIND_ALL);
+    bruh = new FlxSprite().loadGraphic(hscriptPath + 'Scanlines.png');
+    bruh.antialiasing = true;
+    bruh.cameras = [camHUD2];
+    addSprite(bruh, BEHIND_NONE);
+    trace(":)");
+    var petals = new FlxSprite(360, 600);
+    var petaltex = FlxAtlasFrames.fromSparrow(hscriptPath + 'petals.png', hscriptPath + 'petals.xml');
+    petals.frames = petaltex;
+    petals.animation.addByPrefix("leaves", "PETALS ALL", 24, true);
+    petals.animation.play("leaves", true);
+    petals.setGraphicSize(Std.int(6*petals.width));
+    petals.scrollFactor.set(0.85, 0.85);
+    addSprite(petals, BEHIND_ALL);
+
+    bg2 = new FlxSprite().loadGraphic(hscriptPath + 'weebSkyEvil.png');
+    bg2.scrollFactor.set(0.1,0.1);
+    bg2.setGraphicSize(Std.int(6*bg2.width));
+    bg2.updateHitbox();
+	addSprite(bg2, BEHIND_ALL);
+
+    trace(": )");
+    school2 = new FlxSprite(-200).loadGraphic(hscriptPath + 'weebSchoolEvil.png');
+    school2.setGraphicSize(widShit);
+    school2.updateHitbox();
+    school2.scrollFactor.set(0.6, 0.9);
+    addSprite(school2, BEHIND_ALL);
+
+    street2 = new FlxSprite(-200).loadGraphic(hscriptPath + 'weebStreetEvil.png');
+    street2.scrollFactor.set(0.95, 0.95);
+    street2.setGraphicSize(widShit);
+    street2.updateHitbox();
+    addSprite(street2, BEHIND_ALL);
+
+    treesBack2 = new FlxSprite(-30, 130).loadGraphic(hscriptPath + 'weebTreesBackEvil.png');
+    treesBack2.setGraphicSize(Std.int(widShit * 0.8));
+    treesBack2.updateHitbox();
+    treesBack2.scrollFactor.set(0.9, 0.9);
+    trace(": (");
+    addSprite(treesBack2, BEHIND_ALL);
+
+    trees2 = new FlxSprite(-580, -800);
+    trace(": /");
+    var tex2 = FlxAtlasFrames.fromSpriteSheetPacker(hscriptPath + 'weebTreesEvil.png', hscriptPath + 'weebTreesEvil.txt');
+    trace(": O");
+    trees2.frames = tex2;
+    trees2.animation.add("treeLoop", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 12);
+    trees2.animation.play("treeLoop");
+    trees2.setGraphicSize(Std.int(widShit * 1.4));
+    trees2.updateHitbox();
+    trees2.scrollFactor.set(0.85, 0.85);
+    addSprite(trees2, BEHIND_ALL);
+
+    trace(":)");
+
+
+if ((curSong == 'Steptime' || curSong == 'Dead-Pixel') && currentPlayState.seenCutscene)
+FlixG.sound.play(FNFAssets.getSound('windose_data/shared/sounds/ANGRY_TEXT_BOX.ogg'));
+
+    setDefaultZoom(1.1);
+    dieNEW();
+    loki = new FlxSprite(-300, -200).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFF000000);
+    loki.scrollFactor.set();
+    add(loki, BEHIND_NONE);
+    loki.cameras = [camHUD2];
+    loki.alpha = 0.0001;
+}
+function beatHit(beat)
+{
+    if (curStep >= 1584 && curStep <= 2256 && curBeat % 4 == 0)
+        camHUD2.flash(0xFF000000, 1);
+}
+
+function update(elapsed)
+{
+    currentPlayState.camZooming = true;
+    GameOverSubstate.deathSoundName = 'fnf_loss_sfx-pixel';
+    GameOverSubstate.loopSoundName = 'gameOver-pixel';
+    GameOverSubstate.endSoundName = 'gameOverEnd-pixel';
+    GameOverSubstate.characterName = 'bf-pixel-dead';
+}
+
+function stepHit(step)
+{
+    if (curStep == 1504){
+        FlixG.sound.play(FNFAssets.getSound(hscriptPath + 'glitchysound.ogg'));
+        FlxTween.tween(loki, {alpha:1}, 2.5,{onComplete: function(twn)
+            {
+                dieOLD();
+            }});  
+    }
+    if (curStep == 1584){
+        FlxTween.tween(loki, {alpha:0.0001}, 1);  
+    }
+    if (curStep == 2255){
+        camHUD2.flash(0xFF000000, 1);
+        dieNEW();
+    }
+        
+}
+
+
+function dieOLD()
+    {
+        bg2.alpha = 1;
+        school2.alpha = 1;
+        street2.alpha = 1;
+        treesBack2.alpha = 1;
+        trees2.alpha = 1;
+       
+}
+    
+    function dieNEW()
+    {
+        bg2.alpha = 0.0001;
+        school2.alpha = 0.0001;
+        street2.alpha = 0.0001;
+        treesBack2.alpha = 0.0001;
+        trees2.alpha = 0.0001;
+
+    }
+    

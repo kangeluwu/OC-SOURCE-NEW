@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="skid-d2.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="skid dance idle0000" x="0" y="0" width="267" height="381" frameX="-9" frameY="0" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0001" x="0" y="0" width="267" height="381" frameX="-9" frameY="0" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0002" x="267" y="0" width="266" height="380" frameX="-9" frameY="-1" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0003" x="267" y="0" width="266" height="380" frameX="-9" frameY="-1" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0004" x="533" y="0" width="252" height="367" frameX="-6" frameY="-14" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0005" x="533" y="0" width="252" height="367" frameX="-6" frameY="-14" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0006" x="785" y="0" width="248" height="368" frameX="-9" frameY="-13" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0007" x="785" y="0" width="248" height="368" frameX="-9" frameY="-13" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0008" x="1033" y="0" width="250" height="381" frameX="0" frameY="0" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0009" x="1033" y="0" width="250" height="381" frameX="0" frameY="0" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0010" x="1283" y="0" width="249" height="380" frameX="-1" frameY="-1" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0011" x="1283" y="0" width="249" height="380" frameX="-1" frameY="-1" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0012" x="1532" y="0" width="245" height="367" frameX="-6" frameY="-14" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0013" x="1532" y="0" width="245" height="367" frameX="-6" frameY="-14" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0014" x="1777" y="0" width="241" height="369" frameX="-9" frameY="-12" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid dance idle0015" x="1777" y="0" width="241" height="369" frameX="-9" frameY="-12" frameWidth="276" frameHeight="381"/>
+	<SubTexture name="skid down note0000" x="2018" y="0" width="246" height="375" frameX="0" frameY="0" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0001" x="2018" y="0" width="246" height="375" frameX="0" frameY="0" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0002" x="2264" y="0" width="248" height="371" frameX="0" frameY="-3" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0003" x="2264" y="0" width="248" height="371" frameX="0" frameY="-3" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0004" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0005" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0006" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0007" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0008" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0009" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0010" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0011" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0012" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0013" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note0014" x="2512" y="0" width="248" height="366" frameX="0" frameY="-8" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note miss0000" x="2018" y="0" width="246" height="375" frameX="0" frameY="0" frameWidth="248" frameHeight="375"/>
+	<SubTexture name="skid down note miss0001" x="2760" y="0" width="255" height="371" frameX="0" frameY="-3" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0002" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0003" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0004" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0005" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0006" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0007" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0008" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0009" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0010" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0011" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0012" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0013" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0014" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0015" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0016" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0017" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0018" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0019" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0020" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0021" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0022" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0023" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0024" x="3269" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0025" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid down note miss0026" x="3015" y="0" width="254" height="375" frameX="0" frameY="0" frameWidth="255" frameHeight="375"/>
+	<SubTexture name="skid idle dance0000" x="3523" y="0" width="290" height="359" frameX="0" frameY="-16" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0001" x="3523" y="0" width="290" height="359" frameX="0" frameY="-16" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0002" x="3523" y="0" width="290" height="359" frameX="0" frameY="-16" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0003" x="3523" y="0" width="290" height="359" frameX="0" frameY="-16" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0004" x="0" y="381" width="290" height="363" frameX="-1" frameY="-12" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0005" x="0" y="381" width="290" height="363" frameX="-1" frameY="-12" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0006" x="290" y="381" width="289" height="367" frameX="-2" frameY="-8" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0007" x="290" y="381" width="289" height="367" frameX="-2" frameY="-8" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0008" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0009" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0010" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0011" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0012" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0013" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0014" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid idle dance0015" x="579" y="381" width="286" height="376" frameX="-4" frameY="0" frameWidth="291" frameHeight="376"/>
+	<SubTexture name="skid left note0000" x="865" y="381" width="247" height="377" frameX="-4" frameY="0" frameWidth="251" frameHeight="377"/>
+	<SubTexture name="skid left note0001" x="865" y="381" width="247" height="377" frameX="-4" frameY="0" frameWidth="251" frameHeight="377"/>
+	<SubTexture name="skid left note0002" x="1112" y="381" width="249" height="377" frameX="-2" frameY="0" frameWidth="251" frameHeight="377"/>
+	<SubTexture name="skid left note0003" x="1112" y="381" width="249" height="377" frameX="-2" frameY="0" frameWidth="251" frameHeight="377"/>
+	<SubTexture name="skid left note0004" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0005" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0006" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0007" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0008" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0009" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0010" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0011" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0012" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note0013" x="1361" y="381" width="251" height="377"/>
+	<SubTexture name="skid left note miss0000" x="1612" y="381" width="247" height="377" frameX="-12" frameY="0" frameWidth="259" frameHeight="377"/>
+	<SubTexture name="skid left note miss0001" x="1859" y="381" width="256" height="377" frameX="-3" frameY="0" frameWidth="259" frameHeight="377"/>
+	<SubTexture name="skid left note miss0002" x="2115" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0003" x="2374" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0004" x="2374" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0005" x="2115" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0006" x="2115" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0007" x="2374" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0008" x="2374" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0009" x="2115" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0010" x="2115" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0011" x="2374" y="381" width="259" height="377"/>
+	<SubTexture name="skid left note miss0012" x="2374" y="381" width="259" height="377"/>
+	<SubTexture name="skid right note0000" x="2633" y="381" width="262" height="376" frameX="0" frameY="0" frameWidth="269" frameHeight="376"/>
+	<SubTexture name="skid right note0001" x="2633" y="381" width="262" height="376" frameX="0" frameY="0" frameWidth="269" frameHeight="376"/>
+	<SubTexture name="skid right note0002" x="2895" y="381" width="265" height="376" frameX="0" frameY="0" frameWidth="269" frameHeight="376"/>
+	<SubTexture name="skid right note0003" x="2895" y="381" width="265" height="376" frameX="0" frameY="0" frameWidth="269" frameHeight="376"/>
+	<SubTexture name="skid right note0004" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0005" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0006" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0007" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0008" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0009" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0010" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0011" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0012" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note0013" x="3160" y="381" width="269" height="376"/>
+	<SubTexture name="skid right note miss0000" x="2633" y="381" width="262" height="376" frameX="0" frameY="0" frameWidth="269" frameHeight="376"/>
+	<SubTexture name="skid right note miss0001" x="3429" y="381" width="278" height="376" frameX="0" frameY="0" frameWidth="280" frameHeight="376"/>
+	<SubTexture name="skid right note miss0002" x="3707" y="381" width="280" height="376"/>
+	<SubTexture name="skid right note miss0003" x="0" y="758" width="280" height="376"/>
+	<SubTexture name="skid right note miss0004" x="0" y="758" width="280" height="376"/>
+	<SubTexture name="skid right note miss0005" x="3707" y="381" width="280" height="376"/>
+	<SubTexture name="skid right note miss0006" x="3707" y="381" width="280" height="376"/>
+	<SubTexture name="skid right note miss0007" x="0" y="758" width="280" height="376"/>
+	<SubTexture name="skid right note miss0008" x="0" y="758" width="280" height="376"/>
+	<SubTexture name="skid right note miss0009" x="3707" y="381" width="280" height="376"/>
+	<SubTexture name="skid right note miss0010" x="3707" y="381" width="280" height="376"/>
+	<SubTexture name="skid right note miss0011" x="0" y="758" width="280" height="376"/>
+	<SubTexture name="skid right note miss0012" x="0" y="758" width="280" height="376"/>
+	<SubTexture name="skid up note0000" x="280" y="758" width="244" height="381" frameX="0" frameY="-4" frameWidth="244" frameHeight="385"/>
+	<SubTexture name="skid up note0001" x="280" y="758" width="244" height="381" frameX="0" frameY="-4" frameWidth="244" frameHeight="385"/>
+	<SubTexture name="skid up note0002" x="524" y="758" width="244" height="383" frameX="0" frameY="-2" frameWidth="244" frameHeight="385"/>
+	<SubTexture name="skid up note0003" x="524" y="758" width="244" height="383" frameX="0" frameY="-2" frameWidth="244" frameHeight="385"/>
+	<SubTexture name="skid up note0004" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0005" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0006" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0007" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0008" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0009" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0010" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0011" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0012" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note0013" x="768" y="758" width="244" height="385"/>
+	<SubTexture name="skid up note miss0000" x="280" y="758" width="244" height="381" frameX="0" frameY="-4" frameWidth="244" frameHeight="385"/>
+	<SubTexture name="skid up note miss0001" x="1012" y="758" width="255" height="383" frameX="0" frameY="-2" frameWidth="255" frameHeight="385"/>
+	<SubTexture name="skid up note miss0002" x="1267" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0003" x="1267" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0004" x="1522" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0005" x="1522" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0006" x="1267" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0007" x="1267" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0008" x="1522" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0009" x="1522" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0010" x="1267" y="758" width="255" height="385"/>
+	<SubTexture name="skid up note miss0011" x="1267" y="758" width="255" height="385"/>
+</TextureAtlas>

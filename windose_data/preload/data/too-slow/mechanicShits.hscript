@@ -1,0 +1,40 @@
+function start(song){
+    currentPlayState.precacheList.set('jumpscareReal', 'image');
+    currentPlayState.iconP1.alpha = 0;   
+    currentPlayState.iconP2.alpha = 0;   
+    var stopedWorking = new FlxSprite(currentPlayState.GF_X + 2,currentPlayState.GF_Y + 2).loadGraphic(Paths.image('cgfhasstopworking'));
+    currentPlayState.addBehindDad(stopedWorking);
+    stopedWorking.alpha = 0.0001;
+var the = new FlxSprite(currentPlayState.GF_X + 2,currentPlayState.GF_Y + 200).loadGraphic(Paths.image('damn'));
+the.scale.set(0.5,0.5);
+the.updateHitbox();
+currentPlayState.addBehindDad(the);
+the.alpha = 0.0001;
+new FlxTimer().start(3, function(tmr) {
+FlxTween.tween(stopedWorking, {alpha: 1},1,{        
+    onComplete: function(twn)
+    {
+        new FlxTimer().start(1, function(tmr) {
+            FlixG.sound.play(Paths.sound('Windows Foreground'));
+            FlxTween.tween(the, {alpha: 1},0.1,{ease: FlxEase.linear});
+
+            });
+    }});
+
+});
+}
+function onEvent(name,value1,value2,value3){
+    switch (name)
+    {
+        case 'TooSlowFlashinShit':
+var dumbScare = new FlxSprite().loadGraphic(Paths.image('jumpscareReal'));
+dumbScare.cameras = [camHUD2];
+add(dumbScare);
+FlixG.sound.play(Paths.sound('sppok'));
+var time = Std.parseFloat(value1 / 10);
+new FlxTimer().start(time, function(tmr) {
+remove(dumbScare);
+dumbScare.destroy();
+});
+    }
+}

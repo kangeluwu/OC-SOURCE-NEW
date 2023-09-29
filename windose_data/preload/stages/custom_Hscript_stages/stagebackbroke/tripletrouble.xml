@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tripletrouble.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="kouhai0000" x="0" y="0" width="233" height="254"/>
+	<SubTexture name="kouhai0001" x="0" y="0" width="233" height="254"/>
+	<SubTexture name="kouhai0002" x="0" y="0" width="233" height="254"/>
+	<SubTexture name="kouhai0003" x="233" y="0" width="233" height="254"/>
+	<SubTexture name="kouhai0004" x="233" y="0" width="233" height="254"/>
+	<SubTexture name="kouhai0005" x="233" y="0" width="233" height="254"/>
+	<SubTexture name="kouhai20000" x="0" y="254" width="145" height="181"/>
+	<SubTexture name="kouhai20001" x="0" y="254" width="145" height="181"/>
+	<SubTexture name="kouhai20002" x="145" y="254" width="145" height="181"/>
+	<SubTexture name="kouhai20003" x="145" y="254" width="145" height="181"/>
+	<SubTexture name="kouhai20004" x="145" y="254" width="145" height="181"/>
+	<SubTexture name="kouhai30000" x="0" y="435" width="239" height="239"/>
+	<SubTexture name="kouhai30001" x="0" y="435" width="239" height="239"/>
+	<SubTexture name="kouhai30002" x="0" y="435" width="239" height="239"/>
+	<SubTexture name="kouhai30003" x="239" y="435" width="239" height="239"/>
+	<SubTexture name="kouhai30004" x="239" y="435" width="239" height="239"/>
+	<SubTexture name="kouhai30005" x="239" y="435" width="239" height="239"/>
+	<SubTexture name="kouhai30006" x="239" y="435" width="239" height="239"/>
+</TextureAtlas>

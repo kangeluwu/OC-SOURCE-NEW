@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stagelights.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="元件 120000" x="0" y="0" width="1208" height="1665"/>
+	<SubTexture name="元件 120001" x="1208" y="0" width="1208" height="1665"/>
+	<SubTexture name="元件 120002" x="2416" y="0" width="1208" height="1665"/>
+	<SubTexture name="元件 120003" x="2416" y="0" width="1208" height="1665"/>
+	<SubTexture name="元件 120004" x="2416" y="0" width="1208" height="1665"/>
+	<SubTexture name="元件 120005" x="2416" y="0" width="1208" height="1665"/>
+	<SubTexture name="元件 120006" x="2416" y="0" width="1208" height="1665"/>
+</TextureAtlas>

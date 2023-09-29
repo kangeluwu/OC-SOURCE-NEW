@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="christmasTree.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Christmas Tree 实例 10000" x="0" y="0" width="662" height="1017"/>
+	<SubTexture name="Christmas Tree 实例 10001" x="0" y="0" width="662" height="1017"/>
+	<SubTexture name="Christmas Tree 实例 10002" x="0" y="0" width="662" height="1017"/>
+	<SubTexture name="Christmas Tree 实例 10003" x="0" y="0" width="662" height="1017"/>
+	<SubTexture name="Christmas Tree 实例 10004" x="0" y="0" width="662" height="1017"/>
+</TextureAtlas>

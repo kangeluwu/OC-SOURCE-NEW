@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tankman1.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Tankman 1 Fire0000" x="0" y="0" width="384" height="393" frameX="-10" frameY="-145" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0001" x="384" y="0" width="674" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0002" x="1058" y="0" width="708" height="541"/>
+	<SubTexture name="Tankman 1 Fire0003" x="0" y="541" width="647" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0004" x="647" y="541" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0005" x="937" y="541" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0006" x="1227" y="541" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0007" x="1517" y="541" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0008" x="0" y="1082" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0009" x="290" y="1082" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0010" x="580" y="1082" width="290" height="541" frameX="0" frameY="0" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0011" x="870" y="1082" width="346" height="417" frameX="-15" frameY="-124" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0012" x="1216" y="1082" width="367" height="394" frameX="-10" frameY="-147" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Fire0013" x="1583" y="1082" width="384" height="394" frameX="-10" frameY="-147" frameWidth="708" frameHeight="541"/>
+	<SubTexture name="Tankman 1 Idle0000" x="0" y="1623" width="384" height="402" frameX="-3" frameY="0" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0001" x="0" y="1623" width="384" height="402" frameX="-3" frameY="0" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0002" x="384" y="1623" width="388" height="394" frameX="0" frameY="-7" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0003" x="384" y="1623" width="388" height="394" frameX="0" frameY="-7" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0004" x="772" y="1623" width="391" height="390" frameX="0" frameY="-10" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0005" x="772" y="1623" width="391" height="390" frameX="0" frameY="-10" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0006" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0007" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0008" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0009" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0010" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0011" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0012" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+	<SubTexture name="Tankman 1 Idle0013" x="1163" y="1623" width="390" height="393" frameX="0" frameY="-8" frameWidth="391" frameHeight="402"/>
+</TextureAtlas>

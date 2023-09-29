@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Tankman Idle Dance",
+			"indices": []
+		},
+		{
+			"offsets": [
+				258,
+				51
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Tankman UP note instance"
+		},
+		{
+			"offsets": [
+				200,
+				-45
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Tankman DOWN note instance"
+		},
+		{
+			"offsets": [
+				79,
+				-12
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Tankman Right Note instance"
+		},
+		{
+			"offsets": [
+				139,
+				-24
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Tankman Note Left instance"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				67,
+				0
+			],
+			"anim": "shoot",
+			"fps": 24,
+			"name": "TANKMAN FIRE",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/warzone/tankman-d4",
+	"position": [
+		0,
+		240
+	],
+	"healthicon": "tankman-d4",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

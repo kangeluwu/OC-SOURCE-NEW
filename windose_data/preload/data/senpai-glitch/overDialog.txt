@@ -1,0 +1,4 @@
+[0[ [179[ [223[ [216[ |LunchboxScary| *100* =1= #pixel_spirit#  <0.08< >4> (0.2( )5) {0.83{ }5} `hand_textbox` ~clickText~
+:bf-pixel: !default! [Pixel Arial 11 Bold[ ]32] *100* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .#000000. ~~     Request Failed ("Unable to successfully transfer gf_soul");
+:bf-pixel: !default! [Pixel Arial 11 Bold[ ]32] *100* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .#000000. ~~      Console.Write ("Game Over");
+:senpai: !neutral! [Pixel Arial 11 Bold[ ]32] *100* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .. ~~      ....?

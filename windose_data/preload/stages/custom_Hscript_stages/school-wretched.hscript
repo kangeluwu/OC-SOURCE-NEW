@@ -1,0 +1,115 @@
+var bg;
+var stageFront;
+var stagecurtains;
+var color;
+
+var loki2;
+var loki;
+function start(song) {
+    bg = new FlxSprite(-220, -200).loadGraphic(hscriptPath + 'stageback.png');
+    bg.scrollFactor.set(0.7, 0.7);
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_BF);
+
+    stageFront = new FlxSprite(-320, 600).loadGraphic(hscriptPath + 'stagefront.png');
+    stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+    stageFront.scrollFactor.set(0.9, 0.9);
+    stageFront.antialiasing = true;
+    stageFront.updateHitbox();
+    addSprite(stageFront, BEHIND_BF);
+
+    stagecurtains = new FlxSprite(-200, -300).loadGraphic(hscriptPath + 'stagecurtains.png');
+    stagecurtains.setGraphicSize(Std.int(stageFront.width * 0.9));
+    stagecurtains.scrollFactor.set(1.3, 1.3);
+    stagecurtains.updateHitbox();
+    stagecurtains.antialiasing = true;
+    addSprite(stagecurtains, BEHIND_BF);
+
+
+    var line = new FlxSprite(160, 250);
+    var linetex = FlxAtlasFrames.fromSparrow(hscriptPath + 'Lines.png', hscriptPath + 'Lines.xml');
+    line.frames = linetex;
+    line.animation.addByPrefix("Lines", "Cracked", 24, true);
+    line.animation.play("Lines", true);
+    line.setGraphicSize(Std.int(5.5*line.width));
+    line.scrollFactor.set(1.5, 1.5);
+    PlayState.instance.dadGroup.scrollFactor.set(1.5, 1.5);
+    addSprite(line, BEHIND_NONE);
+
+    loki2 = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    loki2.alpha = 0.0001;
+    loki2.cameras = [camHUD2];
+    loki2.scrollFactor.set();
+    add(loki2);
+
+    loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFFFFFFFF);
+    loki.alpha = 0.0001;
+    loki.cameras = [camHUD2];
+    loki.scrollFactor.set();
+    add(loki);
+
+
+color = stagecurtains.color;
+    setDefaultZoom(0.9);
+currentPlayState.phillyLightsColors.remove(0xFF31A2FD);
+currentPlayState.phillyLightsColors.remove(0xFF31FD8C);
+currentPlayState.phillyLightsColors.remove(0xFFFB33F5);
+currentPlayState.phillyLightsColors.remove(0xFFFBA633);
+currentPlayState.glowbehind = stageFront;
+PlayState.instance.boyfriendGroup.x += 400;
+PlayState.instance.dadGroup.y -= 80;
+}
+function update(elapsed)
+{
+}
+function stepHit(step)
+{
+}
+function onEvent(name, value1, value2, value3)
+{
+switch(name){
+case 'Philly Glow':
+if (value1 == '1')
+stagecurtains.color = currentPlayState.phillyLightsColors[currentPlayState.curLightEvent];
+else if (value1 == '0')
+stagecurtains.color = color;
+   }
+}
+function onCountdownTick(swagCounter)
+    {
+        switch (swagCounter)
+        {
+            case 0:
+                PlayState.isCorruptUI = false;
+                PlayState.isPixelStage = false;
+            case 1:
+                PlayState.isCorruptUI = true;
+                PlayState.isPixelStage = true;
+            case 2:
+                PlayState.isCorruptUI = false;
+                PlayState.isPixelStage = false;
+            case 3:
+                PlayState.isCorruptUI = true;
+                PlayState.isPixelStage = true;
+            case 4:
+                PlayState.isCorruptUI = false;
+                PlayState.isPixelStage = false;
+        }
+    }
+
+    function opponentNoteHit(id, direction, noteType, isSustainNote, note)
+        {
+        }
+        
+        function playerTurn()
+        {
+        }
+        
+        function noteMiss(id, direction, noteType, isSustainNote, note)
+        {
+        
+        }
+        
+        function goodNoteHit(id, direction, noteType, isSustainNote, note)
+        {
+        }

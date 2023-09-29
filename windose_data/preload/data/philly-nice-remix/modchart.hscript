@@ -1,0 +1,284 @@
+//Notetype Change(Beta)
+
+function start(song) {
+}
+
+
+function beatHit(beat)
+{
+
+
+}
+
+function update(elapsed)
+{
+  /*temp
+  CURstep//curBeat
+  if (curStep >= 100 && curStep < 2000){
+changeStrumsWithNotesSkin('NOTE_assets', '', 0, true);
+  for (i in 0...currentPlayState.strumLineNotes.length) {
+    currentPlayState.strumLineNotes.members[i].alpha += 0.1;
+      }
+  }
+  else if (curStep >= 10 && curStep < 100){
+    changeStrumsWithNotesSkin('HURTNOTE_assets', 'HURT',0, true);
+    for (i in 0...currentPlayState.strumLineNotes.length) {
+      currentPlayState.strumLineNotes.members[i].alpha = 0;
+        }
+  }*/
+
+  currentPlayState.notes.forEach(function(daNote){
+    if (daNote.isSustainNote && daNote.isPixelNote){
+
+
+daNote.scale.y*= Conductor.stepCrochet / 100 * 1.05;
+daNote.scale.y *= 1.19;
+
+daNote.scale.y *= (6 / daNote.height);
+daNote.resizeByRatio(PlayState.instance.songSpeed);
+
+
+daNote.updateHitbox();
+daNote.scale.y *=  PlayState.daPixelZoom;
+daNote.offsetX += 30;
+daNote.updateHitbox();
+daNote.y += 8 + (6 - daNote.originalHeightForCalcs) * PlayState.daPixelZoom;
+    }
+
+  });
+}
+
+function stepHit(step)
+{
+
+
+}
+
+function opponentTurn()
+{
+}
+
+function opponentNoteHit(id, direction, noteType, isSustainNote, note)
+{
+}
+
+function playerTurn()
+{
+}
+
+function noteMiss(id, direction, noteType, isSustainNote, note)
+{
+
+}
+
+function goodNoteHit(id, direction, noteType, isSustainNote, note)
+{
+
+}
+function changeFullNotesSkin(texture, prefix, funnidirection, isPixel)
+{
+  if(texture == null || texture == '') texture = 'NOTE_assets';
+  if(prefix == null || prefix == '') prefix = '';
+if (funnidirection < 8){
+
+currentPlayState.strumLineNotes.members[funnidirection].isPixelNote = isPixel;
+  currentPlayState.strumLineNotes.members[funnidirection].texture = texture;
+
+
+  currentPlayState.notes.forEach(function(daNote){
+if (funnidirection < 4){
+        if (!daNote.mustPress && daNote.noteData == funnidirection)
+        {
+
+          daNote.isPixelNote = isPixel;
+          if (daNote.noteType == '')
+          daNote.reloadNote(prefix, texture);
+
+                
+        }
+    }
+    else
+      {
+        if (daNote.mustPress && daNote.noteData == funnidirection - 4)
+          {
+            daNote.isPixelNote = isPixel;
+            if (daNote.noteType == '')
+              daNote.reloadNote(prefix, texture);
+
+          }   
+      }
+      if (daNote.noteType != '')
+        setnoteType();  
+  });
+}
+else
+{
+  for (i in 0...currentPlayState.strumLineNotes.length) {
+currentPlayState.strumLineNotes.members[i].isPixelNote = isPixel;
+  currentPlayState.strumLineNotes.members[i].texture = texture;
+
+  }
+  currentPlayState.notes.forEach(function(daNote)
+    {
+      daNote.isPixelNote = isPixel;
+      if (daNote.noteType == '')
+      daNote.reloadNote(prefix, texture);
+
+      if (daNote.noteType != '')
+        setnoteType();  
+    });
+}
+}
+
+function changeStrumNotesSkin(texture, funnidirection, isPixel)
+  {
+    if(texture == null || texture == '') texture = 'NOTE_assets';
+  
+  if (funnidirection < 8){
+  currentPlayState.strumLineNotes.members[funnidirection].isPixelNote = isPixel;
+    currentPlayState.strumLineNotes.members[funnidirection].texture = texture;
+
+  }
+  else
+  {
+    for (i in 0...currentPlayState.strumLineNotes.length) {
+  currentPlayState.strumLineNotes.members[i].isPixelNote = isPixel;
+    currentPlayState.strumLineNotes.members[i].texture = texture;
+    }
+  
+  }
+  }
+
+function changeNotesSkin(texture, prefix, funnidirection, isPixel)
+  {
+    if(texture == null || texture == '') texture = 'NOTE_assets';
+    if(prefix == null || prefix == '') prefix = '';
+  if (funnidirection < 8){
+  
+    currentPlayState.notes.forEach(function(daNote){
+  if (funnidirection < 4){
+          if (!daNote.mustPress && daNote.noteData == funnidirection)
+          {
+            daNote.isPixelNote = isPixel;
+            if (daNote.noteType == '')
+            daNote.reloadNote(prefix, texture);
+
+          }
+      }
+      else
+        {
+          if (daNote.mustPress && daNote.noteData == funnidirection - 4)
+            {
+              daNote.isPixelNote = isPixel;
+              if (daNote.noteType == '')
+              daNote.reloadNote(prefix, texture);
+
+            }   
+        }
+        if (daNote.noteType != '')
+          setnoteType();  
+    });
+  }
+  else
+  {
+
+    currentPlayState.notes.forEach(function(daNote)
+      {
+        daNote.isPixelNote = isPixel;
+        if (daNote.noteType == '')
+        daNote.reloadNote(prefix, texture);
+
+        if (daNote.noteType != '')
+          setnoteType();  
+      });
+  
+  }
+  
+  }
+
+  function setnoteType()
+    {
+      currentPlayState.notes.forEach(function(daNote)
+        {
+          if(daNote.noteData > -1 && daNote.noteType != '') {
+            switch(daNote.noteType) {
+              case 'Hurt Note':
+                daNote.reloadNote('HURT');
+                case 'Death Note':
+                  daNote.reloadNote('NUKE');
+              case 'Alt Animation':
+                daNote.reloadNote('');
+              case 'No Animation':
+                daNote.reloadNote('');
+              case 'GF Sing':
+                daNote.reloadNote('');
+              case 'Both Sing':
+                daNote.reloadNote('');
+              case 'Drain Note':
+                daNote.reloadNote('');
+      
+              case 'Warning Note':
+               
+                daNote.reloadNote('WARNING');
+              case 'Static Note':
+                daNote.reloadNote('STATIC');
+            }
+
+          }
+  });
+    }
+
+function changeStrumsWithNotesSkin(texture, prefix, strums, isPixel)
+  {
+    if(texture == null || texture == '') texture = 'NOTE_assets';
+    if(prefix == null || prefix == '') prefix = '';
+if (strums == 0){
+ changeFullNotesSkin(texture, prefix, 0, isPixel);
+ changeFullNotesSkin(texture, prefix, 1, isPixel);
+ changeFullNotesSkin(texture, prefix, 2, isPixel);
+ changeFullNotesSkin(texture, prefix, 3, isPixel);
+}else if (strums == 1){
+ changeFullNotesSkin(texture, prefix, 4, isPixel);
+ changeFullNotesSkin(texture, prefix, 5, isPixel);
+ changeFullNotesSkin(texture, prefix, 6, isPixel);
+ changeFullNotesSkin(texture, prefix, 7, isPixel);
+}
+  
+  }
+
+function changeAllNotesSkin(texture, prefix, strums, isPixel)
+  {
+//NO MORE.....
+    if(texture == null || texture == '') texture = 'NOTE_assets';
+    if(prefix == null || prefix == '') prefix = '';
+if (strums == 0){
+changeNotesSkin(texture, prefix, 0, isPixel);
+changeNotesSkin(texture, prefix, 1, isPixel);
+changeNotesSkin(texture, prefix, 2, isPixel);
+changeNotesSkin(texture, prefix, 3, isPixel);
+}else if (strums == 1){
+changeNotesSkin(texture, prefix, 4, isPixel);
+changeNotesSkin(texture, prefix, 5, isPixel);
+changeNotesSkin(texture, prefix, 6, isPixel);
+changeNotesSkin(texture, prefix, 7, isPixel);
+}
+  
+  }
+
+function changeAllStrumsNotesSkin(texture, strums, isPixel)
+  {
+    if(texture == null || texture == '') texture = 'NOTE_assets';
+    if(prefix == null || prefix == '') prefix = '';
+if (strums == 0){
+changeStrumNotesSkin(texture, 0, isPixel);
+changeStrumNotesSkin(texture, 1, isPixel);
+changeStrumNotesSkin(texture, 2, isPixel);
+changeStrumNotesSkin(texture, 3, isPixel);
+}else if (strums == 1){
+changeStrumNotesSkin(texture, 4, isPixel);
+changeStrumNotesSkin(texture, 5, isPixel);
+changeStrumNotesSkin(texture, 6, isPixel);
+changeStrumNotesSkin(texture, 7, isPixel);
+}
+  
+  }

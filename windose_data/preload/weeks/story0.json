@@ -1,0 +1,22 @@
+{
+    "songs": [
+        ["Started Fellish", "monster-prologue", [34, 51, 68]]
+    ],
+    "songNameChinese": [
+        ["堕落源头"]
+    ],
+    "weekCharacters": [
+        "",
+        "bf",
+        "gf"
+    ],
+    "weekBackground": "halloween",
+
+    "storyName": "???",
+    "weekBefore": "tutorial",
+    "weekName": "story0",
+    "startUnlocked": true,
+
+    "hideStoryMode": false,
+    "hideFreeplay": false
+}

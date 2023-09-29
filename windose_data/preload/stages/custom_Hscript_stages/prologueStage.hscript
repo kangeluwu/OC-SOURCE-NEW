@@ -1,0 +1,270 @@
+var bg;
+var funni;
+var funni2;
+var loki1;
+var bgMall;
+var tree;
+var snow;
+var mic;
+var shaderValue;
+var loki;
+var lokidumb;
+function start(song) {
+    addHaxeLibrary('Reflect');
+    addHaxeLibrary('FlxMath','flixel.math');
+    bg = new FlxSprite(-200, -100);
+    var tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'halloween_bg.png', hscriptPath + 'halloween_bg.xml');
+    bg.frames = tex;
+    bg.animation.addByPrefix("idle", "halloweem bg0", 24, true);
+    bg.animation.play("idle");
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+
+    bgMall = new FlxSprite(-400, -500).loadGraphic(hscriptPath + 'evilBG.png');
+    bgMall.scrollFactor.set(0.2, 0.2);
+    bgMall.antialiasing = true;
+    bgMall.setGraphicSize(Std.int(0.8 * bgMall.width));
+    bgMall.updateHitbox();
+    addSprite(bgMall, BEHIND_ALL);
+
+    tree = new FlxSprite(300, -300).loadGraphic(hscriptPath + 'evilTree.png');
+    tree.antialiasing = true;
+    tree.scrollFactor.set(0.2, 0.2);
+    addSprite(tree, BEHIND_ALL);
+    snow = new FlxSprite(-200, 700).loadGraphic(hscriptPath + 'evilSnow.png');
+    snow.antialiasing = true;
+    addSprite(snow, BEHIND_ALL);
+
+    mic = new FlxSprite(currentPlayState.boyfriendGroup.x - 50,currentPlayState.boyfriendGroup.y + 660).loadGraphic(hscriptPath + 'The mic.png');
+    mic.scale.set(0.95,0.95);
+    mic.alpha =0.0001;
+    mic.antialiasing = true;
+    addSprite(mic, BEHIND_NONE);
+
+    funni2 = new FlxSprite().loadGraphic(hscriptPath + 'overlay2.png');
+    funni2.scrollFactor.set();
+    funni2.screenCenter();
+    funni2.alpha =0.001;
+    funni2.antialiasing = true;
+    funni2.cameras = [camHUDTOP];
+    addSprite(funni2, BEHIND_NONE);
+
+    funni = new FlxSprite().loadGraphic(hscriptPath + 'overlay.png');
+    funni.scrollFactor.set();
+    funni.screenCenter();
+  
+    funni.antialiasing = true;
+    funni.cameras = [camHUDTOP];
+    addSprite(funni, BEHIND_NONE);
+
+    loki1 = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    loki1.alpha = 0.0001;
+    loki1.scrollFactor.set();
+    loki1.cameras = [camHUDTOP];
+    addSprite(loki1, BEHIND_NONE);
+
+    loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFFFFFFFF);
+    loki.alpha = 0.0001;
+    loki.scrollFactor.set();
+    loki.cameras = [camHUDTOP];
+    addSprite(loki, BEHIND_NONE);
+    setDefaultZoom(1.35);
+    changeBG('hall');
+    lokidumb = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFFFFFFFF);
+    lokidumb.alpha = 0.1;
+    lokidumb.scrollFactor.set();
+    lokidumb.cameras = [camHUDTOP];
+    addSprite(lokidumb, BEHIND_NONE);
+    
+}
+var damn = 125;
+var camOFF = [PlayState.instance.boyfriendCameraOffset[0] + 25,PlayState.instance.boyfriendCameraOffset[1] + 62.5];
+var camON = [PlayState.instance.boyfriendCameraOffset[0] - 100,PlayState.instance.boyfriendCameraOffset[1] + 2.5];
+var ogCamOffset = PlayState.instance.boyfriendCameraOffset;
+var ogBFX = currentPlayState.boyfriendGroup.x;
+var ogBFY = currentPlayState.boyfriendGroup.y;
+var ogDADX = currentPlayState.dadGroup.x;
+var ogDADY = currentPlayState.dadGroup.y;
+var ogGFX = currentPlayState.gfGroup.x;
+var ogGFY = currentPlayState.gfGroup.y;
+function changeBG(curBG){
+    switch(curBG){
+        case 'hall':
+            bgMall.alpha = 0.00001;
+            tree.alpha = 0.00001;
+            snow.alpha = 0.00001;
+            bg.alpha = 1;
+            currentPlayState.dadGroup.y =ogDADY;
+            currentPlayState.gfGroup.y =ogGFY;
+PlayState.instance.boyfriendCameraOffset = camOFF;
+            currentPlayState.boyfriendGroup.x =ogBFX;
+        case 'mall':
+            bgMall.alpha = 1;
+            tree.alpha = 1;
+            snow.alpha = 1;
+            bg.alpha = 0.00001;
+            currentPlayState.dadGroup.y -=80;
+            currentPlayState.gfGroup.y -=80;
+PlayState.instance.boyfriendCameraOffset = camON;
+            currentPlayState.boyfriendGroup.x +=320;
+    }
+}
+var alphaShit = 0;
+var powerValue = 0;
+var shaderValue2;
+var der = true;
+function onSongStart(){
+    FlxG.camera.zoom += 0.1;
+    camHUD.zoom += 0.025;
+}
+function onCreatePost(){
+   
+    camHUD.y = 0;
+    var shader2 = currentPlayState.createRuntimeShader('effect2');
+    
+    shaderValue2 = shader2.get_shaderData();
+    shaderValue2.isCamera.value = [false];
+    shaderValue2.isSpriteLeft.value = [der];
+    shaderValue2.isSpriteRight.value = [!der];
+    shaderValue2.rgbValueLmao.value = [0];
+    camHUD.setFilters([new ShaderFilter(shader2)]);
+var shader = currentPlayState.createRuntimeShader('effect');
+camGame.setFilters([new ShaderFilter(shader),new ShaderFilter(shader2)]);
+
+shaderValue = shader.get_shaderData();
+
+camHUD.height = camHUD.height+(powerValue * 1000);
+
+for (dumb in currentPlayState.members)
+    {
+
+
+           
+    }
+
+for (i in 0...currentPlayState.strumLineNotes.length) {
+   
+    if (ClientPrefs.downScroll)
+    currentPlayState.strumLineNotes.members[i].y =  currentPlayState.strumLineNotes.members[i].y - (200*powerValue);
+    else
+    currentPlayState.strumLineNotes.members[i].y =  currentPlayState.strumLineNotes.members[i].y + (200*powerValue);
+
+    if (i % 2 == 0 && powerValue != 0)
+        currentPlayState.strumLineNotes.members[i].downScroll = !ClientPrefs.downScroll;
+      
+    }
+    camHUD.y += powerValue * 100;
+
+}
+var moveSine = 0;
+var camDefault = 1;
+var uhTwistP = 0;
+function beatHit(beat)
+{
+    if (powerValue > 0)
+        {
+            shaderValue2.rgbValueLmao.value[0] += Math.sin(beat);
+            if (beat % 4 == 0){
+                der = !der;
+            shaderValue2.isSpriteLeft.value = [der];
+            shaderValue2.isSpriteRight.value = [!der];
+            }
+        }
+if (beat % 2 == 0){
+
+    FlxG.camera.zoom += 0.1;
+    camHUD.zoom += 0.025;
+}
+if (beat % 6 == 0){
+    camHUD.zoom += 0.05;
+}
+}
+var psychicPower = 0;
+var stop = false;
+function update(elapsed)
+{	
+    currentPlayState.camZooming = true;
+    moveSine += 180 * elapsed;
+    alphaShit += 180 * elapsed;
+    if (!stop)
+    funni.alpha = Math.sin(alphaShit/180);
+    camHUD.x = camHUD.x + powerValue * Math.sin(moveSine / 60);
+    camHUD.angle = powerValue * Math.sin(moveSine / 60);
+
+    camHUD.y = camHUD.y + powerValue * Math.sin(camDefault - moveSine / 60);
+   // shaderValue.moving.value = [powerValue * moveSine / 60];
+
+}
+function lmaos(value){
+    psychicPower= value;
+  }
+function stepHit(step)
+{
+    if (curSong == 'Dragged-Down-To-Hell' || curSong == 'Dragged Down To Hell' )
+        {
+            if (step == 576){
+                FlxG.camera.flash(OGcolor,1);
+                FlxTween.tween(lokidumb, {alpha: 0.25}, 3);
+                FlxTween.num(psychicPower, 1, 3,{onComplete: function(){
+                    psychicPower = 1;
+                }},function(num){
+                    psychicPower = num;
+                });
+                changeBG('mall');
+            }
+        }
+        if (curSong == "Started-Fellish"){
+            if (step == 736){
+                FlxTween.tween(loki, {alpha: 1}, 2);
+            }
+            if (step == 768){
+                stop = true;
+                shaderValue.powerMinusX.value = [1];
+                shaderValue.powerMinusY.value = [1];
+                if (funni.alpha != 0)
+                    FlxTween.tween(funni, {alpha: 1}, 2);
+                FlxTween.tween(funni2, {alpha: 1}, 2);
+                FlxTween.num(powerValue, 1, 3,{onComplete: function(){
+                    powerValue = 1;
+                }},function(num){
+                    powerValue = num;
+                });
+                changeBG('mall');
+                FlxTween.tween(loki, {alpha: 0.001}, 2);
+            }
+        }
+}
+
+function onEvent(name, value1, value2, value3)
+    {
+    switch(name){
+    case 'Change Character':
+        switch(value2){
+            case 'bf-prologue-alt':
+                gf.idleSuffix = '-alt';
+               
+                camHUD2.flash(OGcolor,1);
+            case 'bf-prologue-alt2':
+                gf.idleSuffix = '-alt2';
+               
+                camHUD2.flash(OGcolor,1);
+             case 'bf-prologue-alt3':
+                gf.idleSuffix = '-alt3';
+                mic.alpha =1;
+              
+                    camHUD2.flash(OGcolor,1);
+                changeBG('hall');
+                
+                case 'bfc':
+                    gf.idleSuffix = '-alt4';
+                    mic.alpha =0.0001;
+                  
+                        camHUD2.flash(OGcolor,1);
+                    new FlxTimer().start(1, function(tmr) {
+                      
+                        FlxTween.tween(loki1, {alpha: 1}, 3.5);
+                    });
+                
+           }
+       }
+    }

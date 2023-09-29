@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Mom Idle0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				250,
+				-23
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Mom Left Pose0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				-160
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "MOM DOWN POSE0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				71
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Mom Up Pose0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				10,
+				-60
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Mom Pose Left0"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/womanlol/mm-d1-alt",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "mom",
+	"flip_x": false,
+	"healthbar_colors": [
+		216,
+		85,
+		142
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

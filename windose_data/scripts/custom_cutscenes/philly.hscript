@@ -1,0 +1,18 @@
+var bg;
+function start(song) {
+bg = new FlxSprite().loadGraphic(hscriptPath + 'cut.png');
+bg.cameras = [camHUD];
+add(bg);
+startGame();
+
+}
+
+function startGame() {
+    //FlxTween.tween(bg, {alpha: 0}, 1);
+    new FlxTimer().start(2.38, function(trol)
+        {
+            bg.alpha = 0;
+            currentPlayState.startCountdown();
+        });
+
+}

@@ -1,0 +1,22 @@
+{
+	"songs": [
+		["Lament", "dad-d1", [148, 22, 83]],
+		["Dusk", "dad-d2", [148, 22, 83]],
+		["Deathmatch", "dad-d3", [148, 22, 83]]
+	],
+
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "christmas",
+
+	"storyName": "The hallucination.",
+	"weekBefore": "story2",
+	"weekName": "Week 3",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

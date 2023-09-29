@@ -1,0 +1,62 @@
+var bg;
+function start(song) {
+    bg = new FlxSprite(-200, -50);
+    var tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'halloween_bg.png', hscriptPath + 'halloween_bg.xml');
+    bg.frames = tex;
+    bg.animation.addByPrefix("idle", "halloweem bg0", 24, true);
+    bg.animation.addByPrefix("lightning", "halloweem bg lightning strike",24,false );
+    bg.animation.play("idle");
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+    currentPlayState.gfGroup.y -= 80;
+    currentPlayState.boyfriendGroup.y += 30;
+    currentPlayState.boyfriendCameraOffset[1] -= 30;
+    setDefaultZoom(0.9);
+   
+}
+
+var lightningBeat = 0;
+var lightningOffset = 8;
+function beatHit(beat)
+{
+    if (FlixG.random.bool(10) && beat > lightningBeat + lightningOffset) {
+        FlixG.sound.play(FNFAssets.getSound(hscriptPath + 'lightning.ogg'));
+        bg.animation.play("lightning");
+        lightningBeat = beat;
+        lightningOffset = FlixG.random.int(8,24);
+    }
+}
+
+function update(elapsed)
+{
+
+}
+
+function stepHit(step)
+{
+}
+
+function playerTwoTurn()
+{
+}
+
+function playerTwoMiss()
+{
+}
+
+function playerTwoSing()
+{
+}
+
+function playerOneTurn()
+{
+}
+
+function playerOneMiss()
+{
+}
+
+function playerOneSing()
+{
+}
+

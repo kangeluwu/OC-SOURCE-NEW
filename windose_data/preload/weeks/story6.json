@@ -1,0 +1,22 @@
+{
+	"songs": [
+		["Past-Meeting", "mom", [252, 150, 215]],
+		["Manic-Evanescent", "mom-d2", [252, 150, 215]],
+		["Demonic", "mom-d3", [252, 150, 215]]
+	],
+
+	"weekCharacters": [
+		"mom",
+		"dad",
+		""
+	],
+	"weekBackground": "stage",
+
+	"storyName": "Heart Attack.",
+	"weekBefore": "story5",
+	"weekName": "Week 6",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

@@ -1,0 +1,25 @@
+
+//var singAnims = ["singLEFT", "singDOWN", "singUP", "singRIGHT"];
+/*function start(song) {
+  currentPlayState.addOtherCharacters(boyfriend.x,boyfriend.y-400,'senpai','dad',0);
+  currentPlayState.addOtherCharacterToList('senpai','dad','dad',true,false);
+  currentPlayState.otherCharactersMap.get('senpai').get('dad').alpha = 1;
+  
+}
+function opponentNoteHit(id, direction, noteType, isSustainNote, note)
+    {
+        if (noteType == 'No Animation')
+            {
+
+		
+						for (character in currentPlayState.otherCharactersMap.get('senpai').iterator()) {
+
+								character.playAnim(singAnims[direction], true);
+							}
+						}
+				
+			
+
+            
+    }
+    */

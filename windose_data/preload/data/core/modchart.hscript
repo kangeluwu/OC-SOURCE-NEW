@@ -1,0 +1,82 @@
+
+function start(song) {
+}
+
+
+function beatHit(beat)
+{
+
+
+}
+
+function update(elapsed)
+{
+}
+var phase1 = false;
+var phase2 = false;
+var phase3 = false;
+function stepHit(step)
+{
+if (step >= 1785 && !phase3)
+{
+  //C——O——R——R——U——P——T——————G——F——
+  currentPlayState.health -= 0.04;
+  currentPlayState.boyfriendGroup.alpha -= 0.085;
+  currentPlayState.dadGroup.alpha += 0.085;
+}
+}
+
+function opponentTurn()
+{
+}
+
+function opponentNoteHit(id, direction, noteType, isSustainNote, note)
+{
+  if (phase1 && !phase3)
+    currentPlayState.dadGroup.alpha += 0.03;
+  if (phase2 && !phase3)
+    currentPlayState.dadGroup.alpha += 0.075;
+  if (phase3)
+    currentPlayState.dadGroup.alpha += 0.025;
+}
+
+function playerTurn()
+{
+}
+
+function noteMiss(id, direction, noteType, isSustainNote, note)
+{
+
+}
+
+function goodNoteHit(id, direction, noteType, isSustainNote, note)
+{
+if (noteType == 'Static Note' && !isSustainNote)
+{
+if (!phase1 && !phase2 && !phase3){
+  phase1 = true;
+  trace("phases1!Deleting Senpai.Data");
+}
+else if (phase1 && !phase2 && !phase3){
+phase2 = true;
+phase1 = false;
+trace("phases2!What A hard FIGHT!");
+}
+else if (!phase1 && phase2 && !phase3){
+  phase2 = false;
+  phase3 = true;
+  FlxG.camera.flash(0xFF000000, 1);
+  trace("phases3!Good Bye Senpai!");
+  }
+}
+if (currentPlayState.dadGroup.alpha >= 0.1){
+if (phase1 && !phase3)
+  currentPlayState.dadGroup.alpha -= 0.01;
+if (phase2 && !phase3)
+  currentPlayState.dadGroup.alpha -= 0.05;
+}
+if (phase3){
+  currentPlayState.dadGroup.alpha -= 0.125;
+  camHUD.alpha -= 0.125;
+}
+}

@@ -1,0 +1,287 @@
+
+var street;
+var loki;
+var loki1;
+var Colors = [0xFF31A2FD, 0xFF31FD8C, 0xFFFB33F5, 0xFFFD4531, 0xFFFBA633,0xFF6F0707];
+var Light;
+var LightEvent = -1;
+var streetBehind;
+var Emitter;
+var funni;
+var loki2;
+var cloud;
+function start(song) {
+    bg = new FlxSprite(-100).loadGraphic(hscriptPath + 'skyme.png');
+    bg.scrollFactor.set(0.1, 0.1);
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+    var cloud2 = new AttachedSprite().loadGraphic(hscriptPath + 'clouds.png');
+    cloud2.sprTracker = bg;
+
+    addSprite(cloud2, BEHIND_ALL);
+    trace("poyo");
+    var city = new FlxSprite(-10).loadGraphic(hscriptPath + 'city3.png');
+    trace("woozy");
+    trace(":woozy-face:");
+    city.scrollFactor.set(0.6, 0.3);
+    city.antialiasing = true;
+    city.scale.set(0.85, 0.85);
+    city.updateHitbox();
+    trace(":POG:");
+
+    addSprite(city, BEHIND_ALL);
+
+
+        var light2 = new FlxSprite(-10).loadGraphic(hscriptPath + 'win20.png');
+        light2.setGraphicSize(Std.int(0.85 * light2.width));
+        light2.updateHitbox();
+
+        light2.antialiasing = true;
+        light2.scrollFactor.set(0.6,0.3);
+    addSprite(light2, BEHIND_ALL);
+    var city1 = new FlxSprite(-10).loadGraphic(hscriptPath + 'city2.png');
+    trace("more");
+    trace("and more:");
+    city1.scrollFactor.set(0.45, 0.3);
+    city1.antialiasing = true;
+    city1.scale.set(0.85, 0.85);
+    city1.updateHitbox();
+    trace(":POG POG POG:");
+    addSprite(city1, BEHIND_ALL);
+        var light1 = new FlxSprite(-10).loadGraphic(hscriptPath + 'win10.png');
+        light1.setGraphicSize(Std.int(0.85 * light1.width));
+        light1.updateHitbox();
+        
+        light1.antialiasing = true;
+        light1.scrollFactor.set(0.45,0.3);
+    addSprite(light1, BEHIND_ALL);
+    var city2 = new FlxSprite(-10).loadGraphic(hscriptPath + 'city1.png');
+    city2.scrollFactor.set(0.3, 0.3);
+    city2.antialiasing = true;
+    city2.scale.set(0.85, 0.85);
+    city2.updateHitbox();
+    trace(":POG POG POG POGGGGGGGGGGGGGGGGGGGGGGGG:");
+    addSprite(city2, BEHIND_ALL);
+        var light = new FlxSprite(-10).loadGraphic(hscriptPath + 'win00.png');
+        light.setGraphicSize(Std.int(0.85 * light.width));
+        light.updateHitbox();
+
+        light.antialiasing = true;
+        light.scrollFactor.set(0.3,0.3);
+    addSprite(light, BEHIND_ALL);
+    loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    loki.alpha = 0.0001;
+    loki.scrollFactor.set();
+    addSprite(loki, BEHIND_ALL);
+PlayState.instance.phillyGlowGradient = new PhillyGlowGradient(-400, 225);
+PlayState.instance.phillyGlowGradient.visible = false;
+Emitter = new FlxEmitter(0, 720);
+FlxPexParser.parse(FNFAssets.getText(hscriptPath + "particles/particle.pex"),FNFAssets.getBitmapData(hscriptPath + "particles/texture.png"),Emitter,1);
+Emitter.angle.set(90, 90, 0, 0);
+Emitter.launchAngle.set(-90, -90);
+Emitter.acceleration.set(0, 0);
+Emitter.alpha.set(0, 0, 0,0);
+    addSprite(Emitter, BEHIND_ALL);
+    streetBehind = new FlxSprite(-40, 50).loadGraphic(hscriptPath + 'behindTrain.png');
+    streetBehind.antialiasing = true;
+    addSprite(streetBehind, BEHIND_ALL);
+
+
+
+    street = new FlxSprite(-40, 50).loadGraphic(hscriptPath + 'street.png');
+    street.antialiasing = true;
+    addSprite(street, BEHIND_ALL);
+    var rain = new FlxSprite();
+    var tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'rain.png', hscriptPath + 'rain.xml');
+    rain.frames = tex;
+    rain.animation.addByPrefix("idle", "rain", 24, true);
+    rain.animation.play("idle");
+    rain.antialiasing = true;
+    addSprite(rain, BEHIND_ALL);
+    cloud = new FlxSprite(-100).loadGraphic(hscriptPath + 'clouds.png');
+    cloud.scrollFactor.set(0.1, 0.1);
+    cloud.antialiasing = true;
+    addSprite(cloud, BEHIND_NONE);
+    cloud.alpha = 0.8;
+    loki1 = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    loki1.alpha = 1;
+    loki1.scrollFactor.set();
+    addSprite(loki1, BEHIND_NONE);
+
+    
+    loki2 = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, OGcolor);
+    loki2.alpha = 0.0001;
+    loki2.scrollFactor.set();
+    addSprite(loki2, BEHIND_NONE);
+
+    funni = new FlxSprite().loadGraphic(hscriptPath + 'overlay.png');
+    funni.scrollFactor.set();
+    funni.screenCenter();
+    funni.antialiasing = true;
+    addSprite(funni, BEHIND_NONE);
+
+PlayState.instance.opponentCameraOffset[0] += 50;
+PlayState.instance.opponentCameraOffset[1] += 30;
+
+    setDefaultZoom(1.05);
+
+}
+var yes = false;
+function beatHit(beat)
+{    if (curSong == "Facing-The-Truth"){
+    if (yes){
+        currentPlayState.triggerEventNote("Add Camera Zoom", "0.2", "0.1", "");
+    }}
+    if (beat % 4 == 0) {
+    
+    Emitter.start(false,.02);
+Light = FlxG.random.int(0, Colors.length - 1);
+LightEvent = FlxG.random.int(0, Colors.length-1);
+
+if (yes){
+    currentPlayState.triggerEventNote("Set Lights", "in", "", "");
+}
+}
+if ((beat >= 1 && beat < 220) || (beat >= 288 && curStep < 1520)) {
+    FlxTween.tween(loki1, {alpha:0.0001}, 2);
+}
+}
+
+function update(elapsed)
+{
+    GameOverSubstate.characterName = 'bfc-dead';
+}
+
+function stepHit(step)
+{    
+    if (curSong == "Facing-The-Truth"){
+    if (curStep == 113){
+        FlxTween.tween(loki2, {alpha:1}, 1);
+        }
+        if (curStep == 128)
+            {
+                setDefaultZoom(1.35);
+                
+                FlxTween.tween(loki2, {alpha:0.0001}, 1);
+            }
+            if (curStep == 512){
+                FlxTween.tween(FlxG.camera, {zoom: 1.05}, 1);
+                    FlxTween.num(currentPlayState.defaultCamZoom, 1.05, 1,{onComplete: function(twn)
+                        {
+            
+                            setDefaultZoom(1.05);
+                        }});  
+
+                }
+                if (curStep == 888){
+                    FlxTween.tween(loki1, {alpha:1}, 1);
+                    }
+
+                      if (curStep == 1152){
+                        FlxTween.tween(loki1, {alpha:0.001}, 1);
+                        }
+                        if (curStep == 1264){
+                            PlayState.instance.opponentCameraOffset[0] = PlayState.instance.opponentCameraOffset[0] - 55;
+                            }
+                        if (curStep == 1272){
+                            FlxTween.tween(FlxG.camera, {zoom: 1.85}, 1.05);
+                                FlxTween.num(currentPlayState.defaultCamZoom, 1.85, 1.05,{onComplete: function(twn)
+                                    {
+                        
+
+                                    }});  
+                
+                            }
+    if (curStep == 1275)
+    FlixG.sound.play(FNFAssets.getSound(hscriptPath + 'loaded.ogg'));
+    if (curStep == 1276){
+        currentPlayState.dad.debugMode = true;
+        currentPlayState.dad.playAnim('reload');
+
+        }
+        if (curStep == 1280){
+            PlayState.instance.opponentCameraOffset[0] = PlayState.instance.opponentCameraOffset[0] + 55;
+            setDefaultZoom(1.35);
+          currentPlayState.dad.debugMode = false;
+          }
+          if (curStep == 1540){
+            FlxTween.tween(loki1, {alpha:1}, 0.5);
+            }
+            if (curStep == 1552){
+                FlxTween.tween(loki1, {alpha:0}, 0.35);
+                FlxG.camera.shake(0.01,2);
+                }
+                if (curStep == 1560){
+                    FlxTween.tween(loki1, {alpha:1}, 0.4);
+                    FlxTween.tween(camHUD, {alpha:0}, 0.4);
+                    }
+                }
+}
+function onEvent(name, value1, value2, value3)
+{
+switch (name){
+case 'Set Lights':
+
+var chars = [PlayState.instance.boyfriend, PlayState.instance.gf, PlayState.instance.dad];
+
+if (value1 == 'true' ){
+var color = Colors[LightEvent];
+FlxG.camera.flash(OGcolor, 0.15, null, true);
+for (who in chars)
+{
+	who.color = color;
+}
+
+street.color = color;
+streetBehind.color = color;
+loki.alpha = 1;
+Emitter.alpha.set(1, 1, 0,0);
+Emitter.color.set(color, color);
+PlayState.instance.phillyGlowGradient.visible = true;
+PlayState.instance.phillyGlowGradient.color = color;
+yes = true;
+}
+
+if (value1 == 'in' ){
+var color = Colors[LightEvent];
+for (who in chars)
+{
+	who.color = color;
+}
+
+street.color = color;
+streetBehind.color = color;
+loki.alpha = 1;
+Emitter.alpha.set(1, 1, 0,0);
+PlayState.instance.phillyGlowGradient.visible = true;
+PlayState.instance.phillyGlowGradient.color = color;
+Emitter.color.set(color, color);
+
+}
+
+if (value1 == 'false'){
+
+for (who in chars)
+{
+	who.color = OGcolor;
+}
+street.color = OGcolor;
+streetBehind.color = OGcolor;
+loki.alpha = 0.001;
+Emitter.alpha.set(0, 0, 0,0);
+Emitter.color.set(OGcolor, OGcolor);
+PlayState.instance.phillyGlowGradient.color = OGcolor;
+FlxG.camera.flash(OGcolor, 0.15, null, true);
+PlayState.instance.phillyGlowGradient.visible = false;
+yes = false;
+}
+PlayState.instance.phillyGlowGradient.bop();
+
+}
+
+}
+
+function goodNoteHit(id, direction, noteType, isSustainNote, note)
+    {
+        currentPlayState.camZooming = true;
+    }

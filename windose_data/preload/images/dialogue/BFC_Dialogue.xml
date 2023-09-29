@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BFC_Dialogue.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF0000" x="0" y="0" width="402" height="425"/>
+	<SubTexture name="BF0001" x="0" y="0" width="402" height="425"/>
+	<SubTexture name="BF CONFUSED0000" x="402" y="0" width="396" height="425"/>
+	<SubTexture name="BF CONFUSED0001" x="402" y="0" width="396" height="425"/>
+	<SubTexture name="BF CONFUSED LOOP0000" x="798" y="0" width="400" height="439"/>
+	<SubTexture name="BF CONFUSED LOOP0001" x="798" y="0" width="400" height="439"/>
+	<SubTexture name="BF CONFUSED LOOP0002" x="1198" y="0" width="395" height="433" frameX="-3" frameY="-6" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF CONFUSED LOOP0003" x="1198" y="0" width="395" height="433" frameX="-3" frameY="-6" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF CONFUSED LOOP0004" x="1593" y="0" width="396" height="425" frameX="-3" frameY="-14" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF CONFUSED LOOP0005" x="1593" y="0" width="396" height="425" frameX="-3" frameY="-14" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF EXCITED0000" x="1989" y="0" width="414" height="430"/>
+	<SubTexture name="BF EXCITED0001" x="1989" y="0" width="414" height="430"/>
+	<SubTexture name="BF EXCITED LOOP0000" x="2403" y="0" width="415" height="440"/>
+	<SubTexture name="BF EXCITED LOOP0001" x="2403" y="0" width="415" height="440"/>
+	<SubTexture name="BF EXCITED LOOP0002" x="2818" y="0" width="412" height="434" frameX="-1" frameY="-6" frameWidth="415" frameHeight="440"/>
+	<SubTexture name="BF EXCITED LOOP0003" x="2818" y="0" width="412" height="434" frameX="-1" frameY="-6" frameWidth="415" frameHeight="440"/>
+	<SubTexture name="BF EXCITED LOOP0004" x="3230" y="0" width="414" height="430" frameX="-1" frameY="-10" frameWidth="415" frameHeight="440"/>
+	<SubTexture name="BF EXCITED LOOP0005" x="3230" y="0" width="414" height="430" frameX="-1" frameY="-10" frameWidth="415" frameHeight="440"/>
+	<SubTexture name="BF LOOP0000" x="3644" y="0" width="404" height="439"/>
+	<SubTexture name="BF LOOP0001" x="3644" y="0" width="404" height="439"/>
+	<SubTexture name="BF LOOP0002" x="0" y="440" width="402" height="433" frameX="0" frameY="-6" frameWidth="404" frameHeight="439"/>
+	<SubTexture name="BF LOOP0003" x="0" y="440" width="402" height="433" frameX="0" frameY="-6" frameWidth="404" frameHeight="439"/>
+	<SubTexture name="BF LOOP0004" x="402" y="440" width="402" height="425" frameX="-1" frameY="-14" frameWidth="404" frameHeight="439"/>
+	<SubTexture name="BF LOOP0005" x="402" y="440" width="402" height="425" frameX="-1" frameY="-14" frameWidth="404" frameHeight="439"/>
+	<SubTexture name="BF PISSED0000" x="804" y="440" width="392" height="425"/>
+	<SubTexture name="BF PISSED0001" x="804" y="440" width="392" height="425"/>
+	<SubTexture name="BF PISSED LOOP0000" x="1196" y="440" width="396" height="417" frameX="-1" frameY="-8" frameWidth="397" frameHeight="425"/>
+	<SubTexture name="BF PISSED LOOP0001" x="1196" y="440" width="396" height="417" frameX="-1" frameY="-8" frameWidth="397" frameHeight="425"/>
+	<SubTexture name="BF PISSED LOOP0002" x="1592" y="440" width="394" height="421" frameX="0" frameY="-4" frameWidth="397" frameHeight="425"/>
+	<SubTexture name="BF PISSED LOOP0003" x="1592" y="440" width="394" height="421" frameX="0" frameY="-4" frameWidth="397" frameHeight="425"/>
+	<SubTexture name="BF PISSED LOOP0004" x="804" y="440" width="392" height="425"/>
+	<SubTexture name="BF PISSED LOOP0005" x="804" y="440" width="392" height="425"/>
+	<SubTexture name="BF SHOCK0000" x="1986" y="440" width="396" height="425"/>
+	<SubTexture name="BF SHOCK0001" x="1986" y="440" width="396" height="425"/>
+	<SubTexture name="BF SHOCK LOOP0000" x="2382" y="440" width="400" height="439"/>
+	<SubTexture name="BF SHOCK LOOP0001" x="2782" y="440" width="400" height="439"/>
+	<SubTexture name="BF SHOCK LOOP0002" x="3182" y="440" width="395" height="433" frameX="-3" frameY="-6" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF SHOCK LOOP0003" x="3577" y="440" width="395" height="433" frameX="-3" frameY="-6" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF SHOCK LOOP0004" x="0" y="879" width="396" height="425" frameX="-3" frameY="-14" frameWidth="400" frameHeight="439"/>
+	<SubTexture name="BF SHOCK LOOP0005" x="396" y="879" width="396" height="425" frameX="-3" frameY="-14" frameWidth="400" frameHeight="439"/>
+</TextureAtlas>

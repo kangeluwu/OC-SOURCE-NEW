@@ -1,0 +1,15 @@
+var bgvideo;
+function start(song) {
+    bgvideo = new FlxVideo();
+    bgvideo.play('windose_data/videos/AllureCutscene.mp4');
+    video.onEndReached.add(function()
+        {
+            video.dispose();
+                startGame();
+        }, true);
+    bgvideo.finishCallback = startGame;
+}
+
+function startGame() {
+                    currentPlayState.startCountdown();
+}

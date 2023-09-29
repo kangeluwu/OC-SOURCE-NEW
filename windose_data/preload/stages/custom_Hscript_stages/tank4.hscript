@@ -1,0 +1,424 @@
+
+var johns;
+var tower;
+var fire1;
+var fire2;
+var losers;
+var warn;
+var funni;
+var Colors = [0xFF31A2FD, 0xFF31FD8C, 0xFFFB33F5, 0xFFFD4531, 0xFFFBA633,0xFF6F0707];
+var Light;
+var LightEvent = -1;
+var funni2;
+var loki;
+var Emitter;
+var ground;
+var flash;
+function start(song) {
+    if (curSong == "Tacuchen")
+    PlayState.instance.skipCountdown = true;
+    FlixG.mouse.visible = false;
+    var bg = new FlxSprite(-400, -400).loadGraphic(hscriptPath + 'tankSky.png');
+    bg.scrollFactor.set();
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+
+    var clouds = new FlxSprite(FlxG.random.int(-700, -100), FlxG.random.int(-20, 20)).loadGraphic(hscriptPath + 'tankClouds.png');
+
+	clouds.antialiasing = true;
+	clouds.scrollFactor.set(0.1, 0.1);
+    clouds.velocity.x = FlxG.random.float(5,15);
+    addSprite(clouds, BEHIND_ALL);
+
+    var mountains = new FlxSprite(-300, -20).loadGraphic(hscriptPath + 'tankMountains.png');
+    mountains.antialiasing = true;
+    mountains.setGraphicSize(Std.int(mountains.width * 1.2));
+    mountains.updateHitbox();
+    mountains.scrollFactor.set(0.2, 0.2);
+    addSprite(mountains, BEHIND_ALL);
+
+    var building = new FlxSprite(-200).loadGraphic(hscriptPath + 'tankBuildings.png');
+    building.setGraphicSize(Std.int(building.width * 1.1));
+    building.antialiasing = true;
+    building.updateHitbox();
+    building.scrollFactor.set(0.3, 0.3);
+    addSprite(building, BEHIND_ALL);
+
+    var ruins = new FlxSprite(-200).loadGraphic(hscriptPath + 'tankRuins.png');
+    ruins.scrollFactor.set(0.35, 0.35);
+    ruins.setGraphicSize(Std.int(1.1 * ruins.width));
+    ruins.updateHitbox();
+    ruins.antialiasing = true;
+    addSprite(ruins, BEHIND_ALL);
+
+    var smokeLeft = new FlxSprite(-200 , -100);
+    smokeLeft.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'smokeLeft.png', hscriptPath + 'smokeLeft.xml');
+    smokeLeft.animation.addByPrefix('idle', 'SmokeBlurLeft', 24, true);
+    smokeLeft.animation.play('idle', true);
+    smokeLeft.scrollFactor.set(0.4, 0.4);
+    smokeLeft.antialiasing = true;
+    addSprite(smokeLeft, BEHIND_ALL);
+
+
+    trace(":weary:");
+	var smokeRight = new FlxSprite(1100, -100);
+	smokeRight.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'smokeRight.png', hscriptPath + 'smokeRight.xml');
+	smokeRight.animation.addByPrefix('idle', 'SmokeRight', 24, true);
+	smokeRight.animation.play('idle', true);
+	smokeRight.scrollFactor.set(0.4, 0.4);
+    smokeRight.antialiasing = true;
+	addSprite(smokeRight, BEHIND_ALL);
+    trace(":hueh:");
+	tower = new MetroSprite(100, 50, true);
+    trace("WAH tower");
+	tower.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tankWatchtower.png', hscriptPath + 'tankWatchtower.xml');
+    trace("RED ALERT: ioajfha");
+	tower.animation.addByPrefix('idle', 'watchtower gradient color', 24, false);
+	tower.animation.play('idle', true);
+    trace("eugh");
+	tower.scrollFactor.set(0.5, 0.5);
+	tower.updateHitbox();
+	tower.antialiasing = true;
+	addSprite(tower, BEHIND_ALL);
+    trace(":pensive:");
+
+    loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    loki.alpha = 0.0001;
+    loki.scrollFactor.set();
+    addSprite(loki, BEHIND_ALL);
+Emitter = new FlxEmitter(0, 720);
+			FlxPexParser.parse("shared:windose_data/shared/images/particles/funniBlue/particle.pex","shared:windose_data/shared/images/particles/funniBlue/texture.png",Emitter,1);
+Emitter.angle.set(90, 90, 0, 0);
+Emitter.launchAngle.set(-90, -90);
+Emitter.acceleration.set(0, 0);
+Emitter.alpha.set(0, 0, 0,0);
+    addSprite(Emitter, BEHIND_ALL);
+
+    ground = new FlxSprite(-420, -150).loadGraphic(hscriptPath + 'tankGround.png');
+    ground.setGraphicSize(Std.int(1.15 * ground.width));
+    ground.updateHitbox();
+    ground.antialiasing = true;
+    addSprite(ground, BEHIND_ALL);
+    PlayState.instance.glowbehind = ground;
+    pump = new FlxSprite(PlayState.instance.dadGroup.x-300 , PlayState.instance.dadGroup.y+400);
+    pump.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'pump.png', hscriptPath + 'pump.xml');
+    pump.animation.addByPrefix('idle', 'pump idle0', 24, true);
+    pump.animation.play('idle', true);
+    pump.antialiasing = true;
+    addSprite(pump, BEHIND_ALL);
+
+  
+
+    warn = new FlxSprite().loadGraphic(hscriptPath + 'warn.png');
+    warn.setGraphicSize(Std.int(0.55 * warn.width));
+    warn.updateHitbox();
+    warn.antialiasing = true;
+    warn.alpha = 0;
+    warn.cameras = [camHUD2];
+    warn.screenCenter();
+    addSprite(warn, BEHIND_NONE);
+    funni = new FlxSprite().loadGraphic(hscriptPath + 'stageoverlay3.png');
+    funni.scrollFactor.set();
+    funni.screenCenter();
+    funni.antialiasing = true;
+    funni.setGraphicSize(Std.int(funni.width * 1.15));
+    addSprite(funni, BEHIND_NONE);
+
+    funni2 = new FlxSprite().loadGraphic(hscriptPath + 'stageoverlay2.png');
+    funni2.scrollFactor.set();
+    funni2.screenCenter();
+    funni2.antialiasing = true;
+    funni2.cameras = [camHUD2];
+    funni2.setGraphicSize(Std.int(funni2.width * 1.15));
+    addSprite(funni2, BEHIND_NONE);
+
+    PlayState.instance.gfGroup.y += 10;
+    PlayState.instance.gfGroup.x -= 30;
+    PlayState.instance.boyfriendGroup.x += 40;
+    PlayState.instance.dadGroup.y -= 20;
+    PlayState.instance.dadGroup.x -= 80;
+    PlayState.instance.opponentCameraOffset[1] += 60;
+        setDefaultZoom(1.2);
+    PlayState.instance.gfGroup.x -= 170;
+    PlayState.instance.gfGroup.y -= 75;
+    flash = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    flash.alpha = 1;
+    flash.cameras = [camHUD];
+    flash.scrollFactor.set();
+    addSprite(flash, BEHIND_NONE);
+if (curSong != "Tacuchen")
+    FlxTween.tween(flash, {alpha:0.0001}, 2);
+}
+
+
+var yes = false;
+function beatHit(beat)
+{
+    if (curSong == "Tauchen"){
+    if ((curStep >= 144 && curBeat % 2 == 0 && curStep < 272)
+        || (curStep >= 400&& curBeat % 2 == 0 && curStep < 624)
+    || (curStep >= 912 && curBeat % 2 == 0 && curStep < 1040)){
+        FlxG.camera.zoom += 0.05;
+					camHUD.zoom += 0.025;
+    }
+    if (beat % 4 == 0) {
+    
+        Emitter.start(false,.02);
+    Light = FlxG.random.int(0, Colors.length - 1);
+    LightEvent = FlxG.random.int(0, Colors.length-1);
+    
+    if (yes){
+        currentPlayState.triggerEventNote("Tank Glow", "2", "", "");
+    }
+    }
+    if ((curStep >= 272 && curStep < 400)
+        ){
+        FlxG.camera.zoom += 0.05;
+					camHUD.zoom += 0.025;
+    }
+}
+if (curSong == "Burning-In-Hell"){
+    if ((beat >= 96 && curStep < 896)
+        || (curStep >= 1408&& curStep < 1520)
+    || (curStep >= 1536 && curStep < 1664)){
+        FlxG.camera.zoom += 0.05;
+					camHUD.zoom += 0.025;
+                    FlxG.camera.shake(0.01,0.5);
+                    camHUD.shake(0.01,0.5);
+                    camHUD.angle = Math.sin(1 - beat);
+                  
+                 
+    }
+    else
+        {
+            if (camHUD.angle != 0)  {
+                if (camHUD.angle < 0){
+                camHUD.angle += 1;
+
+                }
+                if (camHUD.angle > 0){
+                    camHUD.angle -= 1;
+                  
+                }
+            }
+                
+        }
+    if (beat % 4 == 0) {
+    
+        Emitter.start(false,.02);
+    Light = FlxG.random.int(0, Colors.length - 1);
+    LightEvent = FlxG.random.int(0, Colors.length-1);
+    
+    if (yes){
+        currentPlayState.triggerEventNote("Tank Glow", "2", "", "");
+    }
+    }
+    
+}
+
+}
+var moveSine = 0;
+var funniTween;
+var strumPower = [1,1];
+function update(elapsed)
+{
+  
+    moveSine += 180 * elapsed;
+    currentPlayState.camZooming = true; 
+   
+}
+
+function stepHit(step)
+{
+    if (curSong == "Tauchen"){
+    if ((curStep >= 624 && curStep < 784 &&curStep % 2)
+    ||(curStep >= 1040 && curStep < 1296 && curStep % 2)
+        ){
+        FlxG.camera.zoom += 0.05;
+					camHUD.zoom += 0.025;
+    }
+    if (curStep == 16){
+       funniTween = FlxTween.tween(flash, {alpha:0.0001}, 2, {onComplete: function(twn)
+            {
+                funniTween = null;
+            }});
+    }
+   if (curStep == 144)
+    {
+        camHUD.flash(0xFFFFFF,1);
+        currentPlayState.triggerEventNote('Change Scroll Speed','1.45','1'); 
+        
+    }
+    if (curStep == 272)
+        {
+            camHUD.flash(0xFFFFFF,1);
+            currentPlayState.triggerEventNote('Tank Glow','1',''); 
+
+        }
+        if (curStep == 400)
+            {
+                camHUD.flash(0xFFFFFF,1);
+                currentPlayState.triggerEventNote('Tank Glow','0',''); 
+                
+            }
+
+            if (curStep == 656)
+                {
+                    camHUD.flash(0xFFFFFF,1);
+                    currentPlayState.triggerEventNote('do CrossFades','true','');
+                    
+                }
+                if (curStep == 784)
+                    {
+                        if (funniTween != null)funniTween.cancel();
+                        camHUD.flash(0xFFFFFF,1);
+                        flash.cameras = [camGame];
+                        funniTween = FlxTween.tween(flash, {alpha:1}, 2);
+                        currentPlayState.triggerEventNote('do CrossFades','false','');
+                        
+                    }
+
+                    if (curStep == 912)
+                        {
+                            camHUD.flash(0xFFFFFF,1);
+                            flash.alpha = 0;
+
+                            
+                        
+                        }
+                        if (curStep == 1040)
+                            {
+                                camHUD.flash(0xFFFFFF,1);
+                                currentPlayState.triggerEventNote('Tank Glow','1',''); 
+                    
+                            }
+                            if (curStep == 1296)
+                                {
+                                    camHUD.flash(0xFFFFFF,1);
+                                    currentPlayState.triggerEventNote('Tank Glow','0',''); 
+                                    
+                                }
+                                if (curStep == 1312)
+                                    {
+                                        funniTween = FlxTween.tween(flash, {alpha:1}, 2.5, {onComplete: function(twn)
+                                            {
+                                                funniTween = null;
+                                            }});
+                                    
+                                    }
+} 
+}
+
+var doCrossFades;
+
+function onEvent(name, value1, value2, value3)
+    {
+        switch (name){
+                
+    case 'temp':
+        var zoom = Std.parseFloat(value1);
+        var time = Std.parseFloat(value2);
+        if(Math.isNaN(zoom)) zoom = curZoom;
+                    if(Math.isNaN(time)) time = 1;
+                    if (time > 0){
+        FlxTween.tween(currentPlayState, {defaultCamZoom:zoom}, time);
+            }
+            else
+                {
+                    currentPlayState.defaultCamZoom = zoom;
+                }
+            case 'Tank Glow':
+            
+            var chars = [PlayState.instance.boyfriend, PlayState.instance.gf, PlayState.instance.dad];
+            
+            if (value1 == '1' ){
+            var color = Colors[LightEvent];
+            FlxG.camera.flash(OGcolor, 0.15, null, true);
+            for (who in chars)
+            {
+                who.color = color;
+            }
+            
+            ground.color = color;
+            pump.color = color;
+            loki.alpha = 1;
+            Emitter.alpha.set(1, 1, 0,0);
+            Emitter.color.set(color, color);
+            yes = true;
+            }
+            
+            if (value1 == '2' ){
+            var color = Colors[LightEvent];
+            for (who in chars)
+            {
+                who.color = color;
+            }
+            
+            ground.color = color;
+            pump.color = color;
+            loki.alpha = 1;
+            Emitter.alpha.set(1, 1, 0,0);
+            Emitter.color.set(color, color);
+
+            }
+            
+            if (value1 == '0'){
+            
+            for (who in chars)
+            {
+                who.color = OGcolor;
+            }
+            ground.color = OGcolor;
+            pump.color = OGcolor;
+            loki.alpha = 0.001;
+            Emitter.alpha.set(0, 0, 0,0);
+            Emitter.color.set(OGcolor, OGcolor);
+            yes = false;
+
+            }
+
+            }
+    }
+
+    function opponentNoteHit(id, direction, noteType, isSustainNote, note){
+        if (doCrossFades){
+          var onActing = currentPlayState.dad;
+          var isFlip = false;
+          if (currentPlayState.opponentPlayer){
+            onActing = currentPlayState.boyfriend;
+      isFlip = true;
+          }
+        if (noteType == 'Both Sing'){
+      
+          currentPlayState.makeCrossfades(isFlip,onActing);
+          currentPlayState.makeCrossfades(isFlip,currentPlayState.gf,currentPlayState.grpGFCrossfades,Colors[LightEvent]);
+        }else if (noteType == 'GF Sing'){
+          currentPlayState.makeCrossfades(isFlip,currentPlayState.gf,currentPlayState.grpGFCrossfades,Colors[LightEvent]);
+        }
+        else{
+          currentPlayState.makeCrossfades(isFlip,onActing,Colors[LightEvent]);
+        }
+      }
+        }
+        
+        function goodNoteHit(id, direction, noteType, isSustainNote, note){
+        
+          if (doCrossFades){
+            var actingOn = currentPlayState.boyfriend;
+            var isFlip = true;
+            if (currentPlayState.opponentPlayer){
+              actingOn = currentPlayState.dad;
+        isFlip = false;
+            }
+            if (noteType == 'Both Sing'){
+      
+              currentPlayState.makeCrossfades(isFlip,actingOn,Colors[LightEvent]);
+              currentPlayState.makeCrossfades(isFlip,currentPlayState.gf,currentPlayState.grpGFCrossfades,Colors[LightEvent]);
+            }else if (noteType == 'GF Sing'){
+              currentPlayState.makeCrossfades(isFlip,currentPlayState.gf,currentPlayState.grpGFCrossfades,Colors[LightEvent]);
+            }
+            else{
+              currentPlayState.makeCrossfades(isFlip,actingOn,Colors[LightEvent]);
+            }
+          }
+        }

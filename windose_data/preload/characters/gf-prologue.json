@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 18,
+			"anim": "idle-alt3",
+			"indices": [],
+			"name": "Girlfriend Idle Phase 4"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 18,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "Girlfriend Idle Phase 2"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 18,
+			"anim": "idle",
+			"indices": [],
+			"name": "Girlfriend Idle Phase 1"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 18,
+			"anim": "idle-alt2",
+			"indices": [],
+			"name": "Girlfriend Idle Phase 3"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle-alt4",
+			"fps": 18,
+			"name": "Girlfriend Idle Phase 5",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/prologue/gf",
+	"position": [
+		-460,
+		-300
+	],
+	"healthicon": "gf",
+	"flip_x": false,
+	"healthbar_colors": [
+		165,
+		0,
+		77
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

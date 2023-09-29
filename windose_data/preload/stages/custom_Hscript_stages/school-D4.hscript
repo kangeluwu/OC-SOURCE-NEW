@@ -1,0 +1,178 @@
+var loki;
+var loki2;
+var bg;
+var bg2;
+function start(song) {
+
+   //PlayState.instance.gfGroup.alpha = 0;
+    bg = new FlxSprite(400, 200);
+    var tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'animatedEvilSchool.png', hscriptPath + 'animatedEvilSchool.xml');
+    bg.frames = tex;
+    bg.animation.addByPrefix("idleStatic", "background 2 instance 10001", 24, true);    
+    bg.animation.addByPrefix("idle", "background 2", 24, true);    
+    bg.animation.play("idleStatic",true);
+    bg.scrollFactor.set(0.8,0.9);
+    bg.scale.set(6, 6);
+    addSprite(bg, BEHIND_ALL);
+
+    bg2 = new FlxSprite(400, 200);
+    var tex2 = FlxAtlasFrames.fromSparrow(hscriptPath + 'animatedEvilSchool2.png', hscriptPath + 'animatedEvilSchool2.xml');
+    bg2.frames = tex2;
+    bg2.animation.addByPrefix("idle", "background 2", 24, true);    
+    bg2.animation.play("idle",true);
+    bg2.scrollFactor.set(0.8,0.9);
+    bg2.scale.set(6, 6);
+    addSprite(bg2, BEHIND_ALL);
+
+    if (curSong != "Banishment")
+      bg2.alpha = 0.00001;
+
+
+    var funni = new FlxSprite().loadGraphic(hscriptPath + 'overlay.png');
+    funni.scrollFactor.set();
+    funni.cameras = [camHUD2];
+    funni.screenCenter();
+    funni.antialiasing = true;
+    funni.setGraphicSize(Std.int(funni.width * 1.15));
+    addSprite(funni, BEHIND_NONE);
+
+    var bruh = new FlxSprite().loadGraphic(hscriptPath + 'Scanlines.png');
+    bruh.antialiasing = true;
+    bruh.cameras = [camHUD2];
+    addSprite(bruh, BEHIND_NONE);
+    if (curSong != "Banishment")
+      funni.alpha = 0.00001;
+
+
+    loki = new FlxSprite(-300, -200).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFF000000);
+    loki.scrollFactor.set();
+    add(loki, BEHIND_NONE);
+    loki.cameras = [camHUD2];
+    loki.alpha = 0.0001;
+
+    loki2 = new FlxSprite(-300, -200).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFFFFFFFF);
+    loki2.scrollFactor.set();
+    add(loki2);
+    loki2.cameras = [camHUD2];
+    loki2.alpha = 0.0001;
+    setDefaultZoom(1.1);
+
+}
+var die = false;
+var die2 = false;
+var allow = false;
+var allow2 = false;
+
+var phase1 = false;
+var phase2 = false;
+var phase3 = false;
+//IDK WHY should i copy my mechaic from MODCHART
+function beatHit(beat)
+{				
+
+/*if (die && curBeat % 4 == 0)
+funnidia += "\nNULL";
+else if (funnidia != "" && !die && allow &&  curBeat % 4 == 0)
+funnidia -= "\nNULL";
+
+if (die2 &&  curBeat % 4 == 0)
+funnidia += "\n        NULL NULL NULL NULL";
+else if (funnidia != "" && !die2 && allow2 &&  curBeat % 4 == 0)
+funnidia -= "\n        NULL NULL NULL NULL";*/
+}
+
+function update(elapsed)
+{
+   GameOverSubstate.deathSoundName = 'fnf_loss_sfx-pixel';
+GameOverSubstate.loopSoundName = 'gameOver-pixel';
+GameOverSubstate.endSoundName = 'gameOverEnd-pixel';
+GameOverSubstate.characterName = 'bf-pixel-dead';
+   if (curSong == "Banishment")
+      bg.animation.play("idle");
+   
+   if (phase2 || phase3){
+      bg.animation.play("idle");
+    }
+   function stepHit(step)
+{
+if (curSong == "Banishment"){
+if (step == 216)
+   FlxTween.tween(loki2, {alpha: 1}, 4);
+
+if (step == 256){
+   FlxTween.tween(loki2, {alpha: 0.0001}, 0.5);
+
+}
+if (step >= 256){
+   currentPlayState.gfGroup.alpha = 0.00001;
+   bg2.alpha = 0.00001;
+}
+if (step == 2528){
+   loki2.cameras = [camHUD];
+   FlxTween.tween(loki2, {alpha: 1}, 3);
+
+}
+
+if (step == 2560){
+   FlxG.camera.alpha = 0.00001;
+   FlxTween.tween(camHUD, {alpha: 0.0001}, 3);
+ 
+}
+
+}
+
+}
+}
+
+function stepHit(step)
+{
+if (curSong == "Banishment"){
+if (step == 216)
+   FlxTween.tween(loki2, {alpha: 1}, 4);
+
+if (step == 256){
+   FlxTween.tween(loki2, {alpha: 0.0001}, 0.5);
+
+}
+if (step >= 256){
+   currentPlayState.gfGroup.alpha = 0.00001;
+   bg2.alpha = 0.00001;
+}
+if (step == 2528){
+   loki2.cameras = [camHUD];
+   FlxTween.tween(loki2, {alpha: 1}, 3);
+
+}
+
+if (step == 2560){
+   FlxG.camera.alpha = 0.00001;
+   FlxTween.tween(camHUD, {alpha: 0.0001}, 3);
+ 
+}
+
+}
+
+}
+
+function goodNoteHit(id, direction, noteType, isSustainNote, note)
+   {
+   if (noteType == 'Static Note' && !isSustainNote)
+   {
+   if (!phase1 && !phase2 && !phase3){
+     phase1 = true;
+   }
+   else if (phase1 && !phase2 && !phase3){
+   phase2 = true;
+   phase1 = false;
+
+   }
+   else if (!phase1 && phase2 && !phase3){
+     phase2 = false;
+     phase3 = true;
+
+     }
+   }
+
+   }
+
+   

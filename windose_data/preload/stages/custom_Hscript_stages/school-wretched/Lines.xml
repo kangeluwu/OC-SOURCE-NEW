@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Lines.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Cracked0000" x="0" y="0" width="224" height="228" frameX="0" frameY="0" frameWidth="224" frameHeight="230"/>
+	<SubTexture name="Cracked0001" x="0" y="228" width="218" height="225" frameX="0" frameY="-4" frameWidth="224" frameHeight="230"/>
+	<SubTexture name="Cracked0002" x="0" y="453" width="216" height="227" frameX="0" frameY="-1" frameWidth="224" frameHeight="230"/>
+	<SubTexture name="Cracked0003" x="0" y="680" width="214" height="226" frameX="0" frameY="-4" frameWidth="224" frameHeight="230"/>
+</TextureAtlas>

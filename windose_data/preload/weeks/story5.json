@@ -1,0 +1,23 @@
+{
+	"songs": [
+		["Warzone", "tankman-d1", [246, 182, 4]],
+		["Guns Remix", "tankman-d2", [246, 182, 4]],
+		["Stressful Doom", "tankman-d3", [246, 182, 4]],
+		["Tauchen", "tankman-d4", [246, 182, 4]]
+	],
+
+	"weekCharacters": [
+		"tankman",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "tank",
+
+	"storyName": "War Zone",
+	"weekBefore": "story4",
+	"weekName": "Week 5",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

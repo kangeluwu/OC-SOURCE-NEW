@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tankman-d4.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="TANKMAN FIRE0000" x="0" y="0" width="670" height="565" frameX="0" frameY="-10" frameWidth="670" frameHeight="575"/>
+	<SubTexture name="TANKMAN FIRE0001" x="670" y="0" width="664" height="565" frameX="0" frameY="-10" frameWidth="670" frameHeight="575"/>
+	<SubTexture name="TANKMAN FIRE0002" x="1334" y="0" width="655" height="575" frameX="-4" frameY="0" frameWidth="670" frameHeight="575"/>
+	<SubTexture name="Tankman DOWN note instance0000" x="1989" y="0" width="593" height="517" frameX="0" frameY="-5" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0001" x="1989" y="0" width="593" height="517" frameX="0" frameY="-5" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0002" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0003" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0004" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0005" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0006" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0007" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0008" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman DOWN note instance0009" x="2582" y="0" width="621" height="522" frameX="-1" frameY="0" frameWidth="622" frameHeight="522"/>
+	<SubTexture name="Tankman Idle Dance0000" x="3203" y="0" width="488" height="559" frameX="-5" frameY="-14" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0001" x="3203" y="0" width="488" height="559" frameX="-5" frameY="-14" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0002" x="0" y="575" width="489" height="560" frameX="-3" frameY="-13" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0003" x="0" y="575" width="489" height="560" frameX="-3" frameY="-13" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0004" x="489" y="575" width="488" height="560" frameX="0" frameY="-13" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0005" x="489" y="575" width="488" height="560" frameX="0" frameY="-13" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0006" x="977" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0007" x="977" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0008" x="1464" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0009" x="1464" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0010" x="1464" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0011" x="1464" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0012" x="1464" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Idle Dance0013" x="1464" y="575" width="487" height="573" frameX="0" frameY="0" frameWidth="493" frameHeight="573"/>
+	<SubTexture name="Tankman Note Left instance0000" x="1951" y="575" width="625" height="547" frameX="0" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0001" x="1951" y="575" width="625" height="547" frameX="0" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0002" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0003" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0004" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0005" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0006" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0007" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0008" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0009" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Note Left instance0010" x="2576" y="575" width="614" height="547" frameX="-20" frameY="0" frameWidth="634" frameHeight="547"/>
+	<SubTexture name="Tankman Right Note instance0000" x="3190" y="575" width="527" height="558" frameX="-10" frameY="-3" frameWidth="540" frameHeight="561"/>
+	<SubTexture name="Tankman Right Note instance0001" x="3190" y="575" width="527" height="558" frameX="-10" frameY="-3" frameWidth="540" frameHeight="561"/>
+	<SubTexture name="Tankman Right Note instance0002" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0003" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0004" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0005" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0006" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0007" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0008" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman Right Note instance0009" x="0" y="1148" width="540" height="561"/>
+	<SubTexture name="Tankman UP note instance0000" x="540" y="1148" width="598" height="624" frameX="0" frameY="0" frameWidth="713" frameHeight="624"/>
+	<SubTexture name="Tankman UP note instance0001" x="1138" y="1148" width="572" height="618" frameX="0" frameY="0" frameWidth="713" frameHeight="624"/>
+	<SubTexture name="Tankman UP note instance0002" x="1710" y="1148" width="559" height="609" frameX="-6" frameY="-9" frameWidth="713" frameHeight="624"/>
+	<SubTexture name="Tankman UP note instance0003" x="2269" y="1148" width="707" height="609" frameX="-6" frameY="-9" frameWidth="713" frameHeight="624"/>
+	<SubTexture name="Tankman UP note instance0004" x="2976" y="1148" width="629" height="609" frameX="-6" frameY="-9" frameWidth="713" frameHeight="624"/>
+</TextureAtlas>

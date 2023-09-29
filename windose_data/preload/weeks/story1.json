@@ -1,0 +1,27 @@
+{
+    "songs": [
+        ["Fleshed Moon", "pico-d1", [148, 22, 83]],
+        ["Resume Times", "pico-d2", [148, 22, 83]],
+        ["Facing The Truth", "pico-d3", [148, 22, 83]]
+    ],
+    "songNameChinese": [
+        ["腐蚀之月"],
+        ["仍续之时"],
+        ["面对现实"]
+    ],
+    "weekCharacters": [
+        "pico",
+        "bf",
+        "gf"
+    ],
+    "weekBackground": "philly",
+
+    "storyName": "An Old Friend.",
+    "storyNameChinese": "一位老友.",
+    "weekBefore": "tutorial",
+    "weekName": "story1",
+    "startUnlocked": true,
+
+    "hideStoryMode": false,
+    "hideFreeplay": false
+}

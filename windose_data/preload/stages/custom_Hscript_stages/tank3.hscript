@@ -1,0 +1,367 @@
+
+var johns;
+var tower;
+var fire1;
+var fire2;
+var losers;
+var warn;
+var funni;
+var funni2;
+var loki;
+function start(song) {
+    var bg = new FlxSprite(-400, -400).loadGraphic(hscriptPath + 'tankSky.png');
+    bg.scrollFactor.set();
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+
+    var clouds = new FlxSprite(FlxG.random.int(-700, -100), FlxG.random.int(-20, 20)).loadGraphic(hscriptPath + 'tankClouds.png');
+
+	clouds.antialiasing = true;
+	clouds.scrollFactor.set(0.1, 0.1);
+    clouds.velocity.x = FlxG.random.float(5,15);
+    addSprite(clouds, BEHIND_ALL);
+
+    var mountains = new FlxSprite(-300, -20).loadGraphic(hscriptPath + 'tankMountains.png');
+    mountains.antialiasing = true;
+    mountains.setGraphicSize(Std.int(mountains.width * 1.2));
+    mountains.updateHitbox();
+    mountains.scrollFactor.set(0.2, 0.2);
+    addSprite(mountains, BEHIND_ALL);
+
+    var building = new FlxSprite(-200).loadGraphic(hscriptPath + 'tankBuildings.png');
+    building.setGraphicSize(Std.int(building.width * 1.1));
+    building.antialiasing = true;
+    building.updateHitbox();
+    building.scrollFactor.set(0.3, 0.3);
+    addSprite(building, BEHIND_ALL);
+
+    var ruins = new FlxSprite(-200).loadGraphic(hscriptPath + 'tankRuins.png');
+    ruins.scrollFactor.set(0.35, 0.35);
+    ruins.setGraphicSize(Std.int(1.1 * ruins.width));
+    ruins.updateHitbox();
+    ruins.antialiasing = true;
+    addSprite(ruins, BEHIND_ALL);
+
+    var smokeLeft = new FlxSprite(-200 , -100);
+    smokeLeft.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'smokeLeft.png', hscriptPath + 'smokeLeft.xml');
+    smokeLeft.animation.addByPrefix('idle', 'SmokeBlurLeft', 24, true);
+    smokeLeft.animation.play('idle', true);
+    smokeLeft.scrollFactor.set(0.4, 0.4);
+    smokeLeft.antialiasing = true;
+    addSprite(smokeLeft, BEHIND_ALL);
+
+
+    trace(":weary:");
+	var smokeRight = new FlxSprite(1100, -100);
+	smokeRight.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'smokeRight.png', hscriptPath + 'smokeRight.xml');
+	smokeRight.animation.addByPrefix('idle', 'SmokeRight', 24, true);
+	smokeRight.animation.play('idle', true);
+	smokeRight.scrollFactor.set(0.4, 0.4);
+    smokeRight.antialiasing = true;
+	addSprite(smokeRight, BEHIND_ALL);
+    trace(":hueh:");
+	tower = new MetroSprite(100, 50, true);
+    trace("WAH tower");
+	tower.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tankWatchtower.png', hscriptPath + 'tankWatchtower.xml');
+    trace("RED ALERT: ioajfha");
+	tower.animation.addByPrefix('idle', 'watchtower gradient color', 24, false);
+	tower.animation.play('idle', true);
+    trace("eugh");
+	tower.scrollFactor.set(0.5, 0.5);
+	tower.updateHitbox();
+	tower.antialiasing = true;
+	addSprite(tower, BEHIND_ALL);
+    trace(":pensive:");
+
+
+
+    var ground = new FlxSprite(-420, -150).loadGraphic(hscriptPath + 'tankGround.png');
+    ground.setGraphicSize(Std.int(1.15 * ground.width));
+    ground.updateHitbox();
+    ground.antialiasing = true;
+    addSprite(ground, BEHIND_ALL);
+
+    pump = new FlxSprite(PlayState.instance.dadGroup.x-300 , PlayState.instance.dadGroup.y+400);
+    pump.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'pump.png', hscriptPath + 'pump.xml');
+    pump.animation.addByPrefix('idle', 'pump idle0', 24, true);
+    pump.animation.play('idle', true);
+    pump.antialiasing = true;
+    addSprite(pump, BEHIND_ALL);
+
+    fire1 = new Character(-400, 620, 'steve', false);
+    fire1.antialiasing = true;
+    fire1.scrollFactor.set(1.5, 1);
+    fire1.playAnim("idle");
+    addSprite(fire1, BEHIND_NONE);
+    
+    fire2 = new Character(1600, 620, 'NotMaintankman-d3', false);
+    fire2.antialiasing = true;
+    fire2.scrollFactor.set(1.5, 1);
+    fire2.playAnim("idle");
+    addSprite(fire2, BEHIND_NONE);
+
+    losers = new FlxGroup();
+ 
+	var tank2 = new MetroSprite(450, 940, true);
+	tank2.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tank2.png', hscriptPath + 'tank2.xml');
+	tank2.antialiasing = true;
+	tank2.animation.addByPrefix("idle", "foreground", 24, false);
+	tank2.scrollFactor.set(1.5, 1.5);
+	tank2.animation.play("idle");
+	losers.add(tank2);
+
+	var tank4 = new MetroSprite(1300, 900, true);
+	tank4.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tank4.png', hscriptPath + 'tank4.xml');
+	tank4.antialiasing = true;
+	tank4.animation.addByPrefix("idle", "fg", 24, false);
+   
+	tank4.scrollFactor.set(1.5, 1.5);
+	tank4.animation.play("idle");
+	losers.add(tank4);
+
+
+	var tank3 = new MetroSprite(1300, 1200, true);
+	tank3.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tank3.png', hscriptPath + 'tank3.xml');
+	tank3.antialiasing = true;
+	tank3.animation.addByPrefix("idle", "fg", 24, false);
+	tank3.scrollFactor.set(3.5, 2.5);
+	tank3.animation.play("idle");
+	losers.add(tank3);
+
+    addSprite(losers, BEHIND_NONE);
+
+
+
+    loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, OGcolor);
+    loki.alpha = 0.0001;
+    loki.cameras = [camHUD2];
+    loki.scrollFactor.set();
+    addSprite(loki, BEHIND_NONE);
+    warn = new FlxSprite().loadGraphic(hscriptPath + 'warn.png');
+    warn.setGraphicSize(Std.int(0.55 * warn.width));
+    warn.updateHitbox();
+    warn.antialiasing = true;
+    warn.alpha = 0;
+    warn.cameras = [camHUD2];
+    warn.screenCenter();
+    addSprite(warn, BEHIND_NONE);
+    funni = new FlxSprite().loadGraphic(hscriptPath + 'stageoverlay3.png');
+    funni.scrollFactor.set();
+    funni.screenCenter();
+    funni.antialiasing = true;
+    funni.setGraphicSize(Std.int(funni.width * 1.15));
+    addSprite(funni, BEHIND_NONE);
+
+    funni2 = new FlxSprite().loadGraphic(hscriptPath + 'stageoverlay2.png');
+    funni2.scrollFactor.set();
+    funni2.screenCenter();
+    funni2.antialiasing = true;
+    funni2.cameras = [camHUD2];
+    funni2.setGraphicSize(Std.int(funni2.width * 1.15));
+    addSprite(funni2, BEHIND_NONE);
+
+    PlayState.instance.gfGroup.y += 10;
+    PlayState.instance.gfGroup.x -= 30;
+    PlayState.instance.boyfriendGroup.x += 40;
+    PlayState.instance.dadGroup.y -= 20;
+    PlayState.instance.dadGroup.x -= 80;
+    PlayState.instance.opponentCameraOffset[1] += 60;
+        setDefaultZoom(0.9);
+    PlayState.instance.gfGroup.x -= 170;
+    PlayState.instance.gfGroup.y -= 75;
+   
+    
+}
+
+
+var dance1 = true;
+var dance2 = true;
+function beatHit(beat)
+{
+    if (beat % 4 == 0 && FlxG.random.bool(45))
+        shoot();
+    if (curSong == "Stressful-Doom"){
+    if ((curStep >= 806 && curStep < 913) && beat % 4 == 0) {
+        FlxTween.tween(loki, {alpha: 1}, 0.5,{onComplete: function(twn)
+            {
+                new FlxTimer().start(0.25, function(tmr)
+					{
+                FlxG.camera.flash(OGcolor,0.5, {
+                    FlxTween.tween(loki, {alpha: 0.0001}, 1);
+                });
+            });
+            }});
+
+    }
+    if ((curStep >= 921 && curStep <= 1184) || (curStep >= 921 && curStep <= 1184)) {
+        currentPlayState.triggerEventNote("Add Camera Zoom", "", "", "");
+    }
+    if (curStep >= 1447 && curStep <= 1579) {
+        FlxG.camera.flash(BlackColor,0.5);
+    }
+}
+    losers.forEach(function (spr) {
+        spr.dance();
+    });
+    tower.dance();
+if(dance1)
+    fire1.playAnim("idle");
+if(dance2)
+    fire2.playAnim("idle");
+}
+
+var space = true;
+var isdodge;
+function update(elapsed)
+{
+    currentPlayState.camZooming = true;
+    if (!currentPlayState.botplay){
+    space = FlxG.keys.pressed.SPACE;
+    }
+    else
+{
+    space = true;
+    }
+
+}
+
+function stepHit(step)
+{
+    if (curSong == "Stressful-Doom"){
+    if ((step >= 428 && step <= 461) || (step >= 493 && step <= 526) || (step >= 691 && step <= 723) || (step >= 756 && step <= 786)) {
+        currentPlayState.triggerEventNote("Add Camera Zoom", "", "", "");
+    }
+    if (curStep == 789)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 1,{onComplete: function(twn)
+                {
+                    setDefaultZoom(1.5);
+                    FlxG.camera.alpha = 0.001;
+                    
+        }});
+            
+            FlxTween.tween(camHUD, {alpha: 0.0001});
+        }
+        if (curStep == 913)
+            {
+            
+            FlxTween.tween(camHUD, {alpha: 1});
+            FlxTween.tween(FlxG.camera, {alpha: 1});
+            setDefaultZoom(1.5);
+
+            }
+            if (curStep == 917){
+                FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1);
+                    FlxTween.num(currentPlayState.defaultCamZoom, 1.05, 1,{onComplete: function(twn)
+                        {
+            
+                            setDefaultZoom(1.1);
+                        }});  
+
+                }
+            }
+} 
+
+function shoot()
+    {
+    var random = FlixG.random.int(0,1);
+    warn.alpha = 1;
+
+
+    if (space)
+    isdodge = true;
+
+    if (isdodge){
+
+    new FlxTimer().start(0.3, function(tmr)
+        {
+    if (random == 0){
+        fire1.playAnim("shoot");
+        dance1 = false;
+    }
+    else if (random == 1){
+        fire2.playAnim("shoot");
+        dance2 = false;
+    }
+    FlixG.sound.play('windose_data/sounds/shoot.ogg');
+
+
+        
+        currentPlayState.boyfriend.debugMode = true;
+                if(currentPlayState.boyfriend.animation.getByName('dodge') != null) {
+                currentPlayState.boyfriend.playAnim('dodge',true);
+                }
+                new FlxTimer().start(0.5, function(tmr)
+                    {
+                        if (random == 0){
+                            dance1 = true;
+                        }
+                        else if (random == 1){
+                            dance2 = true;
+                        }
+                            currentPlayState.boyfriend.debugMode = false;
+                            warn.alpha = 0.0001;
+
+                            isdodge= false;
+                    }); 
+                });
+                }else {
+        new FlxTimer().start(0.3, function(tmr)
+            {
+        if (random == 0){
+            fire1.playAnim("shoot");
+            dance1 = false;
+        }
+        else if (random == 1){
+            fire2.playAnim("shoot");
+            dance2 = false;
+        }
+        FlixG.sound.play('windose_data/sounds/shoot.ogg');
+    
+    
+        if (difficulty == 2)
+        PlayState.instance.health -= 0.4;
+        else if (difficulty == 1)
+        PlayState.instance.health -= 0.25;
+        else if (difficulty == 0)
+            PlayState.instance.health -= 0.1;
+            
+        for (i in 0...currentPlayState.strumLineNotes.length) {
+            currentPlayState.strumLineNotes.members[i].x += FlxG.random.float(1, -1);
+            currentPlayState.strumLineNotes.members[i].y += FlxG.random.float(1, -1);
+        };
+        currentPlayState.boyfriend.debugMode = true;
+        if(currentPlayState.boyfriend.animation.getByName('hurt') != null) {
+        currentPlayState.boyfriend.playAnim('hurt',true);
+        }
+                    new FlxTimer().start(0.5, function(tmr)
+                        {
+                            if (random == 0){
+                                dance1 = true;
+                            }
+                            else if (random == 1){
+                                dance2 = true;
+                            }
+                                currentPlayState.boyfriend.debugMode = false;
+                                warn.alpha = 0.0001;
+                                isdodge= false;
+                        }); 
+                    });
+                    }
+    }
+
+    function noteMiss(id, direction, noteType, isSustainNote, note)
+        {
+            for (i in 0...currentPlayState.strumLineNotes.length) {
+                currentPlayState.strumLineNotes.members[i].x += FlxG.random.float(1, -1);
+                currentPlayState.strumLineNotes.members[i].y += FlxG.random.float(1, -1);
+            };
+        }
+
+        function noteMissPress(direction)
+            {
+                for (i in 0...currentPlayState.strumLineNotes.length) {
+                    currentPlayState.strumLineNotes.members[i].x += FlxG.random.float(1, -1);
+                    currentPlayState.strumLineNotes.members[i].y += FlxG.random.float(1, -1);
+                };
+            }

@@ -1,0 +1,250 @@
+{
+    "dad": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "bf": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "bf-pixel": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+
+    "gf-pixel": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "senpai-pixel": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "gf": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "tankman": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "spooky": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "bf-old": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "spirit-pixel": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "parents": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "pico": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "monster": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "face": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-d2": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-d3": {
+        "frames": [0, 1, 2],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "tankman-d3": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "tankman-d4": {
+        "frames": [1, 1, 1],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "bfc": {
+        "frames": [0, 1, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "bfc-1": {
+        "frames": [0, 1, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "dadc": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "dadc-d2": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "tankmanc": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "spirit-insane-pixel": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "bf-glitch-pixel": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "bf-prologue1": {
+        "frames": [0, 0, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "bf-prologue2": {
+        "frames": [0, 0, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "bf-prologue3": {
+        "frames": [0, 0, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "bf-prologue4": {
+        "frames": [0, 0, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "monster-prologue": {
+        "frames": [0, 0, 0],
+        "offsets": [-20, -20, 20],
+        "width": 200,
+        "height": 200,
+        "frameNames": ["", "", ""]
+    },
+    "pico-d1": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "pico-d2": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "pico-d3": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "picoc-d1": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "skid": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "skid-d2": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "gfc-d2": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "gfc": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "momc": {
+        "frames": [0, 1, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    }
+}

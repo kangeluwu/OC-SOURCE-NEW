@@ -1,0 +1,14 @@
+
+function start(song) {
+}
+
+
+function beatHit(beat)
+{
+
+
+}
+
+function update(elapsed)
+{ 
+ }

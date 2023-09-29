@@ -1,0 +1,6 @@
+[178[ [179[ [223[ [216[ |LunchboxScary| *100* =1= #pixel_spirit#  <0.08< >4> (0.2( )5) {0.83{ }5} `hand_textbox` ~clickText~
+:senpai-pissed: !default! [Pixel Arial 11 Bold[ ]32] *100* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .. ~~      Temp
+:gf-pixel: !default! [Pixel Arial 11 Bold[ ]48] *100* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .. ~~      Temp
+:senpai-pissed: !default! [Pixel Arial 11 Bold[ ]32] *100* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .. ~~      Temp
+:gf-pixel: !default! [Pixel Arial 11 Bold[ ]25] *100* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .. ~~      Temp
+:senpai-pissed: !neutral! [Pixel Arial 11 Bold[ ]32] *100* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_spirit# ^pixelText^ !#FFFFFF! ?#000000? .. ~~      Temp

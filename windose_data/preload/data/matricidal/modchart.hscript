@@ -1,0 +1,12 @@
+    function goodNoteHit(id, direction, noteType, isSustainNote, note)
+      {
+          switch (noteType)
+          {
+      case "Warning Note" :
+      if(currentPlayState.boyfriend.animation.getByName('shoot') != null) {
+              currentPlayState.boyfriend.playAnim('shoot', true);
+              currentPlayState.boyfriend.specialAnim = true;
+            }
+      }
+      
+      }

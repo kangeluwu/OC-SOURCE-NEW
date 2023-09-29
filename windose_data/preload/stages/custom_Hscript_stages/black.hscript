@@ -1,0 +1,16 @@
+
+function start(song) {
+if (currentPlayState.gf != null)
+currentPlayState.gf.alpha = 0.00001;
+currentPlayState.boyfriend.alpha = 0.00001;
+currentPlayState.dad.alpha = 0.00001;
+currentPlayState.skipCountdown = true;
+currentPlayState.healthBarBG.alphaMult = 0.00001;
+currentPlayState.iconP2.alpha = 0.00001;
+currentPlayState.iconP1.alpha = 0.00001;
+}
+
+function onEvent(name, value1, value2, value3)
+{
+
+}

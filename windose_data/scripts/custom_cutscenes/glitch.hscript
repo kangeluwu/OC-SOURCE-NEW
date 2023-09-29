@@ -1,0 +1,75 @@
+var fade;
+function start(song) {
+  var red = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFFff1b31);
+  red.scrollFactor.set();
+  fade = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, OGcolor);
+  fade.scrollFactor.set();
+
+  camHUD.visible = false;
+  var glitchsound;
+ // if (FNFAssets.exists('windose_data/images/custom_chars/${PlayState.SONG.player2}/School_Dies.ogg')) {
+ //   glitchSound = FNFAssets.getSound('windose_data/images/custom_chars/${PlayState.SONG.player2}/School_Dies.ogg');
+
+//  } else if (FNFAssets.exists('windose_data/data/${PlayState.SONG.song.toLowerCase()}/School_Dies.ogg')) {
+//      glitchSound = FNFAssets.getSound('windose_data/data/${PlayState.SONG.song.toLowerCase()}/School_Dies.ogg');
+//  } else {
+      glitchSound = FNFAssets.getSound(hscriptPath + 'School_Dies.ogg');
+ // }
+
+  var glitch = new FlxSprite();
+
+  //if (FNFAssets.exists('windose_data/images/custom_chars/${PlayState.SONG.player2}/crazy.png')) {
+ //     var evilImage = FNFAssets.getBitmapData('windose_data/images/custom_chars/${PlayState.SONG.player2}/glitch.png');
+ //     var evilXml = FNFAssets.getText('windose_data/images/custom_chars/${PlayState.SONG.player2}/glitch.xml');
+   //   glitch.frames = FlxAtlasFrames.fromSparrow(evilImage, evilXml);
+ /// } else if (FNFAssets.exists(hscriptPath + '/glitch.png')) {
+      var evilImage = FNFAssets.getBitmapData(hscriptPath + 'glitch.png');
+      var evilXml = FNFAssets.getText(hscriptPath + 'glitch.xml');
+      glitch.frames = FlxAtlasFrames.fromSparrow(evilImage, evilXml);
+ // } else {
+  //    glitch.frames = FlxAtlasFrames.fromSparrow('windose_data/images/weeb/glitch.png', 'windose_data/images/weeb/glitch.xml');
+ // }
+  glitch.animation.addByPrefix('idle', 'SCHOOLGLITCH', 24, false);
+        glitch.setGraphicSize(Std.int(glitch.width * 6));
+    glitch.scrollFactor.set();
+    glitch.updateHitbox();
+    glitch.screenCenter();
+    add(red);
+    
+    add(glitch);
+    add(fade);
+    glitch.alpha = 0;
+    fade.alpha = 0.0001;
+    if (currentPlayState.doofM != null) {
+        new FlxTimer().start(0.3, function(timer) {
+        glitch.alpha += 0.15;
+        if (glitch.alpha < 1) {
+            timer.reset();
+        } else {
+            glitch.animation.play('idle');
+            FlixG.sound.play(glitchSound, 1, false, null, true, function() {
+                remove(glitch);
+                remove(red);
+                FlxG.camera.fade(0xFFFFFFF, 0.01, true, function()
+                    {
+                        add(currentPlayState.doofM);
+                        camHUD.visible = true;
+                        fade.alpha = 0;
+                    }, true);
+                   
+            });
+            new FlxTimer().start(3.6, function(deadTime)
+                {
+                    FlxTween.tween(fade, {alpha: 1}, 1.6,{onComplete: function(twn)
+                        {
+                            
+                            
+                }});
+                });
+        }
+    });
+    } else {
+        currentPlayState.startCountdown();
+    }
+    
+}

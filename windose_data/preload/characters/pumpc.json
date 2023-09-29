@@ -1,0 +1,34 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				40,
+				10
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "pump idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/spookys/pump",
+	"position": [
+		160,
+		380
+	],
+	"healthicon": "spooky",
+	"flip_x": true,
+	"healthbar_colors": [
+		142,
+		144,
+		159
+	],
+	"camera_position": [
+		130,
+		-80
+	],
+	"sing_duration": 4,
+	"scale": 1.2
+}

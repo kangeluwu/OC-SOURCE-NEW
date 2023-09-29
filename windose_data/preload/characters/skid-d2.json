@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				40,
+				10
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "skid idle dance"
+		},
+		{
+			"offsets": [
+				3,
+				9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "skid down note0"
+		},
+		{
+			"offsets": [
+				4,
+				19
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "skid up note0"
+		},
+		{
+			"offsets": [
+				3,
+				10
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "skid right note0"
+		},
+		{
+			"offsets": [
+				28,
+				11
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "skid left note0"
+		},
+		{
+			"offsets": [
+				2,
+				8
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "skid down note miss"
+		},
+		{
+			"offsets": [
+				4,
+				19
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "skid up note miss"
+		},
+		{
+			"offsets": [
+				38,
+				10
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "skid left note miss"
+		},
+		{
+			"offsets": [
+				4,
+				10
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "skid right note miss"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/spookys/skid-d2",
+	"position": [
+		30,
+		380
+	],
+	"healthicon": "skid-d2",
+	"flip_x": false,
+	"healthbar_colors": [
+		142,
+		144,
+		159
+	],
+	"camera_position": [
+		130,
+		-80
+	],
+	"sing_duration": 4,
+	"scale": 1.2
+}

@@ -1,0 +1,98 @@
+var bg;
+var power;
+var powerFlame;
+var GFbg;
+var pipes;
+function start(song) {
+
+PlayState.isCorruptUI = true;
+    bg = new FlxSprite(-400, -340).loadGraphic(hscriptPath + 'stage2.png');
+    bg.scrollFactor.set(0.85, 0.85);
+    bg.setGraphicSize(Std.int(bg.width * 0.65));
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+
+if (curSong == "Yandere-Attack"){
+    power = new FlxSprite(420, 150);
+//您是否要找:currentPlayState.gf.x,currentPlayState.gf.y
+    var tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'GFfire.png', hscriptPath + 'GFfire.xml');
+    power.frames = tex;
+    power.scale.set(3, 1.98);
+    power.animation.addByPrefix("idle", "fire0", 24, true);
+    power.animation.play("idle");
+    power.antialiasing = true;
+    addSprite(power, BEHIND_ALL);
+
+
+
+    GFbg = new FlxSprite(0, -40).loadGraphic(hscriptPath + 'gf bg.png');
+    GFbg.scrollFactor.set(0.8, 0.8);
+    GFbg.setGraphicSize(Std.int(GFbg.width * 0.55));
+    GFbg.updateHitbox();
+    GFbg.antialiasing = true;
+    addSprite(GFbg, BEHIND_ALL);
+}
+    pipes = new FlxSprite(0, -40).loadGraphic(hscriptPath + 'Pipes.png');
+    pipes.scrollFactor.set(0.9, 0.9);
+    pipes.setGraphicSize(Std.int(pipes.width * 0.85));
+    pipes.antialiasing = true;
+    pipes.updateHitbox();
+    addSprite(pipes, BEHIND_NONE);
+if (curSong == "Yandere-Attack"){
+    powerFlame = new FlxSprite();
+//您是否要找:0,0
+    var tex1 = FlxAtlasFrames.fromSparrow(hscriptPath + 'shine.png', hscriptPath + 'shine.xml');
+    powerFlame.frames = tex1;
+    powerFlame.animation.addByPrefix("idle", "shine0", 12, false);
+    powerFlame.animation.play("idle");
+    powerFlame.antialiasing = true;
+    powerFlame.scale.set(1.03, 0.98);
+powerFlame.screenCenter();
+    powerFlame.scrollFactor.set();
+    addSprite(powerFlame, BEHIND_NONE);
+powerFlame.alpha = 0.0001;
+}
+
+    setDefaultZoom(0.9);
+}
+
+
+function beatHit(beat)
+{
+
+}
+
+function update(elapsed)
+{
+
+}
+
+function stepHit(step)
+{
+}
+
+function opponentTurn()
+{
+}
+
+function opponentNoteHit(id, direction, noteType, isSustainNote, note)
+{
+}
+
+function playerTurn()
+{
+}
+
+function noteMiss(id, direction, noteType, isSustainNote, note)
+{
+}
+
+function goodNoteHit(id, direction, noteType, isSustainNote, note)
+{
+}
+
+function onEvent(name, value1, value2, value3)
+{
+
+}
+

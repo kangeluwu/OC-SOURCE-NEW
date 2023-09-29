@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tank2.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="foreground man 3 instance 10000" x="0" y="0" width="292" height="304" frameX="-2" frameY="-17" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10001" x="0" y="0" width="292" height="304" frameX="-2" frameY="-17" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10002" x="292" y="0" width="287" height="311" frameX="-4" frameY="-11" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10003" x="292" y="0" width="287" height="311" frameX="-4" frameY="-11" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10004" x="579" y="0" width="287" height="318" frameX="-1" frameY="-4" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10005" x="579" y="0" width="287" height="318" frameX="-1" frameY="-4" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10006" x="0" y="318" width="287" height="321" frameX="0" frameY="-1" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10007" x="0" y="318" width="287" height="321" frameX="0" frameY="-1" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10008" x="287" y="318" width="287" height="322" frameX="0" frameY="0" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10009" x="287" y="318" width="287" height="322" frameX="0" frameY="0" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10010" x="287" y="318" width="287" height="322" frameX="0" frameY="0" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10011" x="287" y="318" width="287" height="322" frameX="0" frameY="0" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10012" x="287" y="318" width="287" height="322" frameX="0" frameY="0" frameWidth="294" frameHeight="322"/>
+	<SubTexture name="foreground man 3 instance 10013" x="287" y="318" width="287" height="322" frameX="0" frameY="0" frameWidth="294" frameHeight="322"/>
+</TextureAtlas>

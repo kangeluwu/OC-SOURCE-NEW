@@ -1,0 +1,37 @@
+var bg;
+var bg1;
+var bg2;
+function start(song) {
+    bg2 = new FlxSprite().loadGraphic(hscriptPath + 'cut2.png');
+    bg2.cameras = [camHUD];
+    add(bg2);
+bg1 = new FlxSprite().loadGraphic(hscriptPath + 'cut1.png');
+bg1.cameras = [camHUD];
+add(bg1);
+bg = new FlxSprite().loadGraphic(hscriptPath + 'cut.png');
+bg.cameras = [camHUD];
+add(bg);
+startGame();
+
+}
+
+function startGame() {
+    //FlxTween.tween(bg, {alpha: 0}, 1);
+    new FlxTimer().start(2.58, function(trol)
+        {
+            bg.alpha = 0;
+
+            new FlxTimer().start(2.58, function(trol)
+                {
+                    bg1.alpha = 0;
+                    new FlxTimer().start(3.08, function(trol)
+                        {
+                            bg2.alpha = 0;
+                            currentPlayState.startCountdown();
+                        });
+
+                });
+
+        });
+
+}
