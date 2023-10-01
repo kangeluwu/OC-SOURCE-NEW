@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Tankman Idle Dance"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				268,
+				51
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Tankman UP note instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				200,
+				-45
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Tankman DOWN note instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				79,
+				-12
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Tankman Right Note instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				139,
+				-24
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Tankman Note Left instance",
+			"indices": []
+		},
+		{
+			"offsets": [
+				67,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "shoot",
+			"indices": [],
+			"name": "TANKMAN FIRE"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/reve/evil-tankman-captain",
+	"position": [
+		0,
+		240
+	],
+	"healthicon": "tankmanc",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -1,0 +1,18 @@
+var charY;
+var daAngle = 0;
+
+function init(char) {
+    charY = char.y;
+}
+
+
+function update(elapsed, char) {
+  if (!char.inEdtior){
+  daAngle += elapsed * 150;
+    char.y = 100 * (FlxMath.fastSin(FlxAngle.asRadians(daAngle))) + charY * 2;
+  }
+}
+function dance(char) {
+  char.playAnim('idle');
+}
+trace("done");

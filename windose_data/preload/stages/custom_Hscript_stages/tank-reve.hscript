@@ -1,0 +1,746 @@
+var fire;
+var blackstuff;
+var overlay;
+var bg;
+var mountains;
+var building;
+var towerLOL;
+var ground;
+var wall;
+var gettingW;
+var camp;
+var losers;
+var fire2;
+var playerStrumX = [];
+var oppoStrumX = [];
+var gotankmen = false;
+var flyTransGoCaptain = false;
+var singAnimations = ['singLEFT', 'singDOWN', 'singUP', 'singRIGHT'];
+var charsWhoSing = new Map();
+var guys = new Map();
+var normals = ['tankman'];
+var noAnimations = ['brosLikeWTF'];
+var tankGuyStand;
+var tankGuyFly;
+var bfc;
+var dadc;
+var bfFlash;
+var fireValue;
+var ruins;
+var mom;
+var car = null;//🚗
+var shader;
+var shader2;
+var car2;
+var undedTodedTankmens;
+var fireValue2;
+var smoke;
+var instanceChar = null;
+var pico;
+var smokeLeft;
+var smokeRight;
+var city;
+var shaderBlood = currentPlayState.createRuntimeShader('bloodStuff');
+function onCountdownStarted(){
+    for (strum in currentPlayState.playerStrums.members)
+        playerStrumX.push(strum.x);
+        trace(playerStrumX);
+        for (strum in currentPlayState.opponentStrums.members)
+            oppoStrumX.push(strum.x);
+    }
+function start(song) {
+
+    addHaxeLibrary('TankmenBG');
+addHaxeLibrary('SwagSection','Section');
+addHaxeLibrary('SwagSong','Song');
+addHaxeLibrary('Song');
+
+
+    charsWhoSing.set('tankman',true);
+    charsWhoSing.set('bfc',true);
+    charsWhoSing.set('dadc',true);
+    charsWhoSing.set('mom',true);
+    trace(charsWhoSing);
+    bg = new FlxSprite().loadGraphic(hscriptPath + 'sky.png');
+    bg.scrollFactor.set(0.1,0.1);
+    bg.scale.set(2,2);
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+
+    mountains = new FlxSprite(-500, -420).loadGraphic(hscriptPath + 'moutain.png');
+    mountains.antialiasing = true;
+    mountains.setGraphicSize(Std.int(mountains.width * 1.8));
+    mountains.updateHitbox();
+    mountains.scrollFactor.set(0.2, 0.2);
+    addSprite(mountains, BEHIND_ALL);
+
+    building = new FlxSprite(-200,100).loadGraphic(hscriptPath + 'building.png');
+    building.setGraphicSize(Std.int(building.width * 1.5));
+    building.antialiasing = true;
+    building.updateHitbox();
+    building.scrollFactor.set(0.3, 0.3);
+    addSprite(building, BEHIND_ALL);
+
+    ruins = new FlxSprite(-200,-400).loadGraphic(hscriptPath + 'ruins.png');
+    ruins.scrollFactor.set(0.35, 0.35);
+    ruins.setGraphicSize(Std.int(1.5 * ruins.width));
+    ruins.updateHitbox();
+    ruins.antialiasing = true;
+    addSprite(ruins, BEHIND_ALL);
+
+    shader2 = currentPlayState.createRuntimeShader('fire2');
+    fire2 = new FlxSprite(-1200,-1000).makeGraphic(1280 * 3, 720 * 3, 0xFFFFFFFF);
+
+    fire2.shader = shader2;
+    fire2.alpha = 1;
+    fire2.blend = currentPlayState.blendModeFromString('screen');
+    fireValue2 = shader2.get_shaderData();
+    fireValue2.iTime.value = [1];
+    addSprite(fire2, BEHIND_ALL);
+    fire2.flipY = true;
+
+
+    towerLOL = new FlxSprite(-20,100).loadGraphic(hscriptPath + 'my swaggest tower.png');
+    towerLOL.scrollFactor.set(0.8,0.8);
+    towerLOL.scale.set(1.85,1.85);
+    towerLOL.antialiasing = true;
+    addSprite(towerLOL, BEHIND_ALL);
+
+    car = new FlxSprite(0,300);
+    tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'car.png', hscriptPath + 'car.xml');
+    car.frames = tex;
+    car.animation.addByPrefix('idle', 'Limo stage0', 24, true);
+    car.animation.addByPrefix('idle-static', 'Limo stage static0000', 24, true);
+    car.animation.play('idle-static', true);
+    car.scrollFactor.set(0.85, 0.85);
+    car.antialiasing = true;
+    car.scale.set(0.55,0.55);
+    car.flipX = true;
+    car.updateHitbox();
+    addSprite(car, BEHIND_ALL);
+    
+
+    smokeLeft = new FlxSprite(-600 , -500);
+    smokeLeft.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'smokeLeft.png', hscriptPath + 'smokeLeft.xml');
+    smokeLeft.animation.addByPrefix('idle', 'SmokeBlurLeft', 24, true);
+    smokeLeft.animation.play('idle', true);
+    smokeLeft.scrollFactor.set(0.8,0.8);
+    smokeLeft.scale.set(1.85,1.85);
+    smokeLeft.antialiasing = true;
+    addSprite(smokeLeft, BEHIND_ALL);
+
+
+    trace(":weary:");
+	smokeRight = new FlxSprite(1100, -500);
+	smokeRight.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'smokeRight.png', hscriptPath + 'smokeRight.xml');
+	smokeRight.animation.addByPrefix('idle', 'SmokeRight', 24, true);
+	smokeRight.animation.play('idle', true);
+    smokeRight.scrollFactor.set(0.8,0.8);
+    smokeRight.scale.set(1.85,1.85);
+    smokeRight.antialiasing = true;
+	addSprite(smokeRight, BEHIND_ALL);
+
+    wall = new FlxSprite(0,100).loadGraphic(hscriptPath + 'wall.png');
+    wall.scrollFactor.set(0.8,0.8);
+    wall.scale.set(2,2);
+    wall.antialiasing = true;
+    addSprite(wall, BEHIND_ALL);
+
+    ground = new FlxSprite(0,90).loadGraphic(hscriptPath + 'ground.png');
+    ground.scale.set(2,2);
+    ground.antialiasing = true;
+    addSprite(ground, BEHIND_ALL);
+
+
+
+    camp = new FlxSprite().loadGraphic(hscriptPath + 'camp.png');
+    camp.scale.set(2.5,2.5);
+    camp.antialiasing = true;
+    addSprite(camp, BEHIND_ALL);
+    car2 = car.clone();
+    car2.flipX = true;
+    car2.scale.set(0.85,0.85);
+    car2.updateHitbox();
+    car2.x -= 1020;
+    car2.y += 180;
+    addSprite(car2, BEHIND_ALL);
+if (gotankmen){
+    undedTodedTankmens = new FlxTypedGroup();
+
+
+    var noteData = Song.loadFromJson('wtfBGTANKMEN', Paths.formatToSongPath(PlayState.SONG.song)).notes;
+		for (section in noteData) {
+			for (songNotes in section.sectionNotes) {
+				TankmenBG.animationNotes.push(songNotes);
+			}
+		}
+        
+
+    var firstTank = new TankmenBG(20, 500, false);
+    firstTank.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tankmanKilled1.png', hscriptPath + 'tankmanKilled1.xml');
+    firstTank.initTankmens();
+					firstTank.resetShit(5000, 500, false);
+					firstTank.strumTime = 10;
+					undedTodedTankmens.add(firstTank);
+                    firstTank.alpha = 0.00001;
+                    firstTank.setGraphicSize(Std.int(firstTank.width * 1.1));
+					for (i in 0...TankmenBG.animationNotes.length)
+					{
+						if(FlxG.random.bool(5)) {
+							var tankBih = undedTodedTankmens.recycle(TankmenBG);
+                            tankBih.frames = FlxAtlasFrames.fromSparrow(hscriptPath + 'tankmanKilled1.png', hscriptPath + 'tankmanKilled1.xml');
+                            tankBih.initTankmens();
+                            tankBih.setGraphicSize(Std.int(tankBih.width * 1.1));
+							tankBih.strumTime = TankmenBG.animationNotes[i][0];
+							tankBih.resetShit(500, 500, /*TankmenBG.animationNotes[i][1] < 2*/ false);
+							undedTodedTankmens.add(tankBih);
+                            
+						}
+					}
+
+
+    addSprite(undedTodedTankmens, BEHIND_ALL);
+                }
+
+                city = new FlxSprite(-300, -320).loadGraphic(hscriptPath + 'city.png');
+                city.antialiasing = true;
+                city.scale.set(1.5,1.5);
+                city.updateHitbox();
+                city.alpha = 0.00001;
+                addSprite(city, BEHIND_ALL);
+    tankGuyStand = new Character(currentPlayState.dadGroup.x - 400,currentPlayState.dadGroup.y - 100,dad.curCharacter,dad.isPlayer);
+    currentPlayState.startCharacterPos(tankGuyStand);
+
+    tankGuyFly = new Character(currentPlayState.dadGroup.x - 400,currentPlayState.dadGroup.y - 100,'tankmanc-fly',dad.isPlayer);
+    currentPlayState.startCharacterPos(tankGuyFly);
+
+    mom = new Character(currentPlayState.dadGroup.x - 200,currentPlayState.dadGroup.y - 150,'momc',dad.isPlayer);
+    currentPlayState.startCharacterPos(mom);
+
+    dadc = new Character(currentPlayState.dadGroup.x - 600,currentPlayState.dadGroup.y - 100,'dadc-oppo',dad.isPlayer);
+    currentPlayState.startCharacterPos(dadc);
+
+    bfc = new Character(currentPlayState.boyfriendGroup.x + 500,currentPlayState.boyfriendGroup.y,'bfc-reborn',true);
+    currentPlayState.startCharacterPos(bfc);
+
+    bfFlash = new Character(currentPlayState.boyfriendGroup.x + 500,currentPlayState.boyfriendGroup.y,'bf',true);
+    bfFlash.color = BlackColor;
+    currentPlayState.startCharacterPos(bfFlash);
+
+    pico = new Character(currentPlayState.boyfriendGroup.x + 100,currentPlayState.boyfriendGroup.y - 20,'pico',dad.isPlayer);
+    currentPlayState.startCharacterPos(pico);
+    bfFlash.alpha = 0.001;
+    instanceChar = tankGuyStand;
+    bfc.cameraPosition[0] -= 300;
+    dad.alpha = 0;
+    tankGuyFly.alpha = 0.0001;
+    bfc.alpha = 0.0001;
+    mom.alpha = 0.0001;
+    dadc.alpha = 0.0001;
+    pico.alpha = 0.0001;
+    car2.alpha = 0.0001;
+    car.alpha = 0.0001;
+    addSprite(mom, BEHIND_ALL);
+    addSprite(dadc, BEHIND_ALL);
+    addSprite(bfc, BEHIND_ALL);
+    addSprite(bfFlash, BEHIND_ALL);
+    addSprite(pico, BEHIND_ALL);
+    addSprite(tankGuyStand, BEHIND_ALL);
+    addSprite(tankGuyFly, BEHIND_ALL);
+    guys.set('tankman',tankGuyStand);
+    guys.set('bfc',bfc);
+    guys.set('mom',mom);
+    guys.set('dadc',dadc);
+var texChats = FlxAtlasFrames.fromSparrow(hscriptPath + 'tankys.png', hscriptPath + 'tankys.xml');
+    losers = new FlxGroup();
+    var tank0 = new MetroSprite(-500, 650, true);
+    tank0.frames = texChats;
+    tank0.antialiasing = true;
+    tank0.animation.addByPrefix("idle", "fg tankhead far right instance 2", 24, false);
+    tank0.scrollFactor.set(1.7, 1.5);
+    tank0.animation.play("idle");
+    losers.add(tank0);
+
+	var tank1 = new MetroSprite(-300, 950, true);
+	tank1.frames = texChats;
+	tank1.antialiasing = true;
+	tank1.animation.addByPrefix("idle", "fg tankhead 5 instance 1", 24, false);
+	tank1.scrollFactor.set(1.8, 1.2);
+	tank1.animation.play("idle");
+	losers.add(tank1);
+
+	var tank2 = new MetroSprite(450, 940, true);
+	tank2.frames = texChats;
+	tank2.antialiasing = true;
+	tank2.animation.addByPrefix("idle", "foreground man 3 instance 1", 24, false);
+	tank2.scrollFactor.set(1.5, 1.5);
+	tank2.animation.play("idle");
+	losers.add(tank2);
+
+	var tank4 = new MetroSprite(1300, 900, true);
+	tank4.frames = texChats;
+	tank4.antialiasing = true;
+	tank4.animation.addByPrefix("idle", "fg tankman bobbin 3 instance 1", 24, false);
+	tank4.scrollFactor.set(1.5, 1.5);
+	tank4.animation.play("idle");
+	losers.add(tank4);
+
+	var tank5 = new MetroSprite(1620, 700, true);
+	tank5.frames = texChats;
+	tank5.antialiasing = true;
+	tank5.animation.addByPrefix("idle", "fg tankhead far right instance 1", 24, false);
+	tank5.scrollFactor.set(1.5, 1.5);
+	tank5.animation.play("idle");
+	losers.add(tank5);
+
+	var tank3 = new MetroSprite(1300, 1200, true);
+	tank3.frames = texChats;
+	tank3.antialiasing = true;
+	tank3.animation.addByPrefix("idle", "fg tankhead 4 instance 1", 24, false);
+	tank3.scrollFactor.set(3.5, 2.5);
+	tank3.animation.play("idle");
+	losers.add(tank3);
+
+    addSprite(losers, BEHIND_NONE);
+    losers.forEach(function (spr) {
+        spr.x -= 200;
+        spr.y += 50;
+    });
+
+    shader = currentPlayState.createRuntimeShader('fire');
+    fire = new FlxSprite(-300,-1000).makeGraphic(1280 * 3, 720 * 3, 0xFFFFFFFF);
+    fire.scrollFactor.set(0,0.5);
+    fire.shader = shader;
+    fire.alpha = 0.0001;
+    fireValue = shader.get_shaderData();
+    fireValue.iTime.value = [1];
+    addSprite(fire, BEHIND_NONE);
+    fire.flipY = true;
+
+    gettingW = new FlxSprite(0,110).loadGraphic(hscriptPath + 'W.png');
+    gettingW.scale.set(2.5,2.5);
+    gettingW.scrollFactor.set(0.8, 1);
+    gettingW.antialiasing = true;
+    addSprite(gettingW, BEHIND_NONE);
+    currentPlayState.boyfriendGroup.x -= 250;
+    currentPlayState.iconP1.alpha = 0;
+    currentPlayState.iconP2.alpha = 0;
+    currentPlayState.healthBar.alpha = 0;
+    currentPlayState.scoreTxt.alpha = 0;
+    currentPlayState.boyfriendCameraOffset[0] = -50;
+    dadc.cameraPosition[0] += 400;
+    mom.cameraPosition[1] += 100;
+    overlay = new FlxSprite().loadGraphic(hscriptPath + 'stageoverlay2.png');
+    overlay.scrollFactor.set();
+    overlay.screenCenter();
+    overlay.cameras = [camHUD2];
+    overlay.antialiasing = true;
+    add(overlay);
+    overlay.alpha = 0.0001;
+
+    blackstuff = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF1D0000);
+    blackstuff.alpha = 0.0001;
+    
+    blackstuff.scrollFactor.set();
+    insert(currentPlayState.members.indexOf(currentPlayState.dadGroup), blackstuff);
+
+    setDefaultZoom(1.2);
+   
+}
+function changeCharacter(curchar){
+    var char = guys.get(curchar);
+    instanceChar = char;
+    currentPlayState.iconP2.changeIcon(instanceChar.healthIcon);
+}
+function doFlash(wtf){
+    if (wtf)
+        {
+            currentPlayState.boyfriendCameraOffset[0] = 450;
+            currentPlayState.boyfriendGroup.x -= 200;
+            guys.set('bfc',bfFlash);
+            bfFlash.alpha = 1;
+            currentPlayState.boyfriendGroup.color = BlackColor;
+            pico.alpha = 0.5;
+            overlay.alpha = 0.8;
+            bfc.alpha = 0.0001;
+            mom.alpha = 0.0001;
+            dadc.alpha = 0.0001;
+            tankGuyFly.alpha = 0.0001;
+            gettingW.alpha = 0.0001;
+            city.alpha = 1;
+            fire.visible = false;
+            fire.alpha = 0;
+            losers.forEach(function (spr) {
+                spr.alpha = 0.0001;
+            });
+        }
+        else{
+            currentPlayState.boyfriendGroup.x += 200;
+            currentPlayState.boyfriendCameraOffset[0] = 700;
+            guys.set('bfc',bfc);
+            bfFlash.alpha = 0.00001;
+            pico.alpha = 0.0001;
+            currentPlayState.boyfriendGroup.color = OGcolor;
+            gettingW.alpha = 1;
+            bfc.alpha = 1;
+            mom.alpha = 1;
+            dadc.alpha = 1;
+            tankGuyFly.alpha = 1;
+            city.alpha = 0.00001;
+            fire.visible = true;
+            fire.alpha = 0.0001;
+            losers.forEach(function (spr) {
+                spr.alpha = 1;
+            });
+        }
+}
+function beatHit(beat)
+{
+    losers.forEach(function (spr) {
+        spr.dance();
+    });
+
+    for (character in guys.iterator()) {
+	if (!StringTools.startsWith(character.animation.curAnim.name,'sing'))
+		{
+			character.dance();
+		}
+    }
+}
+function sectionHit(section){
+for (name in normals)
+    {}
+}
+var w=0;
+function update(elapsed)
+{
+    w+= elapsed;
+    fireValue.iTime.value[0] = w;
+    fireValue2.iTime.value[0] = w / 1.5;
+    pico.playAnim(currentPlayState.boyfriend.animation.curAnim.name);
+
+    pico.color = currentPlayState.boyfriendGroup.color;
+    pico.animation.curAnim.curFrame = currentPlayState.boyfriend.animation.curAnim.curFrame;
+}
+
+function stepHit(step)
+{
+    if (curStep >= 768 && !flyTransGoCaptain){
+        instanceChar = tankGuyFly;
+        guys.set('tankman',tankGuyFly);
+        tankGuyFly.alpha = 1;
+        tankGuyStand.alpha = 0.0001;
+        flyTransGoCaptain = true;
+    }
+
+    switch(step){
+        case 1280:
+            for (strum in 0...currentPlayState.strumLineNotes.length){
+                FlxTween.tween(currentPlayState.strumLineNotes.members[strum], {alpha: 0.0001}, 
+                    1, {ease: FlxEase.cubeOut});  
+                }
+            currentPlayState.boyfriendGroup.color = BlackColor;
+            fire.visible = false;
+            fire.alpha = 0;
+            gettingW.alpha = 0.0001;
+            blackstuff.alpha = 1;
+            guys.set('tankman',tankGuyStand);
+            overlay.alpha = 0.8;
+            case 1344:
+                for (strum in 0...currentPlayState.playerStrums.length){
+                    FlxTween.tween(currentPlayState.playerStrums.members[strum], {alpha: 1}, 
+                        2, {ease: FlxEase.cubeOut});  
+                    }
+                    
+           case 1536:
+            for (strum in currentPlayState.strumLineNotes)
+                strum.alpha = 1;
+            overlay.alpha = 0.0001;
+            blackstuff.alpha = 0.001;
+            gettingW.alpha = 1;
+            guys.set('tankman',tankGuyFly);
+            currentPlayState.boyfriendGroup.color = OGcolor;
+            fire.visible = true;
+            fire.alpha = 0.0001;
+            changeCharacter('bfc');
+            normals = ['bfc'];
+            bfc.alpha = 1;
+            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            case 1680:
+                changeCharacter('tankman');
+                normals = ['tankman'];
+            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+            case 1792:
+                changeCharacter('bfc');
+                normals = ['bfc'];
+                noAnimations = ['tankman'];
+            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            case 1984:
+                changeCharacter('tankman');
+            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+            case 2000:
+                changeCharacter('bfc');
+            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            case 2016:
+                changeCharacter('tankman');
+            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+            case 2032:
+                changeCharacter('bfc');
+            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            case 2048:
+                changeCharacter('tankman');
+                currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+            case 2176:
+                changeCharacter('bfc');
+            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            case 2208:
+                car.animation.play('idle', true);
+                car2.animation.play('idle', true);
+                FlxTween.tween(car, 
+                    {x: -800}, 
+                2.5, {ease: FlxEase.cubeInOut});  
+            case 2272:
+                car2.alpha = 1;
+                car2.x -= 1800;
+            
+                FlxTween.tween(car2, 
+                        {x: car2.x + 1800}, 
+                        4, {ease: FlxEase.cubeInOut,	
+                            onComplete: function(twn)
+							{
+							car2.animation.play('idle-static', true);
+							}});  
+            case 2240:
+                changeCharacter('tankman');
+            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+            case 2272:
+                changeCharacter('bfc');
+            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            case 2304:
+                changeCharacter('mom');
+                mom.alpha = 1;
+                normals = ['mom'];
+                noAnimations = ['dadc','bfc'];
+                dadc.alpha = 1;
+            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+            case 2432:
+                normals = ['dadc'];
+                changeCharacter('dadc');
+                case 2560:
+                    normals = ['tankman'];
+                    changeCharacter('tankman');
+                    case 2752:
+                        changeCharacter('bfc');
+                        normals = ['bfc'];
+                        noAnimations = ['dadc'];
+                        currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+          case 2816:
+                changeCharacter('mom');
+                normals = ['mom'];
+                noAnimations = [];
+              
+            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+
+            case 2880:
+                changeCharacter('bfc');
+                normals = ['bfc'];
+
+                currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                case 2944:
+                    doFlash(true);
+                    case 3328:
+                            FlxTween.tween(blackstuff, 
+                                {alpha: 1}, 
+                                3.5, {ease: FlxEase.cubeOut});  
+                    case 3456:
+                        blackstuff.alpha = 0.0001;
+                        doFlash(false);
+                       bg.shader = shaderBlood;
+                       mountains.shader = shaderBlood;
+                       building.shader = shaderBlood;
+                       ruins.shader = shaderBlood;
+                       towerLOL.shader = shaderBlood;
+                       smokeLeft.shader = shaderBlood;
+                       smokeRight.shader = shaderBlood;
+                       wall.shader = shaderBlood;
+                       ground.shader = shaderBlood;
+                       camp.shader = shaderBlood;
+                       car2.shader = shaderBlood;
+                       gettingW.shader = shaderBlood;
+                case 3584:
+                    changeCharacter('mom');
+                    normals = ['mom','dadc'];
+    
+                    currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                    case 3648:
+                        changeCharacter('tankman');
+                        normals = ['tankman'];
+                        case 3744:
+                            changeCharacter('dadc');
+                            normals = ['dadc'];
+                            case 3776:
+                            changeCharacter('mom');
+                            normals = ['mom'];
+                            noAnimations = ['bfc'];
+                            case 3840:
+                                changeCharacter('bfc');
+                                normals = ['bfc'];
+                                noAnimations = [];
+                                currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                                case 3968:
+                                    changeCharacter('tankman');
+                                    normals = ['tankman'];
+                                    currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                                case 4096:
+                                    changeCharacter('bfc');
+                                    normals = ['bfc'];
+                                    noAnimations = ['tankman'];
+                                    currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                                    case 4160:
+                                    changeCharacter('tankman');
+                                    normals = ['bfc','tankman'];
+                                    currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                                    case 4176:
+                                    changeCharacter('bfc');
+                                    currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                                    case 4192:
+                                        changeCharacter('tankman');
+                                        currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                                        case 4208:
+                                            changeCharacter('bfc');
+                                            normals = ['bfc'];
+                                            noAnimations = ['tankman'];
+                                            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                                            case 4224:
+                                                for (strum in 0...currentPlayState.strumLineNotes.length){
+                                                    FlxTween.tween(currentPlayState.strumLineNotes.members[strum], {alpha: 0.0001}, 
+                                                        1, {ease: FlxEase.cubeOut});  
+                                                    }
+                                                    FlxTween.tween(overlay, {alpha: 1}, 
+                                                        1, {ease: FlxEase.cubeOut}); 
+                                                camHUD.flash(BlackColor,1);
+                                                currentPlayState.defaultCamZoom = 1.5;
+                                            changeCharacter('tankman');
+                                            currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                                            case 4288:
+                                            changeCharacter('bfc');
+                                            currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                                            case 4352:
+                                                changeCharacter('tankman');
+                                                currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                                                case 4400:
+                                                changeCharacter('bfc');
+                                                currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+                                                case 4432:
+                                                    changeCharacter('tankman');
+                                                    currentPlayState.triggerEventNote('change healthbar dir','Left','','');
+                                                      case 4448:
+                                                changeCharacter('bfc');
+                                                currentPlayState.triggerEventNote('change healthbar dir','Right','','');
+            
+            
+    }
+}
+
+function playerTwoTurn()
+{
+    currentPlayState.camFollow.set(instanceChar.getMidpoint().x + 150, instanceChar.getMidpoint().y - 100);
+    currentPlayState.camFollow.x += instanceChar.cameraPosition[0] + currentPlayState.opponentCameraOffset[0];
+    currentPlayState.camFollow.y += instanceChar.cameraPosition[1] + currentPlayState.opponentCameraOffset[1];
+}
+
+function playerTwoMiss()
+{
+}
+
+function playerTwoSing()
+{
+}
+
+function playerOneTurn()
+{
+}
+
+function playerOneMiss()
+{
+}
+
+function playerOneSing()
+{
+}
+function opponentNoteHit(id, direction, noteType, isSustainNote, note){
+    if (!currentPlayState.opponentPlayer)
+    characterNoteHit(id, direction, noteType, isSustainNote, note);
+}
+function goodNoteHit(id, direction, noteType, isSustainNote, note){
+    if (currentPlayState.opponentPlayer)
+    characterNoteHit(id, direction, noteType, isSustainNote, note);
+}
+function characterNoteHit(id, direction, noteType, isSustainNote, note){
+    for (character in guys.keys()) {
+        switch (noteType){
+            case '':
+                if (charsWhoSing.get(character)){
+                    for (char in normals){
+                        if (char == character){
+                            var chara = guys.get(char);
+                            chara.playAnim(singAnimations[direction],true);
+                            chara.holdTimer = 0;
+                        }
+                    }
+                }
+            case 'No Animation':
+                if (charsWhoSing.get(character)){
+                    for (char in noAnimations){
+                        if (char == character){
+                            var chara = guys.get(char);
+                            chara.playAnim(singAnimations[direction],true);
+                            chara.holdTimer = 0;
+                        }
+                    }
+                }
+        }
+        }
+}
+
+function onCountdownTick(swagCounter){
+    for (character in guys.iterator()) {
+        if (swagCounter % 2 == 0 & !StringTools.startsWith(character.animation.curAnim.name,'sing'))
+            {
+                character.dance();
+            }
+        }
+}
+
+function onEvent(name, value1, value2, value3) 
+    {
+        switch(name) {
+            case 'change healthbar dir':
+               switch (value1){
+                case "Left":     
+                    currentPlayState.boyfriendCameraOffset[0] = -50;
+                    for (strum in 0...currentPlayState.playerStrums.length){
+                        FlxTween.tween(currentPlayState.playerStrums.members[strum], 
+                            {x: playerStrumX[strum]}, 
+                            1, {ease: FlxEase.cubeOut});  
+                        }
+                for (strum in 0...currentPlayState.opponentStrums.length){
+                    FlxTween.tween(currentPlayState.opponentStrums.members[strum], 
+                        {x: oppoStrumX[strum]}, 
+                        1, {ease: FlxEase.cubeOut});  
+                    }
+                    case "Right":     
+                        currentPlayState.boyfriendCameraOffset[0] = 700;
+                        for (strum in 0...currentPlayState.playerStrums.length){
+                            FlxTween.tween(currentPlayState.playerStrums.members[strum], {x: oppoStrumX[strum]}, 
+                                1, {ease: FlxEase.cubeOut});  
+                            }
+                    for (strum in 0...currentPlayState.opponentStrums.length){
+                        FlxTween.tween(currentPlayState.opponentStrums.members[strum], 
+                            {x: playerStrumX[strum]}, 
+                            1, {ease: FlxEase.cubeOut});  
+                            trace(currentPlayState.opponentStrums.members[strum].x);
+                        }
+               } 
+        }
+    }

@@ -1,0 +1,105 @@
+{
+    "animations": [{
+            "loop": false,
+            "offsets": [
+                3,
+                0
+            ],
+            "anim": "idle",
+            "fps": 24,
+            "name": "Pico Give UP",
+            "indices": []
+        },
+        {
+            "loop": false,
+            "offsets": [-50,
+                109
+            ],
+            "anim": "singUP",
+            "fps": 24,
+            "name": "pico Up note0",
+            "indices": []
+        },
+        {
+            "loop": false,
+            "offsets": [
+                104, -40
+            ],
+            "anim": "singDOWN",
+            "fps": 24,
+            "name": "Pico Down Note0",
+            "indices": []
+        },
+        {
+            "offsets": [-55,
+                35
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singLEFT",
+            "indices": [],
+            "name": "Pico Note Right0"
+        },
+        {
+            "offsets": [
+                17, -8
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singRIGHT",
+            "indices": [],
+            "name": "Pico NOTE LEFT0"
+        },
+        {
+            "offsets": [
+                474,
+                174
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "shoot",
+            "indices": [],
+            "name": "Pico Fire0"
+        },
+        {
+            "loop": false,
+            "offsets": [
+                12,
+                60
+            ],
+            "anim": "shoot-right",
+            "fps": 24,
+            "name": "Pico Fire Right",
+            "indices": []
+        },
+        {
+            "offsets": [
+                37, -3
+            ],
+            "indices": [],
+            "fps": 24,
+            "anim": "idle-ded",
+            "loop": false,
+            "name": "Pico Give UP"
+        }
+    ],
+    "no_antialiasing": false,
+    "image": "characters/reve/pico-3",
+    "position": [
+        0,
+        300
+    ],
+    "healthicon": "pico-d3",
+    "flip_x": true,
+    "healthbar_colors": [
+        183,
+        216,
+        85
+    ],
+    "camera_position": [
+        220,
+        0
+    ],
+    "sing_duration": 4,
+    "scale": 1
+}

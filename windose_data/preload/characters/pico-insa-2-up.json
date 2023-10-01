@@ -1,0 +1,84 @@
+{
+    "animations": [{
+            "loop": false,
+            "offsets": [
+                3,
+                0
+            ],
+            "anim": "idle",
+            "fps": 24,
+            "name": "Pico Idle Dance",
+            "indices": []
+        },
+        {
+            "loop": false,
+            "offsets": [-50,
+                109
+            ],
+            "anim": "singUP",
+            "fps": 24,
+            "name": "pico Up note0",
+            "indices": []
+        },
+        {
+            "loop": false,
+            "offsets": [
+                104, -40
+            ],
+            "anim": "singDOWN",
+            "fps": 24,
+            "name": "Pico Down Note0",
+            "indices": []
+        },
+        {
+            "offsets": [-55,
+                28
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singLEFT",
+            "indices": [],
+            "name": "Pico Note Right0"
+        },
+        {
+            "offsets": [
+                17, -8
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singRIGHT",
+            "indices": [],
+            "name": "Pico NOTE LEFT0"
+        },
+        {
+            "offsets": [
+                474,
+                174
+            ],
+            "indices": [],
+            "fps": 24,
+            "anim": "shoot",
+            "loop": false,
+            "name": "Pico Fire0"
+        }
+    ],
+    "no_antialiasing": false,
+    "image": "characters/reve/pico-2-up",
+    "position": [
+        0,
+        300
+    ],
+    "healthicon": "pico-d2",
+    "flip_x": true,
+    "healthbar_colors": [
+        183,
+        216,
+        85
+    ],
+    "camera_position": [
+        220,
+        0
+    ],
+    "sing_duration": 4,
+    "scale": 1
+}

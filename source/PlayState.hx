@@ -1122,17 +1122,22 @@ function camerabgAlphaShits(cam:FlxCamera)
 				camera_speed: 1
 			};
 		}
-
+		if(stageData.defaultZoom != null)
 		defaultCamZoom = stageData.defaultZoom;
-
+		if(stageData.isPixelStage != null)
 		isPixelStage = stageData.isPixelStage;
-
+		if(stageData.boyfriend != null){
 		BF_X = stageData.boyfriend[0];
 		BF_Y = stageData.boyfriend[1];
+		}
+		if(stageData.girlfriend != null){
 		GF_X = stageData.girlfriend[0];
 		GF_Y = stageData.girlfriend[1];
+		}
+		if(stageData.opponent != null){
 		DAD_X = stageData.opponent[0];
 		DAD_Y = stageData.opponent[1];
+		}
 
 		if(stageData.camera_speed != null)
 			cameraSpeed = stageData.camera_speed;
@@ -6311,7 +6316,7 @@ currentTimingShown.cameras = [camHUD];
 				spr.playAnim('pressed');
 				spr.resetAnim = 0;
 			}
-			setAllHaxeVar('onKeyPress', [key]);
+			callAllHScript('onKeyPress', [key]);
 			callOnLuas('onKeyPress', [key]);
 		}
 		//trace('pressed: ' + controlArray);

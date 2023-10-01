@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tankys.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="fg tankhead 4 instance 10000" x="0" y="0" width="612" height="146" frameX="0" frameY="-11" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10001" x="0" y="0" width="612" height="146" frameX="0" frameY="-11" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10002" x="612" y="0" width="607" height="147" frameX="-2" frameY="-9" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10003" x="612" y="0" width="607" height="147" frameX="-2" frameY="-9" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10004" x="1219" y="0" width="602" height="153" frameX="-5" frameY="-4" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10005" x="1219" y="0" width="602" height="153" frameX="-5" frameY="-4" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10006" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10007" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10008" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10009" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10010" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10011" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10012" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10013" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 4 instance 10014" x="1821" y="0" width="596" height="157" frameX="-9" frameY="0" frameWidth="612" frameHeight="157"/>
+	<SubTexture name="fg tankhead 5 instance 10000" x="2417" y="0" width="495" height="135" frameX="0" frameY="-9" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10001" x="2417" y="0" width="495" height="135" frameX="0" frameY="-9" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10002" x="2912" y="0" width="490" height="138" frameX="-2" frameY="-6" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10003" x="2912" y="0" width="490" height="138" frameX="-2" frameY="-6" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10004" x="3402" y="0" width="483" height="142" frameX="-6" frameY="-2" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10005" x="3402" y="0" width="483" height="142" frameX="-6" frameY="-2" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10006" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10007" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10008" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10009" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10010" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10011" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10012" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10013" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead 5 instance 10014" x="0" y="157" width="481" height="144" frameX="-6" frameY="0" frameWidth="495" frameHeight="144"/>
+	<SubTexture name="fg tankhead far right instance 10000" x="481" y="157" width="334" height="459" frameX="0" frameY="-13" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10001" x="481" y="157" width="334" height="459" frameX="0" frameY="-13" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10002" x="815" y="157" width="329" height="462" frameX="-5" frameY="-10" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10003" x="815" y="157" width="329" height="462" frameX="-5" frameY="-10" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10004" x="1144" y="157" width="328" height="469" frameX="-7" frameY="-3" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10005" x="1144" y="157" width="328" height="469" frameX="-7" frameY="-3" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10006" x="1472" y="157" width="329" height="472" frameX="-7" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10007" x="1472" y="157" width="329" height="472" frameX="-7" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10008" x="1801" y="157" width="328" height="472" frameX="-9" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10009" x="1801" y="157" width="328" height="472" frameX="-9" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10010" x="1801" y="157" width="328" height="472" frameX="-9" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10011" x="1801" y="157" width="328" height="472" frameX="-9" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10012" x="1801" y="157" width="328" height="472" frameX="-9" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 10013" x="1801" y="157" width="328" height="472" frameX="-9" frameY="0" frameWidth="337" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20000" x="2129" y="157" width="332" height="459" frameX="-3" frameY="-13" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20001" x="2129" y="157" width="332" height="459" frameX="-3" frameY="-13" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20002" x="2461" y="157" width="327" height="462" frameX="-3" frameY="-10" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20003" x="2461" y="157" width="327" height="462" frameX="-3" frameY="-10" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20004" x="2788" y="157" width="326" height="469" frameX="-2" frameY="-3" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20005" x="2788" y="157" width="326" height="469" frameX="-2" frameY="-3" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20006" x="3114" y="157" width="327" height="472" frameX="-1" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20007" x="3114" y="157" width="327" height="472" frameX="-1" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20008" x="3441" y="157" width="326" height="472" frameX="0" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20009" x="3441" y="157" width="326" height="472" frameX="0" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20010" x="3441" y="157" width="326" height="472" frameX="0" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20011" x="3441" y="157" width="326" height="472" frameX="0" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20012" x="3441" y="157" width="326" height="472" frameX="0" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankhead far right instance 20013" x="3441" y="157" width="326" height="472" frameX="0" frameY="0" frameWidth="335" frameHeight="472"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10000" x="0" y="629" width="421" height="341" frameX="0" frameY="-11" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10001" x="0" y="629" width="421" height="341" frameX="0" frameY="-11" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10002" x="421" y="629" width="415" height="344" frameX="-4" frameY="-8" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10003" x="421" y="629" width="415" height="344" frameX="-4" frameY="-8" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10004" x="836" y="629" width="413" height="342" frameX="-8" frameY="-4" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10005" x="836" y="629" width="413" height="342" frameX="-8" frameY="-4" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10006" x="1249" y="629" width="412" height="342" frameX="-10" frameY="-1" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10007" x="1249" y="629" width="412" height="342" frameX="-10" frameY="-1" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10008" x="1661" y="629" width="412" height="341" frameX="-11" frameY="0" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10009" x="1661" y="629" width="412" height="341" frameX="-11" frameY="0" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10010" x="1661" y="629" width="412" height="341" frameX="-11" frameY="0" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10011" x="1661" y="629" width="412" height="341" frameX="-11" frameY="0" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10012" x="1661" y="629" width="412" height="341" frameX="-11" frameY="0" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="fg tankman bobbin 3 instance 10013" x="1661" y="629" width="412" height="341" frameX="-11" frameY="0" frameWidth="423" frameHeight="352"/>
+	<SubTexture name="foreground man 3 instance 10000" x="2073" y="629" width="315" height="327" frameX="-2" frameY="-17" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10001" x="2073" y="629" width="315" height="327" frameX="-2" frameY="-17" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10002" x="2388" y="629" width="310" height="332" frameX="-4" frameY="-12" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10003" x="2388" y="629" width="310" height="332" frameX="-4" frameY="-12" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10004" x="2698" y="629" width="310" height="339" frameX="-1" frameY="-5" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10005" x="2698" y="629" width="310" height="339" frameX="-1" frameY="-5" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10006" x="3008" y="629" width="310" height="343" frameX="0" frameY="-1" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10007" x="3008" y="629" width="310" height="343" frameX="0" frameY="-1" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10008" x="3318" y="629" width="309" height="344" frameX="0" frameY="0" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10009" x="3318" y="629" width="309" height="344" frameX="0" frameY="0" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10010" x="3318" y="629" width="309" height="344" frameX="0" frameY="0" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10011" x="3318" y="629" width="309" height="344" frameX="0" frameY="0" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10012" x="3318" y="629" width="309" height="344" frameX="0" frameY="0" frameWidth="317" frameHeight="344"/>
+	<SubTexture name="foreground man 3 instance 10013" x="3318" y="629" width="309" height="344" frameX="0" frameY="0" frameWidth="317" frameHeight="344"/>
+</TextureAtlas>

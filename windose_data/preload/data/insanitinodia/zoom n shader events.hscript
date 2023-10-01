@@ -1,0 +1,187 @@
+var shaders =[];
+var isLeft = true;
+function start(song){
+  var filters = [];
+    
+    shaders[0] = currentPlayState.createRuntimeShader('effect');
+    shaders[0].data.rgbValueLmao.value = [0];
+    shaders[0].data.powerMinusX.value = [0];
+    shaders[0].data.isCamera.value = [false];
+    shaders[0].data.isSpriteLeft.value = [isLeft];
+    shaders[0].data.isSpriteRight.value = [!isLeft];
+    shaders[1] = currentPlayState.createRuntimeShader('twist');
+    shaders[1].data.iTime.value = [1];
+    shaders[1].data.curPower.value = [0];
+    for (shader in shaders)
+        filters.push(new ShaderFilter(shader));
+    camGame.setFilters(filters);
+}
+var tween = [null,null,null];
+function doShader(id1, id2, name, curShader)
+    {
+        if (tween[curShader] != null)tween[curShader].cancel();
+        var yummy = Reflect.field(shaders[curShader].data, name);
+        tween[curShader] = FlxTween.num(id1, 0.0001, id2, {ease: FlxEase.quadOut}, function(num)
+            {
+                yummy.value[0] = num;
+            });
+    
+        if (yummy.value[0] > 0.0001)
+            yummy.value[0] = 0.0;
+    }
+var time = 0;
+function update(elapsed){
+    time += elapsed;
+    shaders[1].data.iTime.value[0] = time;
+}
+var doYummyBeating = 0;
+function beatHit(beat){
+    if (doYummyBeating > 0){
+        switch (doYummyBeating){
+case 1:
+    doShader(0.4,0.5,'powerMinusX',0);
+    FlxG.camera.flash(0x94FFFFFF,0.5);
+    FlxG.camera.zoom += 0.3;
+    camHUD.zoom += 0.15;
+    case 2:
+        if (beat % 2 == 0){
+            FlxG.camera.flash(0x94FFFFFF,0.5);
+            FlxG.camera.zoom += 0.3;
+            camHUD.zoom += 0.15;
+            doShader(1,0.5,'rgbValueLmao',0);
+            isLeft = !isLeft;
+            shaders[0].data.isSpriteLeft.value = [isLeft];
+            shaders[0].data.isSpriteRight.value = [!isLeft];
+        }
+        case 3:
+            if (beat % 2 == 0)
+            doShader(0.2,0.5,'curPower',1);
+        case 5:
+            if (beat % 2 == 0)
+                doShader(0.2,0.5,'curPower',1);
+            FlxG.camera.flash(0x94FFFFFF,0.5);
+            isLeft = !isLeft;
+            shaders[0].data.isSpriteLeft.value = [isLeft];
+            shaders[0].data.isSpriteRight.value = [!isLeft];
+            doShader(1,0.5,'rgbValueLmao',0);
+        }
+    }
+}
+function stepHit(step){
+    if (doYummyBeating > 0){
+        switch (doYummyBeating){
+        case 3:
+            switch ((step % 16) + 1){
+                case 1:
+                    FlxG.camera.flash(0x94FFFFFF,0.5);
+                    FlxG.camera.zoom += 0.3;
+                    camHUD.zoom += 0.15;
+                    case 5:
+                    FlxG.camera.zoom += 0.3;
+                    camHUD.zoom += 0.15;
+                    case 7:
+                        FlxG.camera.zoom += 0.3;
+                        camHUD.zoom += 0.2;
+                        case 9:
+                            FlxG.camera.zoom += 0.5;
+                            camHUD.zoom += 0.4;
+                            case 11:
+                        FlxG.camera.zoom += 0.3;
+                        camHUD.zoom += 0.2;
+                        case 13:
+                        FlxG.camera.zoom += 0.3;
+                        camHUD.zoom += 0.2;
+                       
+            }
+            case 4:
+                switch ((step % 32) + 1){
+                    case 1:
+                        FlxG.camera.zoom += 0.5;
+                        camHUD.zoom += 0.4;
+                        case 7:
+                            FlxG.camera.zoom += 0.2;
+                            camHUD.zoom += 0.1;
+                            case 9:
+                                FlxG.camera.zoom += 0.3;
+                                camHUD.zoom += 0.2;
+                                case 13:
+                                    FlxG.camera.zoom += 0.3;
+                                    camHUD.zoom += 0.2;
+                    case 19:
+                                    FlxG.camera.zoom += 0.3;
+                                    camHUD.zoom += 0.2;
+                    case 20:
+                                    FlxG.camera.zoom += 0.3;
+                                    camHUD.zoom += 0.2;
+                                    case 21:
+                                    FlxG.camera.zoom += 0.3;
+                                    camHUD.zoom += 0.2;
+                                    case 23:
+                                        FlxG.camera.zoom += 0.3;
+                                        camHUD.zoom += 0.2;
+                                        case 25:
+                                            FlxG.camera.zoom += 0.3;
+                                            camHUD.zoom += 0.2;
+                                            case 29:
+                                            FlxG.camera.zoom += 0.3;
+                                            camHUD.zoom += 0.2;
+                                            case 31:
+                                            FlxG.camera.zoom += 0.3;
+                                            camHUD.zoom += 0.2;
+                }
+                case 5:
+                    if (step % 2 ==0)
+                        {
+                            FlxG.camera.zoom += 0.2;
+                            camHUD.zoom += 0.1;
+                        }
+    }
+}
+    switch(step){
+        case 248:              
+            FlxTween.tween(currentPlayState, 
+            {defaultCamZoom: 0.7}, 
+        0.8, {ease: FlxEase.cubeInOut});  
+case 254:
+    doYummyBeating = 1;
+    case 510:
+    doYummyBeating = 2;
+    case 760:
+        FlxTween.tween(currentPlayState, 
+            {defaultCamZoom: 1.5}, 
+        0.8, {ease: FlxEase.cubeInOut});  
+        currentPlayState.boyfriendCameraOffset[0] = 0;
+        case 764:
+            doYummyBeating = 4;
+        case 1280:
+            doYummyBeating = 0;
+            case 1532:
+                FlxTween.tween(currentPlayState, 
+                    {defaultCamZoom: 0.7}, 
+                0.8, {ease: FlxEase.cubeInOut});  
+
+            case 1536:
+
+                doYummyBeating = 3;   
+                case 1792:
+                    doYummyBeating = 1;  
+                    case 2304:
+                        doYummyBeating = 0;
+                        case 2432:
+                            doYummyBeating = 4;
+                        case 2944:
+                            currentPlayState.defaultCamZoom = 1.5;
+                            doYummyBeating = 0;
+                            case 3454:
+                                currentPlayState.defaultCamZoom = 0.7;
+                                doYummyBeating = 2;
+                                case 3696:
+                                    doYummyBeating = 0;
+                                    case 3712:
+                                doYummyBeating = 5;
+                                case 4224:
+                                    currentPlayState.defaultCamZoom = 1.2;
+                                    doYummyBeating = 0;
+    }
+
+}

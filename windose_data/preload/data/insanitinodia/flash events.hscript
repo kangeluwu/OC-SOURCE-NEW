@@ -1,0 +1,201 @@
+var loki;
+var loki2;
+var debugQueON = PlayState.chartingMode;
+function start(song) {
+currentPlayState.skipCountdown = true;
+    loki2 = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    loki2.alpha = 1;
+    loki2.cameras = [camHUDTOP];
+    loki2.scrollFactor.set();
+    add(loki2);
+
+    loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFFFFFFFF);
+    loki.alpha = 0.0001;
+    loki.cameras = [camHUDTOP];
+    loki.scrollFactor.set();
+    add(loki);
+    if (!debugQueON){
+    new FlxTimer().start(5, function(tmr)
+        {
+    FlxTween.tween(loki2, {alpha: 0}, 10);
+});
+    }
+    else{
+        loki2.alpha = 0.0001;
+    }
+}
+function update(elapsed)
+{
+
+}
+function stepHit(step)
+{
+    if (curStep == 764)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 0.4, {ease: FlxEase.quadInOut, onComplete:
+                        function (twn) {
+        new FlxTimer().start(0.1, function(tmr)
+                {
+                       
+           FlxTween.tween(loki, {alpha: 0}, 0.3);
+                });
+        
+                        }});
+        }
+        if (curStep == 1276)
+                {
+                    FlxTween.tween(loki, {alpha: 1}, 0.4, {ease: FlxEase.quadInOut, onComplete:
+                                function (twn) {
+                new FlxTimer().start(0.1, function(tmr)
+                        {
+                               
+                   FlxTween.tween(loki, {alpha: 0}, 0.8);
+                        });
+                
+                                }});
+                }
+        if (curStep == 1528)
+                {
+                    FlxTween.tween(loki, {alpha: 1}, 0.9, {ease: FlxEase.quadInOut, onComplete:
+                                function (twn) {
+                new FlxTimer().start(0.1, function(tmr)
+                        {
+                   FlxTween.tween(loki, {alpha: 0}, 0.5);
+                        });
+                
+                                }});
+                }
+                if (curStep == 2296)
+                        {
+                            FlxTween.tween(loki, {alpha: 1}, 0.9, {ease: FlxEase.quadInOut, onComplete:
+                                        function (twn) {
+                        new FlxTimer().start(0.1, function(tmr)
+                                {
+                           FlxTween.tween(loki, {alpha: 0}, 0.5);
+                                });
+                        
+                                        }});
+                        }
+                        if (curStep == 2940)
+                                {
+                                        FlxTween.tween(loki, {alpha: 1}, 0.9, {ease: FlxEase.quadInOut, onComplete:
+                                                function (twn) {
+                                new FlxTimer().start(0.1, function(tmr)
+                                        {
+                                   FlxTween.tween(loki, {alpha: 0}, 0.5);
+                                        });
+                                
+                                                }});
+                                }
+                                if (curStep == 2944)
+                                        {
+                                                
+                                                loki2.alpha = 1;
+                                        }
+                                        if (curStep == 2976)
+                                                {
+                                                        FlxTween.tween(loki2, {alpha: 0}, 0.5);
+                                                }
+                                if (curStep == 3446)
+                                        {
+                                                loki2.alpha = 1;
+                                        }
+                                        if (curStep == 3450)
+                                                {
+                                                        FlxTween.tween(loki, {alpha: 1}, 0.9, {ease: FlxEase.quadInOut, onComplete:
+                                                                function (twn) {
+                                                new FlxTimer().start(0.1, function(tmr)
+                                                        {
+                                                   FlxTween.tween(loki, {alpha: 0}, 0.5);
+                                                   loki2.alpha = 0.0001;
+                                                        });
+                                                
+                                                                }});
+                                                }
+                                                if (curStep == 3696)
+                                                        {
+                                                                loki2.alpha = 1;
+                                                        }
+                                                        if (curStep == 3712)
+                                                                {
+                                                                        camHUDTOP.flash(OGcolor,1);
+                                                                        loki2.alpha = 0.001;
+                                                                }
+                                                                if (curStep == 4480)
+                                                                        {
+                                                                                loki2.alpha = 1;
+                                                                        }
+
+       /* 
+        if (curStep == 1018)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 0.4, {ease: FlxEase.quadInOut, onComplete:
+                        function (twn) {
+        new FlxTimer().start(0.1, function(tmr)
+                {
+
+           FlxTween.tween(loki, {alpha: 0}, 0.3);
+                });
+        
+                        }});
+        }
+        
+        if (curStep == 1403)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 0.4, {ease: FlxEase.quadInOut, onComplete:
+                        function (twn) {
+        new FlxTimer().start(0.1, function(tmr)
+                {
+           FlxTween.tween(loki, {alpha: 0}, 0.3);
+                });
+        
+                        }});
+        }
+        
+        if (curStep == 1659)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 0.4, {ease: FlxEase.quadInOut, onComplete:
+                        function (twn) {
+        new FlxTimer().start(0.1, function(tmr)
+                {
+           FlxTween.tween(loki, {alpha: 0}, 0.3);
+                });
+        
+                        }});
+        }
+        
+        if (curStep == 2163)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 0.9, {ease: FlxEase.quadInOut, onComplete:
+                        function (twn) {
+        new FlxTimer().start(0.1, function(tmr)
+                {
+           FlxTween.tween(loki, {alpha: 0}, 0.5);
+                });
+        
+                        }});
+        }
+        
+        if (curStep == 2509)
+        {
+            FlxTween.tween(loki, {alpha: 1}, 0.4, {ease: FlxEase.quadInOut, onComplete:
+                        function (twn) {
+        new FlxTimer().start(0.1, function(tmr)
+                {
+        loki2.alpha = 1;
+           FlxTween.tween(loki, {alpha: 0}, 0.4);
+        
+        
+                });
+        
+                        }});
+        }*/
+}
+
+
+function onSectionHit()
+{
+}
+function noteMiss(id, direction, noteType, isSustainNote, note)
+    {
+}

@@ -333,6 +333,7 @@ function setAllHaxeVar(name:String, value:Dynamic) {
 		interp.variables.set("Controls", Controls);
 		interp.variables.set("Map", haxe.ds.StringMap);
 		interp.variables.set("Date", Date);
+		
 		interp.variables.set("FlxRuntimeShader", FlxRuntimeShader);
 interp.variables.set("ShaderFilter", openfl.filters.ShaderFilter);
 		interp.variables.set("makeHaxeState", makeHaxeState);

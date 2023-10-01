@@ -21,6 +21,11 @@ class TankmenBG extends FlxSprite
 		super(x, y);
 
 		frames = Paths.getSparrowAtlas('tankmanKilled1');
+		if(frames != null){
+			initTankmens();
+		}
+	}
+	public function initTankmens(){
 		animation.addByPrefix('run', 'tankman running', 24, true);
 		animation.addByPrefix('shot', 'John Shot ' + FlxG.random.int(1, 2), 24, false);
 		animation.play('run');
@@ -31,7 +36,6 @@ class TankmenBG extends FlxSprite
 		setGraphicSize(Std.int(0.8 * width));
 		updateHitbox();
 	}
-
 	public function resetShit(x:Float, y:Float, goingRight:Bool):Void
 	{
 		this.x = x;
@@ -47,7 +51,7 @@ class TankmenBG extends FlxSprite
 		super.update(elapsed);
 
 		visible = (x > -0.5 * FlxG.width && x < 1.2 * FlxG.width);
-
+		if(frames != null){
 		if(animation.curAnim.name == "run")
 		{
 			var speed:Float = (Conductor.songPosition - strumTime) * tankSpeed;
@@ -71,4 +75,5 @@ class TankmenBG extends FlxSprite
 			}
 		}
 	}
+}
 }

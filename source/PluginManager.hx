@@ -194,6 +194,7 @@ interp.variables.set("mobile", false);
 #end
 interp.variables.set("Paths", Paths);
 		// : )
+        interp.variables.set("Map", haxe.ds.StringMap);
 		interp.variables.set("FlxG", HscriptGlobals);
 		interp.variables.set("FlxTimer", flixel.util.FlxTimer);
 		interp.variables.set("FlxTween", flixel.tweens.FlxTween);
