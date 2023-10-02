@@ -29,7 +29,7 @@ class Paths
 {
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 	inline public static var VIDEO_EXT = "mp4";
-    public var OMFGITSTOOLAGLETSKILLTRACESINCEWEALREADYKNOWITSNULL:Bool = false;
+
 	#if MODS_ALLOWED
 	public static var ignoreModFolders:Array<String> = [
 		'characters',
@@ -425,7 +425,6 @@ class Paths
 			currentTrackedAssets.set(file, newGraphic);
 			return newGraphic;
 		}
-        if (!OMFGITSTOOLAGLETSKILLTRACESINCEWEALREADYKNOWITSNULL)
 		trace('oh no its returning null NOOOO ($file)');
 		return null;
 	}

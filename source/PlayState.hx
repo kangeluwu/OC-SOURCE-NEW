@@ -243,6 +243,7 @@ class PlayState extends MusicBeatState
 
 	public var gfSpeed:Int = 1;
 	public var health:Float = 1;
+	public var healthInstance:Float = 1;
 	public var combo:Int = 0;
 
 	public var healthBarBG:FlxSprite;
@@ -723,7 +724,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 		interp.variables.set("downscroll", ClientPrefs.downScroll);
 		interp.variables.set("middleScroll", ClientPrefs.middleScroll);
 		interp.variables.set("hscriptPath", SUtil.getPath() + path);
-		interp.variables.set("health", health);
+		interp.variables.set("healthInstance", healthInstance);
 		interp.variables.set("scoreTxt", scoreTxt);
  //funny colors0xFF6F0707
  		interp.variables.set("OGcolor", FlxColor.WHITE);
@@ -736,7 +737,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 		interp.variables.set("CyanColor", FlxColor.CYAN);
 		interp.variables.set("gfSpeed", gfSpeed);
 		interp.variables.set("tweenCamIn", tweenCamIn);
-		interp.variables.set("health", health);
+
 		interp.variables.set("ClientPrefs", ClientPrefs);
 		interp.variables.set("skipCountdown", skipCountdown);
 //ClientPrefs:啊对对对我是颜色是吧
@@ -1962,7 +1963,7 @@ if (OpenFlAssets.exists(file)) {
 		
 
 
-		healthBar = new HealthBar(0, FlxG.height * (!ClientPrefs.downScroll ? 0.89 : 0.11), 'custom_ui/' + uiSmelly.uses + '/'  + 'healthBar', function() return health, 0, 2);
+		healthBar = new HealthBar(0, FlxG.height * (!ClientPrefs.downScroll ? 0.89 : 0.11), 'custom_ui/' + uiSmelly.uses + '/'  + 'healthBar', function() return healthInstance, 0, 2);
 if (!opponentPlayer)
 		healthBar.leftToRight = false;
 		healthBar.screenCenter(X);
@@ -4412,16 +4413,8 @@ function eventPushed(event:EventNote) {
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
-		@:privateAccess
-        var dadFrame = dad._frame;
-        
-        if (dadFrame == null || dadFrame.frame == null) return; // prevents crashes (i think???)
-            
-        var rect = new Rectangle(dadFrame.frame.x, dadFrame.frame.y, dadFrame.frame.width, dadFrame.frame.height);
-        
-        dadScrollWin.scrollRect = rect;
-        dadScrollWin.x = (((dadFrame.offset.x) - (dad.offset.x / 2)) * dadScrollWin.scaleX);
-        dadScrollWin.y = (((dadFrame.offset.y) - (dad.offset.y / 2)) * dadScrollWin.scaleY);     
+
+		healthInstance = FlxMath.lerp(healthInstance, health, CoolUtil.boundTo(elapsed * 24, 0, 1));
 
 		setAllHaxeVar('camZooming', camZooming);
 		setAllHaxeVar('gfSpeed', gfSpeed);

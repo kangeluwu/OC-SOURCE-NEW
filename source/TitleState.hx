@@ -75,7 +75,7 @@ class TitleState extends MusicBeatState
 	var hscriptStates:Map<String, Interp> = [];
 	var exInterp:InterpEx = new InterpEx();
 	var haxeSprites:Map<String, FlxSprite> = [];
-	var haxeVars:Map<String, Dynamic> = [];
+	static public var haxeVars:Map<String, Dynamic> = [];
 	static public var soundExt:String = ".ogg";
 
 
