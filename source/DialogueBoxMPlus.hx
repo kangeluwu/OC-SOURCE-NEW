@@ -133,8 +133,8 @@ class DialogueBoxMPlus extends FlxSpriteGroup
 		}
 
 		portrait = new FlxSprite(-20, 40);
-		// portrait.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData('windose_data/images/custom_chars/$curCharacter/portrait.png'),
-		//	FNFAssets.getText('windose_data/images/custom_chars/$curCharacter/portrait.xml'));
+		// portrait.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/custom_chars/$curCharacter/portrait.png'),
+		//	FNFAssets.getText(SUtil.getPath() + 'windose_data/images/custom_chars/$curCharacter/portrait.xml'));
 		portrait.animation.addByPrefix('neutral', 'neutral', 24, false);
 		portrait.setGraphicSize(Std.int(portrait.width * 0.9));
 		portrait.updateHitbox();
@@ -150,7 +150,7 @@ class DialogueBoxMPlus extends FlxSpriteGroup
 		FNFAssets.getText(Paths.isModPath('images/custom_dialogs/dialogBoxes/$curBox.xml')));
 		
 			#else
-			box.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData('windose_data/images/custom_dialogs/dialogBoxes/$curBox.png'),
+			box.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/custom_dialogs/dialogBoxes/$curBox.png'),
 			FNFAssets.getText(SUtil.getPath() + 'windose_data/images/custom_dialogs/dialogBoxes/$curBox.xml'));
 			#end
 		box.animation.addByPrefix('open', 'open', 24, false);
@@ -359,9 +359,9 @@ for (touch in FlxG.touches.list)
 			if (curFlashTime > 0)
 			{
 				if (_dialogue.isPixel)
-					FlxG.sound.play('windose_data/sounds/shocker-pixel.ogg', 1);
+					FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/shocker-pixel.ogg', 1);
 				else
-					FlxG.sound.play('windose_data/sounds/shocker.ogg', 1);
+					FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/shocker.ogg', 1);
 				
 			}
 		});
@@ -433,7 +433,7 @@ for (touch in FlxG.touches.list)
 			FNFAssets.getText(Paths.isModPath('images/custom_dialogs/dialogBoxes/$curBox.xml')));
 			
 				#else
-				box.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData('windose_data/images/custom_dialogs/dialogBoxes/$curBox.png'),
+				box.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/custom_dialogs/dialogBoxes/$curBox.png'),
 				FNFAssets.getText(SUtil.getPath() + 'windose_data/images/custom_dialogs/dialogBoxes/$curBox.xml'));
 				#end
 			box.animation.addByPrefix('open', 'open', 24, false);

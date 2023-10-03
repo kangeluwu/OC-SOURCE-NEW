@@ -86,7 +86,7 @@ class TitleStateCorr extends MusicBeatState
 			transIn = FlxTransitionableState.defaultTransIn;
 			transOut = FlxTransitionableState.defaultTransOut;
 			pressText = new FlxSprite(100, FlxG.height * 0.8);
-			pressText.frames = FlxAtlasFrames.fromSparrow('windose_data/images/titleEnter.png', 'windose_data/images/titleEnter.xml');
+			pressText.frames = FlxAtlasFrames.fromSparrow(SUtil.getPath() + 'windose_data/images/titleEnter.png', 'windose_data/images/titleEnter.xml');
 			pressText.animation.addByPrefix('idle', "ENTER IDLE", 24);
 			pressText.animation.addByPrefix('press', "ENTER PRESSED", 24);
 			pressText.antialiasing = true;
@@ -428,7 +428,7 @@ class TitleStateCorr extends MusicBeatState
 					{
 						introPhase += 1;
 						FlxG.camera.flash(0xFF000000, 1.5, null, true);
-						FlxG.sound.play('windose_data/sounds/confirmMenuintro' + TitleState.soundExt, 0.7);
+						FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/confirmMenuintro' + TitleState.soundExt, 0.7);
 						startRealIntro();
 						pressedEnter = false;
 					}
@@ -438,7 +438,7 @@ class TitleStateCorr extends MusicBeatState
 					{
 						//:saxe_mafalda: lol
 						introPhase += 1;
-						FlxG.sound.play('windose_data/sounds/confirmMenuintro' + TitleState.soundExt, 0.7);
+						FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/confirmMenuintro' + TitleState.soundExt, 0.7);
 						add(black);
 						FlxTween.tween(black, {alpha: 1}, 2.2, {
 							onComplete: function(twn) 
@@ -458,7 +458,7 @@ class TitleStateCorr extends MusicBeatState
 								initialized = true;
 								FlxG.sound.music.fadeOut(1.5);
 							}
-							FlxG.sound.play('windose_data/sounds/confirmMenuintro' + TitleState.soundExt, 0.7);
+							FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/confirmMenuintro' + TitleState.soundExt, 0.7);
 							transitioning = true;
 							new FlxTimer().start(2, function(tmr)
 							{
@@ -563,14 +563,14 @@ class TitleStateCorr extends MusicBeatState
 				
 					FlxG.camera.flash(0xFF000000, 2, null, true);
 					
-					chains = new FlxSprite(0, 0).loadGraphic('windose_data/images/chains.png');
+					chains = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/chains.png');
 					chains.screenCenter();
 					chains.scale.set(0.9, 0.9);
 					chains.alpha = 0.5;
 					chains.scrollFactor.set();
 					add(chains);
 				
-					intro1 = new FlxSprite(0, 0).loadGraphic('windose_data/images/Intro1.png');
+					intro1 = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/Intro1.png');
 					intro1.screenCenter();
 					intro1.scale.set(0.48, 0.48);
 					intro1.scrollFactor.set();
@@ -597,7 +597,7 @@ class TitleStateCorr extends MusicBeatState
 					remove(intro1);
 					intro1.destroy();
 			
-					intro2 = new FlxSprite(0, 0).loadGraphic('windose_data/images/Intro2.png');
+					intro2 = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/Intro2.png');
 					intro2.screenCenter();
 					intro2.scale.set(0.48, 0.48);
 					intro2.scrollFactor.set();
@@ -612,7 +612,7 @@ class TitleStateCorr extends MusicBeatState
 					remove(intro2);
 					intro2.destroy();
 			
-					intro3 = new FlxSprite(0, 0).loadGraphic('windose_data/images/Intro3.png');
+					intro3 = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/Intro3.png');
 					intro3.screenCenter();
 					intro3.scale.set(0.48, 0.48);
 					intro3.scrollFactor.set();
@@ -628,7 +628,7 @@ class TitleStateCorr extends MusicBeatState
 					intro3.destroy();
 					remove(chains);
 					chains.destroy();
-					intro4 = new FlxSprite(0, 0).loadGraphic('windose_data/images/Intro4.png');
+					intro4 = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/Intro4.png');
 					intro4.screenCenter();
 					intro4.scale.set(0.48, 0.48);
 					intro4.scrollFactor.set();
@@ -643,16 +643,16 @@ class TitleStateCorr extends MusicBeatState
 					FlxG.camera.flash(0xFF000000, 2, null, true);
 			
 	
-					FlxG.sound.playMusic('windose_data/music/freakyMenu0' + TitleState.soundExt, 1);
+					FlxG.sound.playMusic(SUtil.getPath() + 'windose_data/music/freakyMenu0' + TitleState.soundExt, 1);
 	
 					
-					titleBG = new FlxSprite(0, 0).loadGraphic('windose_data/images/bgback.png');
+					titleBG = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/bgback.png');
 					titleBG.scale.set(0.68, 0.68);
 					titleBG.scrollFactor.set();
 					titleBG.screenCenter();
 					add(titleBG);
 				
-						creepy = new FlxSprite(0, 0).loadGraphic('windose_data/images/loadingFunkers.png');
+						creepy = new FlxSprite(0, 0).loadGraphic(SUtil.getPath() + 'windose_data/images/loadingFunkers.png');
 						creepy.scrollFactor.set();
 						creepy.antialiasing = true;
 						creepy.scale.set(0.21, 0.21);
@@ -662,7 +662,7 @@ class TitleStateCorr extends MusicBeatState
 					add(creepy);
 				
 					logoBumpin = new FlxSprite(0, 0);
-					logoBumpin.frames = FlxAtlasFrames.fromSparrow('windose_data/images/logoBumpinCorr.png', 'windose_data/images/logoBumpinCorr.xml');
+					logoBumpin.frames = FlxAtlasFrames.fromSparrow(SUtil.getPath() + 'windose_data/images/logoBumpinCorr.png', 'windose_data/images/logoBumpinCorr.xml');
 					logoBumpin.animation.addByPrefix('idle', "logo bumpin0", 24);
 					logoBumpin.scale.set(0.68, 0.68);
 					logoBumpin.scrollFactor.set();

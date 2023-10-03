@@ -95,7 +95,7 @@ function start(song) {
 
 
 if ((curSong == 'Steptime' || curSong == 'Dead-Pixel') && currentPlayState.seenCutscene)
-FlixG.sound.play(FNFAssets.getSound('windose_data/shared/sounds/ANGRY_TEXT_BOX.ogg'));
+FlixG.sound.play(FNFAssets.getSound(SUtil.getPath() + 'windose_data/shared/sounds/ANGRY_TEXT_BOX.ogg'));
 
     setDefaultZoom(1.1);
     dieNEW();

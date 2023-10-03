@@ -1,7 +1,7 @@
 var bgvideo;
 function start(song) {
     bgvideo = new FlxVideo();
-    bgvideo.play('windose_data/videos/AllureCutscene.mp4');
+    bgvideo.play(SUtil.getPath() + 'windose_data/videos/AllureCutscene.mp4');
     video.onEndReached.add(function()
         {
             video.dispose();

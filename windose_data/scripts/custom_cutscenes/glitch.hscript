@@ -7,27 +7,27 @@ function start(song) {
 
   camHUD.visible = false;
   var glitchsound;
- // if (FNFAssets.exists('windose_data/images/custom_chars/${PlayState.SONG.player2}/School_Dies.ogg')) {
- //   glitchSound = FNFAssets.getSound('windose_data/images/custom_chars/${PlayState.SONG.player2}/School_Dies.ogg');
+ // if (FNFAssets.exists(SUtil.getPath() + 'windose_data/images/custom_chars/${PlayState.SONG.player2}/School_Dies.ogg')) {
+ //   glitchSound = FNFAssets.getSound(SUtil.getPath() + 'windose_data/images/custom_chars/${PlayState.SONG.player2}/School_Dies.ogg');
 
-//  } else if (FNFAssets.exists('windose_data/data/${PlayState.SONG.song.toLowerCase()}/School_Dies.ogg')) {
-//      glitchSound = FNFAssets.getSound('windose_data/data/${PlayState.SONG.song.toLowerCase()}/School_Dies.ogg');
+//  } else if (FNFAssets.exists(SUtil.getPath() + 'windose_data/data/${PlayState.SONG.song.toLowerCase()}/School_Dies.ogg')) {
+//      glitchSound = FNFAssets.getSound(SUtil.getPath() + 'windose_data/data/${PlayState.SONG.song.toLowerCase()}/School_Dies.ogg');
 //  } else {
       glitchSound = FNFAssets.getSound(hscriptPath + 'School_Dies.ogg');
  // }
 
   var glitch = new FlxSprite();
 
-  //if (FNFAssets.exists('windose_data/images/custom_chars/${PlayState.SONG.player2}/crazy.png')) {
- //     var evilImage = FNFAssets.getBitmapData('windose_data/images/custom_chars/${PlayState.SONG.player2}/glitch.png');
- //     var evilXml = FNFAssets.getText('windose_data/images/custom_chars/${PlayState.SONG.player2}/glitch.xml');
+  //if (FNFAssets.exists(SUtil.getPath() + 'windose_data/images/custom_chars/${PlayState.SONG.player2}/crazy.png')) {
+ //     var evilImage = FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/custom_chars/${PlayState.SONG.player2}/glitch.png');
+ //     var evilXml = FNFAssets.getText(SUtil.getPath() + 'windose_data/images/custom_chars/${PlayState.SONG.player2}/glitch.xml');
    //   glitch.frames = FlxAtlasFrames.fromSparrow(evilImage, evilXml);
  /// } else if (FNFAssets.exists(hscriptPath + '/glitch.png')) {
       var evilImage = FNFAssets.getBitmapData(hscriptPath + 'glitch.png');
       var evilXml = FNFAssets.getText(hscriptPath + 'glitch.xml');
       glitch.frames = FlxAtlasFrames.fromSparrow(evilImage, evilXml);
  // } else {
-  //    glitch.frames = FlxAtlasFrames.fromSparrow('windose_data/images/weeb/glitch.png', 'windose_data/images/weeb/glitch.xml');
+  //    glitch.frames = FlxAtlasFrames.fromSparrow(SUtil.getPath() + 'windose_data/images/weeb/glitch.png', 'windose_data/images/weeb/glitch.xml');
  // }
   glitch.animation.addByPrefix('idle', 'SCHOOLGLITCH', 24, false);
         glitch.setGraphicSize(Std.int(glitch.width * 6));

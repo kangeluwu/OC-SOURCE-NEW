@@ -7,7 +7,7 @@ function start(song) {
     new FlxTimer().start(0.1, function(tmr)
     {
         FlxG.camera.visible = true;
-        FlixG.sound.play(FNFAssets.getSound('windose_data/week5/sounds/Lights_Turn_On.ogg'));
+        FlixG.sound.play(FNFAssets.getSound(SUtil.getPath() + 'windose_data/week5/sounds/Lights_Turn_On.ogg'));
         currentPlayState.snapCamFollowToPos(640, 300);  
         FlixG.camera.zoom = 1.5;
 

@@ -83,7 +83,7 @@ class StoryMenuStateCorr extends MusicBeatState
 	{
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
-		var weekStateJson:WeekStateJson = TJSON.parse(Assets.getText('windose_data/data/previewVedio.json'));
+		var weekStateJson:WeekStateJson = TJSON.parse(Assets.getText(SUtil.getPath() + 'windose_data/data/previewVedio.json'));
 		for (state in weekStateJson.weekState)
 			isPlayable.push(state);
 		for (weekLinks in weekStateJson.videoLink)
@@ -119,7 +119,7 @@ class StoryMenuStateCorr extends MusicBeatState
 		back = new FlxSprite(0, 56).makeGraphic(FlxG.width, 396, FlxColor.BLACK);
 		back.setGraphicSize(FlxG.width, 396);
 		staticSprite = new FlxSprite(0, 0);
-		staticSprite.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData('windose_data/images/daSTAT.png'), FNFAssets.getText('windose_data/images/daSTAT.xml'));
+		staticSprite.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/daSTAT.png'), FNFAssets.getText(SUtil.getPath() + 'windose_data/images/daSTAT.xml'));
 		staticSprite.animation.addByPrefix('FLASH', 'staticFLASH0', 24, true);
 		staticSprite.animation.play('FLASH', true);
 		staticSprite.screenCenter(X);
@@ -209,7 +209,7 @@ for (i in 1...WeekData.weeksList.length)
 		difficultySelectors = new FlxGroup();
 		
 		leftArrow = new FlxSprite(grpWeekText.members[0].x + grpWeekText.members[0].width + 50, grpWeekText.members[0].y + 14);
-		leftArrow.loadGraphic(FNFAssets.getBitmapData('windose_data/images/selectionArrowLEFT.png'));
+		leftArrow.loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/selectionArrowLEFT.png'));
 		leftArrow.centerOffsets();
 		leftArrow.scale.y = 0.9;
 		leftArrow.antialiasing = true;
@@ -232,7 +232,7 @@ for (i in 1...WeekData.weeksList.length)
 		difficultySelectors.add(sprDifficulty);
 
 		rightArrow = new FlxSprite(leftArrow.x + 376, leftArrow.y);
-		rightArrow.loadGraphic(FNFAssets.getBitmapData('windose_data/images/selectionArrowRIGHT.png'));
+		rightArrow.loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/selectionArrowRIGHT.png'));
 		rightArrow.centerOffsets();
 		rightArrow.scale.y = 0.9;
 		rightArrow.antialiasing = true;
@@ -261,7 +261,7 @@ for (i in 1...WeekData.weeksList.length)
 
 
 
-		playable = new FlxSprite(0, 0).loadGraphic(FNFAssets.getBitmapData('windose_data/images/playable.png'));
+		playable = new FlxSprite(0, 0).loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/playable.png'));
 		playable.scrollFactor.set();
 		playable.active = false;
 		playable.screenCenter();
@@ -273,7 +273,7 @@ for (i in 1...WeekData.weeksList.length)
 
 
 
-		watchable = new FlxSprite(0, 0).loadGraphic(FNFAssets.getBitmapData('windose_data/images/watchable.png'));
+		watchable = new FlxSprite(0, 0).loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/watchable.png'));
 		watchable.scrollFactor.set();
 		watchable.active = false;
 		watchable.screenCenter();
@@ -295,7 +295,7 @@ for (i in 1...WeekData.weeksList.length)
 
 
 //DUMB HAHA I HATE MYSELF:(
-			full = new FlxSprite(leftArrow.x + 85, leftArrow.y + 20).loadGraphic(FNFAssets.getBitmapData('windose_data/images/day0.png'));
+			full = new FlxSprite(leftArrow.x + 85, leftArrow.y + 20).loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/day0.png'));
 			full.visible = false;
 			full.alpha = 0;
 
@@ -318,14 +318,14 @@ for (i in 1...WeekData.weeksList.length)
 		changeDifficulty();
 
 		add(staticSprite);
-		blackScr = new FlxSprite(0, 0).loadGraphic(FNFAssets.getBitmapData('windose_data/images/black.png'));
+		blackScr = new FlxSprite(0, 0).loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/black.png'));
 		blackScr.screenCenter();
 		blackScr.scrollFactor.set();
 		blackScr.active = false;
 		add(blackScr);
 		
 		vixtin = new FlxSprite(0, 0);
-		vixtin.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData('windose_data/images/selectyourvixty.png'), FNFAssets.getText('windose_data/images/selectyourvixty.xml'));
+		vixtin.frames = FlxAtlasFrames.fromSparrow(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/selectyourvixty.png'), FNFAssets.getText(SUtil.getPath() + 'windose_data/images/selectyourvixty.xml'));
 		vixtin.animation.addByPrefix('select', 'select', 24, true);
 		vixtin.animation.play('select', true);
 		vixtin.scale.set(0.7, 0.7);
@@ -475,7 +475,7 @@ for (i in 1...WeekData.weeksList.length)
 
 	function selectWatchDay()
 		{
-			FlxG.sound.play('windose_data/sounds/confirmMenu' + TitleState.soundExt);
+			FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/confirmMenu' + TitleState.soundExt);
 			FlxG.openURL(weekLink[curWeek][curDay]);
 	
 		}

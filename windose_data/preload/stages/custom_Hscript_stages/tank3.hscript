@@ -283,7 +283,7 @@ function shoot()
         fire2.playAnim("shoot");
         dance2 = false;
     }
-    FlixG.sound.play('windose_data/sounds/shoot.ogg');
+    FlixG.sound.play(SUtil.getPath() + 'windose_data/sounds/shoot.ogg');
 
 
         
@@ -316,7 +316,7 @@ function shoot()
             fire2.playAnim("shoot");
             dance2 = false;
         }
-        FlixG.sound.play('windose_data/sounds/shoot.ogg');
+        FlixG.sound.play(SUtil.getPath() + 'windose_data/sounds/shoot.ogg');
     
     
         if (difficulty == 2)

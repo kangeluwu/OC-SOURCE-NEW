@@ -234,7 +234,7 @@ var optionShit:Array<String> = [
 			if (controls.ACCEPT)
 			{
 				selectedSomethin = true;
-				FlxG.sound.play('windose_data/sounds/confirmMenu' + TitleState.soundExt);
+				FlxG.sound.play(SUtil.getPath() + 'windose_data/sounds/confirmMenu' + TitleState.soundExt);
 			
 				if (optionShit[curSelected] == 'donate')
 					{
