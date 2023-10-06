@@ -69,6 +69,7 @@ typedef AnimArray = {
 
 class Character extends FlxSprite
 {
+	public var curAnimName:String = '';
 	public var inEdtior:Bool = false;
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
@@ -442,6 +443,8 @@ callInterp("init", [this]);
 				playAnim(animation.curAnim.name + '-loop');
 			}
 		}
+		if (animation.curAnim != null)
+			curAnimName = animation.curAnim.name;
 		callInterp("update", [elapsed, this]);
 		super.update(elapsed);
 	}

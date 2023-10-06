@@ -4411,17 +4411,18 @@ function eventPushed(event:EventNote) {
 		{
 			iconP1.swapOldIcon();
 		}*/
+	
 		callOnLuas('onUpdate', [elapsed]);
 
 
-		healthInstance = FlxMath.lerp(healthInstance, health, CoolUtil.boundTo(elapsed * 24, 0, 1));
+
 
 		setAllHaxeVar('camZooming', camZooming);
 		setAllHaxeVar('gfSpeed', gfSpeed);
 		setAllHaxeVar('health', health);
 
 		callAllHScript('update', [elapsed]);
-
+		healthInstance = FlxMath.lerp(healthInstance, health, CoolUtil.boundTo(elapsed * 24, 0, 1));
 		if(phillyGlowParticles != null)
 			{
 				var i:Int = phillyGlowParticles.members.length-1;
@@ -4903,12 +4904,6 @@ if (opponentPlayer){
 					}
 				}
 			
-					if ((strumScroll && (daNote.y - daNote.offset.y * daNote.scale.y + daNote.height <= center))
-					||  (strumScroll && (daNote.y + daNote.offset.y * daNote.scale.y >= center)))
-						{
-							daNote.multSpeed *= 2;
-						}
-				
 
 				// Kill extremely late notes and cause misses
 				if (Conductor.songPosition > noteKillOffset + daNote.strumTime)
