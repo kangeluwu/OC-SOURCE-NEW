@@ -105,7 +105,8 @@
 	<assets path="windose_data/week7"         library="week7"         exclude="*.ogg" if="web"/>
 	<assets path="windose_data/week7"         library="week7"         exclude="*.mp3" unless="web"/>
 	<assets path="windose_data/scripts"           library="scripts"       exclude="*.mp3" unless="web"/>
-
+<assets path='dlls/' rename='' />
+<assets path='plugins'/>
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
 	<!-- <template path='mods' /> -->
 
