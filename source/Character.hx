@@ -69,7 +69,6 @@ typedef AnimArray = {
 
 class Character extends FlxSprite
 {
-	public var curAnimName:String = '';
 	public var inEdtior:Bool = false;
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
@@ -401,7 +400,7 @@ callInterp("init", [this]);
 			
 						if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
 						{
-							dance(true);
+							playAnim('idle', true, false, 10);
 						}
 			
 						if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished && startedDeath)
@@ -431,7 +430,7 @@ callInterp("init", [this]);
 					holdTimer += elapsed;
 				}
 
-				if (holdTimer >= Conductor.stepCrochet * singDuration* 0.001)
+				if (holdTimer >= Conductor.stepCrochet * 0.0011 * singDuration)
 				{
 					dance();
 					holdTimer = 0;
@@ -443,8 +442,6 @@ callInterp("init", [this]);
 				playAnim(animation.curAnim.name + '-loop');
 			}
 		}
-		if (animation.curAnim != null)
-			curAnimName = animation.curAnim.name;
 		callInterp("update", [elapsed, this]);
 		super.update(elapsed);
 	}
@@ -454,7 +451,7 @@ callInterp("init", [this]);
 	/**
 	 * FOR GF DANCING SHIT
 	 */
-	public function dance(isMissed:Bool = false)
+	public function dance()
 	{
 		if (!debugMode && !skipDance && !specialAnim)
 		{
@@ -463,23 +460,13 @@ callInterp("init", [this]);
 			else if(danceIdle)
 			{
 				danced = !danced;
-                if (isMissed){
-				if (danced)
-					playAnim('danceRight' + idleSuffix, true, false, 10);
-				else
-					playAnim('danceLeft' + idleSuffix, true, false, 10);
-				}else{
-					if (danced)
-						playAnim('danceRight' + idleSuffix);
-					else
-						playAnim('danceLeft' + idleSuffix);
-				}
 
+				if (danced)
+					playAnim('danceRight' + idleSuffix);
+				else
+					playAnim('danceLeft' + idleSuffix);
 			}
 			else if(animation.getByName('idle' + idleSuffix) != null) {
-				if (isMissed)
-					playAnim('idle' + idleSuffix, true, false, 10);
-				else
 					playAnim('idle' + idleSuffix);
 			}
 		}
@@ -582,6 +569,7 @@ callInterp("init", [this]);
 	public static function getAnimInterp(char:String):Interp {
 		var interp = PluginManager.createSimpleInterp();
 		var parser = new hscript.Parser();
+		parser.allowJSON = parser.allowMetadata = parser.allowTypes = true;
 		var program:Expr;
 		var path:String = '';
 

@@ -1551,7 +1551,7 @@ class FunkinLua {
 			else
 				MusicBeatState.switchState(new FreeplayState());
 
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic));
 			PlayState.changedDifficulty = false;
 			PlayState.chartingMode = false;
 			PlayState.instance.transitioning = true;
@@ -1892,7 +1892,7 @@ class FunkinLua {
 			}
 			return false;
 		});
-
+		
 		Lua_helper.add_callback(lua, "setScrollFactor", function(obj:String, scrollX:Float, scrollY:Float) {
 			if(PlayState.instance.getLuaObject(obj,false)!=null) {
 				PlayState.instance.getLuaObject(obj,false).scrollFactor.set(scrollX, scrollY);

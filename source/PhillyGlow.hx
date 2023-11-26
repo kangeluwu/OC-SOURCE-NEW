@@ -11,7 +11,7 @@ class PhillyGlowParticle extends FlxSprite
 	{
 		super(x, y);
 		this.color = color;
-		loadGraphic(SUtil.getPath() + 'windose_data/images/particle.png');
+		loadGraphic('windose_data/images/particle.png');
 		antialiasing = ClientPrefs.globalAntialiasing;
 		lifeTime = FlxG.random.float(0.6, 0.9);
 		decay = FlxG.random.float(0.8, 1);
@@ -54,7 +54,7 @@ class PhillyGlowGradient extends FlxSprite
 	{
 		super(x, y);
 		originalY = y;
-		loadGraphic(SUtil.getPath() + 'windose_data/images/gradient.png');
+		loadGraphic('windose_data/images/gradient.png');
 		antialiasing = ClientPrefs.globalAntialiasing;
 		scrollFactor.set(0, 0.75);
 		setGraphicSize(2000, originalHeight);

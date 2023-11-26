@@ -425,6 +425,7 @@ class Paths
 			currentTrackedAssets.set(file, newGraphic);
 			return newGraphic;
 		}
+
 		trace('oh no its returning null NOOOO ($file)');
 		return null;
 	}
