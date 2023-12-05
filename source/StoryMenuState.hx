@@ -252,7 +252,7 @@ public function makeHaxeState(usehaxe:String, path:String, filename:String) {
 	interp.variables.set("flixelSave", FlxG.save);
 	interp.variables.set("MainMenuState", MainMenuState);
 	interp.variables.set("Math", Math);
-
+	interp.variables.set("FlxGlitchEffect", flixel.addons.effects.chainable.FlxGlitchEffect);
 	interp.variables.set("MusicBeatState", MusicBeatState);
 	interp.variables.set("ClientPrefs", ClientPrefs);
 	interp.variables.set("ChartTypeMenu", ChartTypeMenu);
