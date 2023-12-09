@@ -6251,7 +6251,7 @@ FlxTween.tween(FlxG.camera, {zoom: zooms}, time, {ease: FlxEase.cubeInOut, onCom
 				if (storyPlaylist.length <= 0)
 				{
 					WeekData.loadTheFirstEnabledMod();
-					FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic));
+					FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic + ClientPrefs.customVars.get("menuMusicStyle")));
 
 					cancelMusicFadeTween();
 					if(FlxTransitionableState.skipNextTransIn) {
@@ -6328,7 +6328,7 @@ FlxTween.tween(FlxG.camera, {zoom: zooms}, time, {ease: FlxEase.cubeInOut, onCom
 					Main.fpsVar.x = 10;
 				options.OptionsState.isFromPlayState = false;
 				MusicBeatState.switchState(new FreeplayState());
-				FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic));
+				FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic + ClientPrefs.customVars.get("menuMusicStyle")));
 				changedDifficulty = false;
 			}
 			transitioning = true;

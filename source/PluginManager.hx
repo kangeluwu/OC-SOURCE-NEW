@@ -122,7 +122,10 @@ class PluginManager {
         interp.variables.set("FlxVideo", FlxVideo);
         interp.variables.set("FlxVideoSprite", FlxVideoSprite);
 #end
-
+interp.variables.set('pushCameraShader', function(cam,value){
+    @:privateAccess
+    cam._filters.push(value);
+});
 		// : )
         interp.variables.set("Map", haxe.ds.StringMap);
 		interp.variables.set("FlxG", HscriptGlobals);
@@ -222,6 +225,10 @@ interp.variables.set("Paths", Paths);
         interp.variables.set("FlixG", FlxG);
         interp.variables.set("PluginManager", PluginManager);
         interp.variables.set("Paths", Paths);
+        interp.variables.set('pushCameraShader', function(cam,value){
+			@:privateAccess
+			cam._filters.push(value);
+		});
         interp.variables.set("callExternClass", instanceExClass); //Call modules?? :D
         interp.variables.set("privateAccess", privateAccess);
         //interp.variables.set("GitarooPause", GitarooPause);

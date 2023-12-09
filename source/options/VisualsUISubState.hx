@@ -161,7 +161,7 @@ addOption(option);
 	
 	override function destroy()
 	{
-		if(changedMusic) FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic));
+		if(changedMusic) FlxG.sound.playMusic(Paths.music(ClientPrefs.menuMusic + ClientPrefs.customVars.get("menuMusicStyle")));
 		super.destroy();
 	}
 

@@ -297,7 +297,7 @@ function update(elapsed)
 				case 'Change Options':
 					
 					
-					FlixG.sound.playMusic(Paths.music(ClientPrefs.menuMusic));
+					FlixG.sound.playMusic(Paths.music(ClientPrefs.menuMusic + ClientPrefs.customVars.get("menuMusicStyle")));
 					MusicBeatState.switchState(new OptionsState());
 				case "Leave Charting Mode":
 					restartSong();
@@ -347,7 +347,7 @@ function update(elapsed)
 						MusicBeatState.switchState(new FreeplayState());
 					}
 					PlayState.cancelMusicFadeTween();
-					FlixG.sound.playMusic(Paths.music(ClientPrefs.menuMusic));
+					FlixG.sound.playMusic(Paths.music(ClientPrefs.menuMusic + ClientPrefs.customVars.get("menuMusicStyle")));
 					PlayState.isCorruptUI = false;
 					PlayState.changedDifficulty = false;
 					PlayState.chartingMode = false;
