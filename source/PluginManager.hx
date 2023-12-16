@@ -127,8 +127,12 @@ class PluginManager {
         interp.variables.set("FlxVideo", FlxVideo);
         interp.variables.set("FlxVideoSprite", FlxVideoSprite);
 #end
-
+interp.variables.set('pushCameraShader', function(cam,value){
+    @:privateAccess
+    cam._filters.push(value);
+});
 		// : )
+        interp.variables.set("Map", haxe.ds.StringMap);
 		interp.variables.set("FlxG", HscriptGlobals);
 		interp.variables.set("FlxTimer", flixel.util.FlxTimer);
 		interp.variables.set("FlxTween", flixel.tweens.FlxTween);
@@ -153,6 +157,7 @@ interp.variables.set("mobile", false);
         interp.variables.set("privateAccess", privateAccess);
         interp.variables.set("FlxRect", FlxRect);
         interp.variables.set("FlixG", FlxG);
+        interp.variables.set("getAudiosampleRate", getAudiosampleRate);
         interp.variables.set("PluginManager", PluginManager);
         interp.variables.set("callExternClass", instanceExClass); //Call modules?? :D
 
@@ -173,6 +178,12 @@ interp.variables.set("mobile", false);
             }
 			}
 		}
+            public static function getAudiosampleRate(sound:FlxSound):Int
+		{
+			@:privateAccess
+       return sound._sound.__buffer.sampleRate;
+			
+		}
     public static function addVarsToInterpEx<T:InterpEx>(interp:T):T {
         interp.variables.set("SUtil", SUtil);
 		interp.variables.set("Conductor", Conductor);
@@ -184,6 +195,7 @@ interp.variables.set("mobile", false);
 		interp.variables.set("FlxGroup", flixel.group.FlxGroup);
 		interp.variables.set("FlxAngle", flixel.math.FlxAngle);
 		interp.variables.set("FlxMath", flixel.math.FlxMath);
+        interp.variables.set("getAudiosampleRate", getAudiosampleRate);
 		interp.variables.set("TitleState", TitleState);
 		interp.variables.set("makeRangeArray", CoolUtil.numberArray);
 		interp.variables.set("FNFAssets", FNFAssets);
@@ -212,11 +224,17 @@ interp.variables.set("Paths", Paths);
         interp.variables.set("FlxText", FlxText);
         interp.variables.set("FlxTextBorderStyle", FlxTextBorderStyle);
         interp.variables.set("FlxBackdrop", FlxBackdrop);
-
+        interp.variables.set("Function_Continue", FunkinLua.Function_Continue);
+        interp.variables.set("Function_Stop", FunkinLua.Function_Stop);
+		interp.variables.set("Function_StopHscript", FunkinLua.Function_StopLua);
         interp.variables.set("FlxRect", FlxRect);
         interp.variables.set("FlixG", FlxG);
         interp.variables.set("PluginManager", PluginManager);
         interp.variables.set("Paths", Paths);
+        interp.variables.set('pushCameraShader', function(cam,value){
+			@:privateAccess
+			cam._filters.push(value);
+		});
         interp.variables.set("callExternClass", instanceExClass); //Call modules?? :D
         interp.variables.set("privateAccess", privateAccess);
         //interp.variables.set("GitarooPause", GitarooPause);

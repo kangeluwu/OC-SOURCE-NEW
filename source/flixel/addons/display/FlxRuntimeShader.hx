@@ -189,7 +189,6 @@ class FlxRuntimeShader extends FlxShader
 	static final PRAGMA_VERSION:String = "#pragma version";
 
 	private var _glslVersion:Int;
-    
 	public function get_shaderData(){
 		return __data;
 	}

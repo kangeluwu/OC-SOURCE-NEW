@@ -44,7 +44,8 @@ class ClientPrefs {
 	public static var controllerMode:Bool = false;
 	public static var hitsoundVolume:Float = 0;
 	public static var pauseMusic:String = 'Breakfast';
-	public static var menuMusic:String = 'Approval-Desire';
+	public static var menuMusic:String = 'freakyMenu';
+	public static var customVars:Map<String, Dynamic> = ["menuMusicStyle" => ''];
 	public static var checkForUpdates:Bool = true;
 	public static var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
@@ -107,6 +108,7 @@ class ClientPrefs {
 	}
 
 	public static function saveSettings() {
+		FlxG.save.data.customVars = customVars;
 		FlxG.save.data.vibration = vibration;
 		FlxG.save.data.cacheOnGPU = cacheOnGPU;
 		FlxG.save.data.showComboBreaks = showComboBreaks;
@@ -166,6 +168,13 @@ class ClientPrefs {
 	}
 
 	public static function loadPrefs() {
+		if(FlxG.save.data.customVars != null) {
+			var savedMap:Map<String, Dynamic> = FlxG.save.data.customVars;
+			for (name => value in savedMap)
+			{
+				customVars.set(name, value);
+			}
+		}
 		if(FlxG.save.data.downScroll != null) {
 			downScroll = FlxG.save.data.downScroll;
 		}

@@ -194,9 +194,7 @@ catch (e)
 public function makeHaxeState(usehaxe:String, path:String, filename:String) {
 	trace("opening a haxe state (because we are cool :))");
 	var parser = new ParserEx();
-	parser.allowJSON = true;
-	parser.allowTypes = true;
-	parser.allowMetadata = true;
+	parser.allowJSON = parser.allowMetadata = parser.allowTypes = true;
 	var program = parser.parseString(FNFAssets.getHscript(SUtil.getPath() + path + filename));
 	var interp = PluginManager.createSimpleInterp();
 	// set vars
@@ -254,7 +252,7 @@ public function makeHaxeState(usehaxe:String, path:String, filename:String) {
 	interp.variables.set("flixelSave", FlxG.save);
 	interp.variables.set("MainMenuState", MainMenuState);
 	interp.variables.set("Math", Math);
-
+	interp.variables.set("FlxGlitchEffect", flixel.addons.effects.chainable.FlxGlitchEffect);
 	interp.variables.set("MusicBeatState", MusicBeatState);
 	interp.variables.set("ClientPrefs", ClientPrefs);
 	interp.variables.set("ChartTypeMenu", ChartTypeMenu);

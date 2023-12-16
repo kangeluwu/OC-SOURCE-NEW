@@ -300,6 +300,7 @@ function setAllHaxeVar(name:String, value:Dynamic) {
 	function makeHaxeState(usehaxe:String, path:String, filename:String) {
 		trace("opening a haxe state (because we are cool :))");
 		var parser = new ParserEx();
+	parser.allowJSON = parser.allowMetadata = parser.allowTypes = true;
 		var program = parser.parseString(FNFAssets.getHscript(path + filename));
 		var interp = PluginManager.createSimpleInterp();
 		// set vars
@@ -333,7 +334,6 @@ function setAllHaxeVar(name:String, value:Dynamic) {
 		interp.variables.set("Controls", Controls);
 		interp.variables.set("Map", haxe.ds.StringMap);
 		interp.variables.set("Date", Date);
-		
 		interp.variables.set("FlxRuntimeShader", FlxRuntimeShader);
 interp.variables.set("ShaderFilter", openfl.filters.ShaderFilter);
 		interp.variables.set("makeHaxeState", makeHaxeState);
