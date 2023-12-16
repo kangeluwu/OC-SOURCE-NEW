@@ -37,10 +37,9 @@ class Main extends Sprite
 	var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
 	#end
 	public static var ammo:Array<Int> = [4, 5];
-	public var haxeVars:Map<String, Dynamic> = [];
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
 	var framerate:Int = 60; // How many frames per second the game should run at.
-	var skipSplash:Bool = false; // Whether to skip the flixel splash screen that appears in release mode.
+	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
 	public static var fpsVar:FPS;
 	public static var titleName:String= "Friday Night Funkin'";
@@ -77,7 +76,6 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
-
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -95,11 +93,9 @@ class Main extends Sprite
 				
 			
 		#end
-		#if (sys && !mobile)
-		cwd = Sys.getCwd();
-		#end
+
 		ClientPrefs.loadDefaultKeys();
-		skipSplash = !ClientPrefs.skipSplash;
+		skipSplash = ClientPrefs.skipSplash;
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 
