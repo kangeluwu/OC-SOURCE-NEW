@@ -103,7 +103,7 @@ class NotesSubState extends MusicBeatSubstate
 
 		changeSelection();
 		#if IS_CORRUPTION
-	var tv = new FlxSprite().loadGraphic(FNFAssets.getBitmapData(SUtil.getPath() + 'windose_data/images/optionsFront.png'));
+	var tv = new FlxSprite().loadGraphic(FNFAssets.getBitmapData('windose_data/images/optionsFront.png'));
 	tv.antialiasing = ClientPrefs.globalAntialiasing;
 	tv.scrollFactor.set();
 	add(tv);

@@ -7206,7 +7206,7 @@
 		"player2": "senpai-afraid",
 		"isHey": false,
 		"player3": "backhahaha",
-		"cutsceneType": "none",
+		"cutsceneType": "angry",
 		"song": "Steptime",
 		"validScore": true,
 		"speed": 2.6,
@@ -18950,7 +18950,7 @@
 				]
 			]
 		],
-		"gfVersion": "gf-blank",
+		"gfVersion": "gf-pixel",
 		"stage": "school-D2",
 		"sections": 0,
 		"needsVoices": true,

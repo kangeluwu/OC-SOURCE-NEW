@@ -38,8 +38,7 @@ class FNFAssets {
     public static var _file:FileReference;
 	static var fd:FileDialog;
 	static var fdString:Null<String> = null;
-	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
-	public static var currentTrackedSounds:Map<String, Sound> = [];
+
     /**
      * Get text content of a file. 
      * @param id Path to file.
@@ -241,28 +240,37 @@ class FNFAssets {
      * @param useCache whether to reuse assets if file was already requested. Only works on non-dynamically loaded files.
 	 * @return Sound The sound file.
      */
-    public static function getSound(id:String, ?useCache:Bool=true):Sound {
-        #if sys
-			if (!isInScope(id))
-				throw "Tried to access a file that is out of scope.";
-			var path = Assets.exists(id) ? Assets.getPath(id) : null;
-            if (path == null)
-                path = id;
-			else
-				// prefer using assets as it uses a cache??
-				return Assets.getSound(id, useCache);
-		try
-		{
-			return Sound.fromFile(path);
-		}
-		catch (e:Any)
-		{
-			throw 'File $path doesn\'t exist or cannot be read.';
-		}
-        #else
-            return Assets.getSound(id, useCache);
-        #end
-    }
+	 
+	 public static function getSound(id:String, ?useCache:Bool=true):Sound {
+		 #if sys
+			 trace('loaded in sys bitch');
+			 if (!isInScope(id))
+				 throw "Tried to access a file that is out of scope.";
+			 var path = Assets.exists(id) ? Assets.getPath(id) : null;
+			 if (path == null)
+				 path = id;
+			 else
+			 {
+				 // prefer using assets as it uses a cache??
+				 return Assets.getSound(id, useCache);
+			 }
+		 try
+		 {
+			 if(!Paths.currentTrackedSounds.exists(id)) {
+				Paths.currentTrackedSounds.set(id, Sound.fromFile(path));
+			 }
+			 Paths.localTrackedAssets.push(id);
+			 return Paths.currentTrackedSounds.get(path);
+			 //return Sound.fromFile(path);
+		 }
+		 catch (e:Any)
+		 {
+			 throw 'File $path doesn\'t exist or cannot be read.';
+		 }
+		 #else
+			 return Assets.getSound(id, useCache);
+		 #end
+	 }
     /**
      * Save content to a file. 
      * @param id File to save to. 
@@ -336,6 +344,21 @@ class FNFAssets {
 		askToSave(id, data);
 		#end
 	}
+	public static function readDirectory(id:String)
+		{
+			#if sys
+			if (!isInScope(id))
+				throw "Tried to access a file that is out of scope.";
+			try
+			{
+				FileSystem.readDirectory(id);
+			}
+			catch (e:Any)
+			{
+				throw "Couldn't read to " + id + ". Is it in null?";
+			}
+			#end
+		}
 	/**
 	 * Ask the user to pick a path to save to. Used on web when other save functions are called.
 	 * @param id Path to save to.
@@ -345,10 +368,27 @@ class FNFAssets {
 		{
 			return getSound(path);
 		}
+	public static function transGraphicData(id:String,bitmap:BitmapData,?allowGPU:Bool = true){
+		if (bitmap != null){
+			if (allowGPU && ClientPrefs.cacheOnGPU)
+				{
+					var texture:openfl.display3D.textures.RectangleTexture = FlxG.stage.context3D.createRectangleTexture(bitmap.width, bitmap.height, BGRA, true);
+					texture.uploadFromBitmapData(bitmap);
+					bitmap.image.data = null;
+					bitmap.dispose();
+					bitmap.disposeImage();
+					bitmap = BitmapData.fromTexture(texture);
+				}
+			}
+			var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(bitmap, false, id);
+			newGraphic.persist = true;
+			newGraphic.destroyOnNoUse = false;
+			Paths.currentTrackedAssets.set(id, newGraphic);
+	}
 	 public static function getGraphicData(id:String,?allowGPU:Bool = true):Null<FlxGraphic>
 		{
 			if(FileSystem.exists(id)) {
-				if(!currentTrackedAssets.exists(id)) {
+				if(!Paths.currentTrackedAssets.exists(id)) {
 					var newBitmap:BitmapData = BitmapData.fromFile(id);
 					if (newBitmap != null){
 					if (allowGPU && ClientPrefs.cacheOnGPU)
@@ -364,9 +404,10 @@ class FNFAssets {
 					var newGraphic:FlxGraphic = FlxGraphic.fromBitmapData(newBitmap, false, id);
 					newGraphic.persist = true;
 			        newGraphic.destroyOnNoUse = false;
-					currentTrackedAssets.set(id, newGraphic);
+					Paths.localTrackedAssets.push(id);
+					Paths.currentTrackedAssets.set(id, newGraphic);
 				}
-				return currentTrackedAssets.get(id);
+				return Paths.currentTrackedAssets.get(id);
 			}
 	
 			return null;
@@ -404,54 +445,5 @@ class FNFAssets {
 		_file = null;
 		FlxG.log.error("Problem saving Level data");
 	}
-	public static function clearStoredMemory(?cleanUnused:Bool = false) 
-		{	
-			// clear anything not in the tracked assets list
-			@:privateAccess
-			for (key in currentTrackedAssets.keys()) {
-				var obj = currentTrackedAssets.get(key);
-				if (obj != null) {
-					openfl.Assets.cache.removeBitmapData(key);
-					FlxG.bitmap._cache.remove(key);
-					obj.destroy();
-					currentTrackedAssets.remove(key);
-				}
-			}
 	
-			@:privateAccess
-			for (key in FlxG.bitmap._cache.keys())
-			{
-				var obj = FlxG.bitmap._cache.get(key);
-				if (obj != null) {
-					openfl.Assets.cache.removeBitmapData(key);
-					FlxG.bitmap._cache.remove(key);
-					obj.destroy();
-				}
-			}
-	
-			/*@:privateAccess
-			EdtNote.coolCustomGraphics = [];
-	
-			@:privateAccess
-			Note.specialFramesKey = [];
-	
-			@:privateAccess
-			Note.gotSpecialFrames = [];*/
-	
-			// clear all sounds that are cached
-			for (key in currentTrackedSounds.keys()) {
-				if (key != null) {
-					//trace('test: ' + dumpExclusions, key);
-					Assets.cache.clear(key);
-					currentTrackedSounds.remove(key);
-				}
-			}
-	
-			// flags everything to be cleared out next unused memory clear
-			//localTrackedAssets = [];
-			openfl.Assets.cache.clear("windose_data");
-			openfl.Assets.cache.clear("windose_data/sounds");
-			openfl.Assets.cache.clear("windose_data/music");
-			System.gc();
-		}
 }

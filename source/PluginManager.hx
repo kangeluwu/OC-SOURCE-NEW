@@ -76,11 +76,15 @@ class PluginManager {
      */
     public static function createSimpleInterp():Interp {
         var reterp = new Interp();
+        reterp.allowStaticVariables = true;
+        reterp.allowPublicVariables = true;
         reterp = addVarsToInterp(reterp);
         return reterp;
     }
     public static function createSimpleInterpEx():InterpEx {
         var reterp = new InterpEx();
+        reterp.allowStaticVariables = true;
+        reterp.allowPublicVariables = true;
         reterp = addVarsToInterpEx(reterp);
         return reterp;
     }
@@ -93,6 +97,7 @@ class PluginManager {
 		interp.variables.set("Conductor", Conductor);
 		interp.variables.set("FlxSprite", DynamicSprite);
         interp.variables.set("MetroSprite", MetroSprite);
+        interp.variables.set("Sys", Sys);
         interp.variables.set("AttachedSprite", AttachedSprite);
 		interp.variables.set("FlxSound", DynamicSound);
 		interp.variables.set("FlxAtlasFrames", DynamicSprite.DynamicAtlasFrames);
@@ -196,6 +201,7 @@ interp.variables.set("mobile", false);
 		interp.variables.set("FNFAssets", FNFAssets);
         interp.variables.set("CoolUtil", CoolUtil);
         interp.variables.set("Main", Main);
+        interp.variables.set("Sys", Sys);
         interp.variables.set("AtlasFrameMaker", AtlasFrameMaker);
         interp.variables.set("FlxCamera", FlxCamera);
         interp.variables.set("Reflect", Reflect);

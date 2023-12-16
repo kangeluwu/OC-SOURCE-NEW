@@ -232,6 +232,7 @@ var mobile = false;
 		var interp = PluginManager.createSimpleInterp();
 		// set vars
 		interp.variables.set("doHidden", doHidden);
+		interp.variables.set("ColorSwap", ColorSwap);
 		interp.variables.set("debugTarget", debugTarget);
 		interp.variables.set("CoolUtil", CoolUtil);
 		interp.variables.set("Json", Json);

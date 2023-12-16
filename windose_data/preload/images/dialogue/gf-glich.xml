@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gf-glich.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="damn0000" x="7" y="7" width="57" height="60"/>
+	<SubTexture name="default0000" x="72" y="7" width="78" height="60"/>
+	<SubTexture name="headaw0000" x="158" y="7" width="59" height="60"/>
+	<SubTexture name="lookback0000" x="7" y="75" width="57" height="60"/>
+	<SubTexture name="lookbackalt0000" x="72" y="75" width="57" height="60"/>
+	<SubTexture name="remorse0000" x="137" y="75" width="57" height="60"/>
+	<SubTexture name="wtf0000" x="7" y="143" width="57" height="60"/>
+</TextureAtlas>

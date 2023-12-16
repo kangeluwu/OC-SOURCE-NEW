@@ -597,7 +597,6 @@ function camerabgAlphaShits(cam:FlxCamera)
 	public function makeHaxeState(usehaxe:String, path:String, filename:String,isArray:Bool = false) {
 		trace("opening a haxe state (because we are cool :))");
 		var parser = new ParserEx();
-	parser.allowJSON = parser.allowMetadata = parser.allowTypes = true;
 
 		var program;
 		parser.allowJSON = parser.allowMetadata = parser.allowTypes = true;
@@ -625,6 +624,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 		interp.variables.set("BEHIND_NONE", 0);
 		interp.variables.set("difficulty", storyDifficulty);
 		interp.variables.set("difficultyText", storyDifficultyText);
+		interp.variables.set("HealthIcon", HealthIcon);
 
 		interp.variables.set("Highscore", Highscore);
 		interp.variables.set("PhillyGlowGradient", PhillyGlow.PhillyGlowGradient);
@@ -818,7 +818,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 				add(boyfriendGroup); 
 			
 		});
-		interp.variables.set("add", add);
+		interp.variables.set("add", this.add);
 		interp.variables.set("fromRGB", fromRGB);
 		interp.variables.set("changeNewUI", changeNewUI);
 		interp.variables.set("remove", remove);
