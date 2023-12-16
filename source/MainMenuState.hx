@@ -192,6 +192,9 @@ catch (e)
 function makeHaxeState(usehaxe:String, path:String, filename:String) {
 	trace("opening a haxe state (because we are cool :))");
 	var parser = new ParserEx();
+	parser.allowJSON = true;
+	parser.allowTypes = true;
+	parser.allowMetadata = true;
 	var program = parser.parseString(FNFAssets.getHscript(SUtil.getPath() + path + filename));
 	var interp = PluginManager.createSimpleInterp();
 	// set vars
@@ -209,6 +212,7 @@ function makeHaxeState(usehaxe:String, path:String, filename:String) {
 	interp.variables.set("modsAllow", modsAllow);
 	interp.variables.set("desktop", desktop);
 	interp.variables.set("Paths", Paths);
+		interp.variables.set("ColorSwap", ColorSwap);
 	interp.variables.set("Sys", Sys);
 	interp.variables.set("FlxTextBorderStyle", FlxTextBorderStyle);
 	interp.variables.set("controls", controls);

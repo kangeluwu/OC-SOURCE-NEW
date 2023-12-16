@@ -77,6 +77,7 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -94,7 +95,9 @@ class Main extends Sprite
 				
 			
 		#end
-
+		#if (sys && !mobile)
+		cwd = Sys.getCwd();
+		#end
 		ClientPrefs.loadDefaultKeys();
 		skipSplash = !ClientPrefs.skipSplash;
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));

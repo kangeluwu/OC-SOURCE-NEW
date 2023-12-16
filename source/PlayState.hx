@@ -597,6 +597,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 	public function makeHaxeState(usehaxe:String, path:String, filename:String,isArray:Bool = false) {
 		trace("opening a haxe state (because we are cool :))");
 		var parser = new ParserEx();
+
 		var program;
 		parser.allowJSON = parser.allowMetadata = parser.allowTypes = true;
 		if (isArray){
@@ -623,6 +624,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 		interp.variables.set("BEHIND_NONE", 0);
 		interp.variables.set("difficulty", storyDifficulty);
 		interp.variables.set("difficultyText", storyDifficultyText);
+		interp.variables.set("HealthIcon", HealthIcon);
 
 		interp.variables.set("Highscore", Highscore);
 		interp.variables.set("PhillyGlowGradient", PhillyGlow.PhillyGlowGradient);
@@ -813,10 +815,10 @@ function camerabgAlphaShits(cam:FlxCamera)
 				add(boyfriendGroup); 
 			
 		});
-		interp.variables.set("add", add);
+		interp.variables.set("add", this.add);
 		interp.variables.set("fromRGB", fromRGB);
 		interp.variables.set("changeNewUI", changeNewUI);
-		interp.variables.set("remove", remove);
+		interp.variables.set("remove", this.remove);
 		interp.variables.set("insert", insert);
 		interp.variables.set("replace", replace);
 		interp.variables.set("setDefaultZoom", function(zoom:Float){
@@ -927,6 +929,7 @@ function camerabgAlphaShits(cam:FlxCamera)
 	{
 		trace("opening a haxe state (because we are cool :))");
 		var parser = new ParserEx();
+
 		var program = parser.parseModule(FNFAssets.getHscript(SUtil.getPath() + path + filename));
 		trace("set stuff");
 		exInterp.registerModule(program);
@@ -6714,7 +6717,6 @@ public var curNoteHitHealth:Float = 0;
 				{
 					case 'shit':
 					
-						songMisses++;
 						note.ratingHealAmount = 0.1;
 					case 'bad':
 		
@@ -6727,6 +6729,7 @@ public var curNoteHitHealth:Float = 0;
 				}
 				curNoteHitHealth = 1 * note.hitHealth * (!note.isSustainNote ? note.ratingHealAmount * healthGain :  healthGain);
 				health += curNoteHitHealth;
+				
 				if(!note.noAnimation) {
 					var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))] + altAnim;
 	

@@ -176,17 +176,19 @@ else if (ClientPrefs.langType == "Chinese")
 		}
        
 }
-function openSubState(){
+function openSubState(state){
 	if (mobile){
 		removeVirtualPad();
 		}
+		currentStoryMenuState.openSubState(state);
 }
-function closeSubState() {
+function closeSubState(state) {
     togglePersistUpdate(true);
     changeWeek(0);
 	if (mobile){
 		addVirtualPads('full', 'a_b_x_y');
 		}
+		currentStoryMenuState.closeSubState();
 }
 
 var lerpScore = 0;
@@ -253,7 +255,7 @@ function update(elapsed)
 			else if (upP || downP)
 				changeDifficulty(0);
 
-			if(FlixG.keys.justPressed.CONTROL||visPressed('X'))
+			if(FlxG.keys.justPressed.CONTROL|| visPressed('X'))
 			{
                 togglePersistUpdate(false);
 				openSubState(new GameplayChangersSubstate());
@@ -326,15 +328,14 @@ function selectWeek()
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.campaignScore = 0;
 			PlayState.campaignMisses = 0;
+		
 			new FlxTimer().start(1, function(tmr)
 			{
-							if (!ClientPrefs.skipChartTypeMenu){
-								openSubState(new ChartTypeMenu());
-							}
-									else
+							
 								LoadingState.loadAndSwitchState(new PlayState(), true);
 								FreeplayState.destroyFreeplayVocals();
 			});
+		
 		} else {
 			FlixG.sound.play(Paths.sound('cancelMenu'));
 		}

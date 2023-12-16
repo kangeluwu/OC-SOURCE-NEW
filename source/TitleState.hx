@@ -227,10 +227,12 @@ var mobile = false;
 	function makeHaxeState(usehaxe:String, path:String, filename:String) {
 		trace("opening a haxe state (because we are cool :))");
 		var parser = new ParserEx();
+
 		var program = parser.parseString(FNFAssets.getHscript(SUtil.getPath() + path + filename));
 		var interp = PluginManager.createSimpleInterp();
 		// set vars
 		interp.variables.set("doHidden", doHidden);
+		interp.variables.set("ColorSwap", ColorSwap);
 		interp.variables.set("debugTarget", debugTarget);
 		interp.variables.set("CoolUtil", CoolUtil);
 		interp.variables.set("Json", Json);

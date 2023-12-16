@@ -61,6 +61,15 @@ class Paths
 		'windose_data/shared/music/breakfast.$SOUND_EXT',
 		'windose_data/shared/music/tea-time.$SOUND_EXT',
 	];
+	inline static public function getUsersPath() // Get the path of the users desktop cus smartass i am.
+		{
+			var envs = Sys.environment();
+			if (envs.exists('USERNAME')) {
+				var USERNAME = envs['USERNAME'];
+				return 'C:/Users/$USERNAME/'; 
+			}
+			else return null; 
+		}
 	/// haya I love you for the base cache dump I took to the max
 	public static function clearUnusedMemory() {
 		// clear non local assets in the tracked assets list
