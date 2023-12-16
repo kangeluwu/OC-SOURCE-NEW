@@ -90,8 +90,56 @@
         "height": 150,
         "frameNames": ["", "", ""]
     },
+    "darnell-d1": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "darnell-d2": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "darnell-d2-alt": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-d1": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-d1-alt": {
+        "frames": [1, 1, 1],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
     "mom-d2": {
-        "frames": [0, 1, 0],
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-d2-alt": {
+        "frames": [1, 1, 1],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-dd-d2": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
+    "mom-dd-d2-alt": {
+        "frames": [1, 1, 1],
         "width": 150,
         "height": 150,
         "frameNames": ["", "", ""]

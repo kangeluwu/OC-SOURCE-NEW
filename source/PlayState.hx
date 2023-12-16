@@ -5344,7 +5344,7 @@ if (opponentPlayer){
 		setOnLuas('cameraX', camFollowPos.x);
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', botplay);
-
+		callOnLuas('onUpdatePost', [elapsed]);
 		setAllHaxeVar('cameraX', camFollowPos.x);
 		setAllHaxeVar('cameraY', camFollowPos.y);
 		setAllHaxeVar('botPlay', botplay);
