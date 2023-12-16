@@ -1,0 +1,15 @@
+[178[ [179[ [223[ [216[ |Lunchbox| *0* =1= #pixel_normal#  <0.08< >4> (0.2( )5) {0.83{ }5} `hand_textbox` ~clickText~
+:senpai-angry: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~     You're a really freaking weirdo.
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      Console.Write("And so?")
+:senpai-angry: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      Look this place.
+:senpai-angry: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      It's freaking broken like a hell.
+:senpai-angry: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      How Could you to do this...
+:senpai-angry: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      AND TO THEM...?!
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      Console.Write("It's none of your business.
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      You just a piece of codes of this stupid GAME.")
+:senpai-angry: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      What do you mean...?
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      Console.Write("Yeah now enjoy your last time and shut up your mouth.")
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]22] *0* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      delete("\windose_data\data\senpai"); delete("\weeb\senpai.png"); delete("\weeb\senpai.xml"); delete("\Senpai_Voices.ogg");  delete("HATING SIMULATOR.EXE");
+:senpai-afraid: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |true| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      ...
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]32] *0* =0= +0+ -0- <0< >0> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      ERROR: UnauthorizedAccessException ("You do not have access to that command. Current administrator is SPIRIT.")
+:gf-glich: !default! [Pixel Arial 11 Bold[ ]32] *0* =0.005= +30+ -19- <6< >19> ;0.04; |false| #pixel_mad# ^pixelText^ !#3F2021! ?#D89494? .. ~~      Console.Write("What The...")

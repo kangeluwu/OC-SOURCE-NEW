@@ -1,0 +1,25 @@
+
+function start(song) {
+    currentPlayState.inCutscene = true;
+
+    var black = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xff000000);
+			black.scrollFactor.set();
+			add(black);
+            black.visible = false;
+    FlxG.sound.play(FNFAssets.getSound('windose_data/shared/sounds/ANGRY_TEXT_BOX.ogg'));
+    if (currentPlayState.doofM != null) {
+        new FlxTimer().start(0.3, function(timer) {
+            black.alpha -= 0.15;
+        if (black.alpha > 0) {
+            timer.reset(0.3);
+        } else {
+
+           add(currentPlayState.doofM);
+        }
+    });
+    } else {
+
+        currentPlayState.startCountdown();
+    }
+    
+}
