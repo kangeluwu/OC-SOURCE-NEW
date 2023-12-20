@@ -1,0 +1,67 @@
+{
+    "animations": [{
+            "offsets": [
+                0,
+                0
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "idle",
+            "indices": [],
+            "name": "idle0"
+        },
+        {
+            "offsets": [-90, -60],
+            "loop": false,
+            "fps": 24,
+            "anim": "singRIGHT",
+            "indices": [],
+            "name": "right"
+        },
+        {
+            "offsets": [-92, -44],
+            "loop": false,
+            "fps": 24,
+            "anim": "singLEFT",
+            "indices": [],
+            "name": "left"
+        },
+        {
+            "offsets": [-90, -96],
+            "loop": false,
+            "fps": 24,
+            "anim": "singDOWN",
+            "indices": [],
+            "name": "down"
+        },
+        {
+            "offsets": [-100,
+                54
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singUP",
+            "indices": [],
+            "name": "up"
+        }
+    ],
+    "no_antialiasing": false,
+    "image": "characters/extras/darnell-d2",
+    "position": [
+        0,
+        260
+    ],
+    "healthicon": "darnell-d2",
+    "flip_x": false,
+    "healthbar_colors": [
+        55,
+        0,
+        135
+    ],
+    "camera_position": [
+        0,
+        0
+    ],
+    "sing_duration": 6.1,
+    "scale": 1
+}

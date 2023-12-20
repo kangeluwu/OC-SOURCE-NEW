@@ -1,23 +1,24 @@
 {
-	"songs": [
-		["Senpai Glitch", "senpai-pixel", [255, 170, 111]],
-		["Steptime", "senpai-pixel", [255, 170, 111]],
-		["Mindless", "senpai-pixel", [255, 170, 111]],
-		["Core", "senpa-pissedi-pixel", [255, 170, 111]]
-	],
-	
-	"weekCharacters": [
-		"senpai",
-		"bf",
-		"gf"
-	],
-	"weekBackground": "school",
+    "songs": [
+        ["Brightness Glitches", "senpai-pixel", [255, 170, 111]],
+        ["Steptime", "senpai-pixel", [255, 170, 111]],
+        ["Mindless", "senpai-pixel", [255, 170, 111]],
+        ["Core", "senpa-pissedi-pixel", [255, 170, 111]],
+        ["Chkdsk", "spirit-insane-pixel", [255, 170, 111]]
+    ],
 
-	"storyName": "Console.Write('Chances')",
-	"weekBefore": "story3",
-	"weekName": "Week 4",
-	"startUnlocked": true,
+    "weekCharacters": [
+        "senpai",
+        "bf",
+        "gf"
+    ],
+    "weekBackground": "school",
 
-	"hideStoryMode": false,
-	"hideFreeplay": false
+    "storyName": "Console.Write('Chances')",
+    "weekBefore": "story3",
+    "weekName": "story4",
+    "startUnlocked": true,
+
+    "hideStoryMode": false,
+    "hideFreeplay": false
 }

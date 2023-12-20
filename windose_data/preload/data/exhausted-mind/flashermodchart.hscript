@@ -1,0 +1,21 @@
+var blankFlashSprite = new FlxSprite(-300,-200).makeGraphic(Std.int(FlxG.width * 100), Std.int(FlxG.height * 100), 0xFFffffff);
+function start(song){
+    blankFlashSprite.screenCenter();
+    blankFlashSprite.scrollFactor.set();
+    blankFlashSprite.alpha = 0.0001;
+add(blankFlashSprite);
+}
+function stepHit(step){
+    if (step == 520){
+        FlxTween.tween(blankFlashSprite,{alpha:1},Conductor.crochet * 2 / 1000);
+    }
+    if (step == 528){
+        FlxTween.tween(blankFlashSprite,{alpha:0.0001},Conductor.crochet / 1000);
+    }
+    if (step == 904){
+        FlxTween.tween(blankFlashSprite,{alpha:1},Conductor.crochet * 2 / 1000);
+    }
+    if (step == 912){
+        FlxTween.tween(blankFlashSprite,{alpha:0.0001},Conductor.crochet / 1000);
+    }
+}

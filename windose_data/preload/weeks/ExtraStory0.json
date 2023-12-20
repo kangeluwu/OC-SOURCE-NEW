@@ -1,0 +1,37 @@
+{
+    "songs": [
+        [
+            "insperity",
+            "darnell-d1", [
+                246,
+                182,
+                4
+            ]
+        ],
+        [
+            "exhausted-mind",
+            "darnell-d2", [
+                246,
+                182,
+                4
+            ]
+        ]
+    ],
+    "hideFreeplay": false,
+    "weekBackground": "tank",
+    "weekCharacters": [
+        "tankman",
+        "bf",
+        "gf"
+    ],
+    "storyName": "Tankman",
+    "weekName": "ExtraStory0",
+    "freeplayColor": [
+        146,
+        113,
+        253
+    ],
+    "hideStoryMode": true,
+    "weekBefore": "story6",
+    "startUnlocked": true
+}

@@ -7,31 +7,140 @@ var loki2;
 var loki3;
 var funni;
 var time = ['','Night','midNight'];
+var time2s = ['','MidNight'];
 var doIdle = true;
 var lmao = null;
 var shaderValue = null;
 var distortionTime = 0.0;
+var lightCity;
+var city2nd;
+var cityBack;
+var cityMid;
+var susCam;
+var noteCam;
+var wiggleShit;
+var charCam;
+var theqwo;
+var bgMM;
+var theqwo2;
+var doTrolling = if (curSong.toLowerCase() == "manic-evanescent") true; else false;
+function createShaderSprite(shader){
+    var sprite = new FlxSprite().makeGraphic(FlxG.width*1.5,FlxG.height*1.5);
+
+    var shader = currentPlayState.createRuntimeShader(shader);
+    sprite.shader = shader;
+    sprite.shader.data.curPower.value = [1];
+    return sprite;
+}
+function onCreatePost(song){
+    if (doTrolling){
+    addHaxeLibrary('CustomFadeTransition');
+    
+    susCam = new FlxCamera();
+    FlixG.cameras.add(susCam);
+    noteCam = new FlxCamera();
+    FlixG.cameras.add(noteCam);
+    charCam = new FlxCamera();
+    FlixG.cameras.add(charCam);
+    var subCam = new FlxCamera();
+    FlixG.cameras.add(subCam);
+    camerabgAlphaShits(susCam);
+    camerabgAlphaShits(noteCam);
+    camerabgAlphaShits(charCam);
+    camerabgAlphaShits(subCam);
+    wiggleShit = new WiggleEffect();
+    wiggleShit.waveAmplitude = 0.07;
+    wiggleShit.effectType = WiggleEffectType.DREAMY;
+    wiggleShit.waveFrequency = 0;
+    wiggleShit.waveSpeed = 1.8; // fasto
+    wiggleShit.shader.uTime.value = [200 / FlxG.height]; // from 4mbr0s3 2
+
+    var susWiggle = new ShaderFilter(wiggleShit.shader);
+    susCam.setFilters([susWiggle]);
+for (sustains in currentPlayState.unspawnNotes)
+    {
+        if (sustains.isSustainNote)
+            sustains.cameras = [susCam];
+        else
+            sustains.cameras = [noteCam];
+    }
+
+    CustomFadeTransition.nextCamera = subCam;
+  //  currentPlayState.dadGroup.cameras = [charCam,camGame];
+ //   currentPlayState.boyfriendGroup.cameras = [charCam,camGame];
+}
+}
+function onPauseCreate(){
+    
+}
 function start(song) {
     var the = time[0];
+    var the2 = time2s[0];
 switch (curSong){
     case 'Manic-Evanescent':
         the = time[1];
+        the2 = time2s[1];
         case 'Demonic':
             the = time[2];
+            the2 = time2s[1];
             case 'Shachath':
             the = time[2];
+            the2 = time2s[1];
 }
     bg = new FlxSprite(-200, -200).loadGraphic(hscriptPath + 'bg' + the + '.png');
     bg.setGraphicSize(Std.int(bg.width * 1.3));
-    bg.scrollFactor.set(0.9, 0.9);
+    bg.scrollFactor.set(0.4, 0.4);
     bg.antialiasing = true;
     addSprite(bg, BEHIND_ALL);
+
+    var bgLayer = new FlxSprite(-200, -200).loadGraphic(hscriptPath + 'bg' + the + 'Layer.png');
+    bgLayer.setGraphicSize(Std.int(bgLayer.width * 1.3));
+    bgLayer.scrollFactor.set(0.4, 0.4);
+    bgLayer.antialiasing = true;
+    if (the != time[0]){
+    bgLayer.shader = currentPlayState.createRuntimeShader('star');
+    bgLayer.shader.data.curPower.value = [1];
+    }
+    bgLayer.blend = currentPlayState.blendModeFromString('screen');
+
+    addSprite(bgLayer, BEHIND_ALL);
+
     city = new FlxSprite(-380, -500).loadGraphic(hscriptPath + 'city.png');
     city.setGraphicSize(Std.int(city.width * 1.3));
-    city.scrollFactor.set(0.75, 0.75);
+    city.scrollFactor.set(0.5, 0.5);
     city.antialiasing = true;
     city.updateHitbox();
     addSprite(city, BEHIND_ALL);
+
+    cityBack = new FlxSprite(-200, -220).loadGraphic(hscriptPath + 'cityBack' + the + '.png');
+    cityBack.setGraphicSize(Std.int(cityBack.width * 1.2));
+    cityBack.scrollFactor.set(0.6, 0.6);
+    cityBack.antialiasing = true;
+    cityBack.updateHitbox();
+    addSprite(cityBack, BEHIND_ALL);
+
+    lightCity = new FlxSprite(-200, -220).loadGraphic(hscriptPath + 'light' + the + '.png');
+    lightCity.setGraphicSize(Std.int(lightCity.width * 1.2));
+    lightCity.scrollFactor.set(0.6, 0.6);
+    lightCity.antialiasing = true;
+    lightCity.updateHitbox();
+    
+    addSprite(lightCity, BEHIND_ALL);
+    
+    cityMid = new FlxSprite(-200, -260).loadGraphic(hscriptPath + 'cityMid' + the2 + '.png');
+    cityMid.setGraphicSize(Std.int(cityMid.width * 1.2));
+    cityMid.scrollFactor.set(0.75, 0.75);
+    cityMid.antialiasing = true;
+    cityMid.updateHitbox();
+    addSprite(cityMid, BEHIND_ALL);
+
+
+    city2nd = new FlxSprite(-280, -320).loadGraphic(hscriptPath + 'cityFront' + the2 + '.png');
+    city2nd.setGraphicSize(Std.int(city2nd.width * 1.2));
+    city2nd.scrollFactor.set(0.8, 0.8);
+    city2nd.antialiasing = true;
+    city2nd.updateHitbox();
+    addSprite(city2nd, BEHIND_ALL);
 
     loki = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
     loki.alpha = 0.0001;
@@ -46,13 +155,7 @@ switch (curSong){
     if (the == time[2])
     addSprite(fire, BEHIND_ALL); 
 
-Emitter = new FlxEmitter(0, 920);
-			FlxPexParser.parse("shared:windose_data/shared/images/particles/funniBlue/particle.pex","shared:windose_data/shared/images/particles/funniBlue/texture.png",Emitter,1);
-			addSprite(Emitter, BEHIND_ALL);
-Emitter.color.set(RedColor, RedColor, RedColor, RedColor);
-Emitter.angle.set(90, 90, 0, 0);
-Emitter.launchAngle.set(-90, -90);
-Emitter.acceleration.set(0, 0);
+
 if (the == time[2]){
  var shader = currentPlayState.createRuntimeShader('desaturation');
  fire.shader = shader;
@@ -67,6 +170,14 @@ if (the != time[0]){
     var path='e3';
     if (the == time[2])
         path='e4';
+    Emitter = new FlxEmitter(0, 920);
+FlxPexParser.parse(FNFAssets.getText(hscriptPath + "particles/" + path +".pex"),FNFAssets.getBitmapData(hscriptPath + "particles/texture.png"),Emitter,1);
+			addSprite(Emitter, BEHIND_ALL);
+Emitter.color.set(RedColor, RedColor, RedColor, RedColor);
+Emitter.angle.set(90, 90, 0, 0);
+Emitter.launchAngle.set(-90, -90);
+Emitter.acceleration.set(0, 0);
+
 var thelmao = new FlxEmitter(-700, 800);
 			FlxPexParser.parse(FNFAssets.getText(hscriptPath + "particles/" + path +".pex"),FNFAssets.getBitmapData(hscriptPath + "particles/texture.png"),thelmao,1);
 			addSprite(thelmao,BEHIND_ALL);
@@ -89,7 +200,7 @@ if (the != time[0]){
     var thelmao = new FlxEmitter(-700, -100);
 			FlxPexParser.parse(FNFAssets.getText(hscriptPath + "particles/" + path +".pex"),FNFAssets.getBitmapData(hscriptPath + "particles/texture.png"),thelmao,1);
 			addSprite(thelmao);
-            thelmao.cameras = [camGame,camHUD2];
+            thelmao.cameras = [camGame];
             thelmao.start(false,.02);
             
               
@@ -114,7 +225,7 @@ if (the != time[0]){
     }
     addSprite(dancers, BEHIND_ALL);
     dancers2 = new FlxGroup();
-	var bootex2 = FlxAtlasFrames.fromSparrow(hscriptPath + 'dancersC.png',hscriptPath + 'dancersC.xml');
+	var bootex2 = FlxAtlasFrames.fromSparrow(hscriptPath + 'limoDancer.png',hscriptPath + 'limoDancer.xml');
     for (i in 0...10) {
         var boogie = new MetroSprite((-370 * i) + 1240, PlayState.instance.boyfriendGroup.y + 200, false);
         boogie.frames = bootex2;
@@ -142,6 +253,12 @@ if (the != time[0]){
     flashed.alpha = 0.0001;
     flashed.color = 0x404040;
     flashed.playAnim('idle', true);
+
+    bgMM = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
+    bgMM.alpha = 0.0001;
+    bgMM.scrollFactor.set();
+    addSprite(bgMM,BEHIND_ALL);
+
     loki2 = new FlxSprite(-300, -200).makeGraphic(1280 * 2, 720 * 2, 0xFF000000);
     loki2.alpha = 0.0001;
     loki2.cameras = [camHUD];
@@ -163,12 +280,66 @@ if (the != time[0]){
     loki3.cameras = [camHUD];
     loki3.scrollFactor.set();
     insert(currentPlayState.members.indexOf(currentPlayState.strumLineNotes), loki3);
+
+    theqwo = createShaderSprite('SUPERPOGGERNG');
+    theqwo.screenCenter();
+    theqwo.blend = currentPlayState.blendModeFromString('add');
+    theqwo.shader.data.iTime.value = [1];
+    theqwo.scrollFactor.set();
+    theqwo.alpha = 0.0001;
+
+    theqwo2 = createShaderSprite('Simulatedsmoke');
+    theqwo2.screenCenter();
+
+    theqwo2.shader.data.iTime.value = [1];
+    theqwo2.scrollFactor.set();
+    theqwo2.alpha = 0.0001;
+    add(theqwo2);
+    add(theqwo);
 setDefaultZoom(0.9);
+camGame.setFilters([]);
+currentPlayState.camZooming = true;
 }
 
 var yes = false;
 function beatHit(beat)
-{    if (curSong == "Demonic"){
+{    
+    if (curSong.toLowerCase() == "manic-evanescent"){
+        if (curStep >= 128 && curStep < 384)
+            {
+                if (beat % 2 == 0){
+                currentPlayState.triggerEventNote("Add Camera Zoom", "0.05", "0.025", "");
+                currentPlayState.triggerEventNote("chromToggle", "0.05", "0.025", "0.5");
+                }
+            }
+
+            if (curStep >= 384 && curStep < 632)
+                {
+
+                    currentPlayState.triggerEventNote("Add Camera Zoom", "0.05", "0.025", "");
+                    currentPlayState.triggerEventNote("chromToggle", "0.05", "0.025", "0.5");
+                    
+                }
+
+                if (curStep >= 1024 && curStep < 1280)
+                    {
+                        if (beat % 2 == 0){
+                        currentPlayState.triggerEventNote("Add Camera Zoom", "0.05", "0.025", "");
+                        
+                        }
+                    }
+
+                    if (curStep >= 1280 && curStep < 1528)
+                        {
+        
+                            if (beat % 2 == 0){
+                                currentPlayState.triggerEventNote("Add Camera Zoom", "0.05", "0.025", "");
+                                currentPlayState.triggerEventNote("chromToggle", "0.05", "0.025", "0.5");
+                                }
+                            
+                        }
+    }
+    if (curSong == "Demonic"){
     if (beat % 4 == 0) {
 
         if (yes){
@@ -211,22 +382,99 @@ dancers2.forEach(function (spr) {
     doIdle = true;
 }
 
-
+var a = 0;
 function update(elapsed)
 {
+    if (doTrolling){
+		wiggleShit.waveAmplitude = FlxMath.lerp(wiggleShit.waveAmplitude, 0, Conductor.stepCrochet  / 1000);
+		wiggleShit.waveFrequency = FlxMath.lerp(wiggleShit.waveFrequency, 0, Conductor.stepCrochet  / 1000);
+		wiggleShit.update(elapsed);
+    susCam.zoom = camHUD.zoom;
+    noteCam.zoom = camHUD.zoom;
+    susCam.alpha = camHUD.alpha;
+    noteCam.alpha = camHUD.alpha;
+    }
+    a += elapsed * 45;
+    lightCity.alpha = 1 - Math.sin((Math.PI * a) / 90);
     if (shaderValue!= null){
         shaderValue.distortionTime.value = [distortionTime];
         distortionTime -= ((elapsed / (1 / 160)) * 0.0125) * 2;
     }
+    theqwo.shader.data.curPower.value = [theqwo.alpha];
+    theqwo.shader.data.iTime.value = [a / 45];
+    theqwo2.shader.data.curPower.value = [theqwo.alpha];
+    theqwo2.shader.data.iTime.value = [a / 45];
 }
 
 function stepHit(step)
 {
+    if (curSong.toLowerCase() == "manic-evanescent"){
+        switch (step){
+            case 684:
+                loki2.cameras = [charCam];
+                FlxTween.tween(loki2, {alpha:1}, 1);
+                case 704:
+        
+                    boyfriend.color = BlackColor;
+                    funni.alpha = 0.8;
+                    dad.color = BlackColor;
+                    FlxTween.tween(loki2, {alpha:0.0001}, 1);
+                    case 960:
+                        FlxTween.tween(loki2, {alpha:1}, 1);
+                        case 992:
+                            boyfriend.color = OGcolor;
+                            funni.alpha = 0.0001;
+                            dad.color = OGcolor; 
+                            case 1020:     
+                                loki2.alpha = 0.0001;
+                                camHUD.alpha = 0.0001;
+                                bgMM.alpha = 1;
+                                currentPlayState.boyfriendGroup.alpha = 0.0001;
+                                funni.alpha = 0.4;
+                            case 1024:   
+                                
+                                currentPlayState.boyfriendGroup.alpha = 1;
+                                currentPlayState.boyfriendMap.get('dadc').alpha = 0.0001;
+                                camHUD.alpha = 1;
+                                bgMM.alpha = 0.0001;
+                                charCam.flash(OGcolor,1);
+                                case 1528:   
+                                    currentPlayState.isCameraOnForcedPos = true;
+                                    FlxTween.tween(currentPlayState.boyfriendGroup, {x:currentPlayState.boyfriendGroup.x + 800}, 0.8, {ease: FlxEase.cubeInOut});
+                                    FlxTween.tween(currentPlayState.dadGroup, {x:currentPlayState.dadGroup.x - 800}, 0.8, {ease: FlxEase.cubeInOut});
+                                    case 1536:   
+                                        charCam.flash(OGcolor,1);
+                                        theqwo.alpha = 1;
+                                        theqwo2.alpha = 1;
+                                    FlxTween.tween(currentPlayState.boyfriendGroup, {x:currentPlayState.BF_X}, 0.8, {ease: FlxEase.cubeOut});
+                                    FlxTween.tween(currentPlayState.dadGroup, {x:currentPlayState.DAD_X}, 0.8, {ease: FlxEase.cubeOut});
+                                      currentPlayState.dadGroup.cameras = [charCam];
+ currentPlayState.boyfriendGroup.cameras = [charCam];
+                        case 1660:   
+    FlxTween.tween(currentPlayState.boyfriendGroup, {x:currentPlayState.boyfriendGroup.x + 800}, 0.8, {ease: FlxEase.cubeIn});
+                                    FlxTween.tween(currentPlayState.dadGroup, {x:currentPlayState.dadGroup.x - 800}, 0.8, {ease: FlxEase.cubeIn});
+                                    case 1664:              
+                                        
+                                        charCam.flash(OGcolor,1);
+                                        theqwo.alpha = 0.0001;
+                                        theqwo2.alpha = 0.0001;         
+                                        case 1668:      
+                                            currentPlayState.dadGroup.cameras = [camGame];
+                                            currentPlayState.boyfriendGroup.cameras = [camGame];     
+                                            FlxTween.tween(currentPlayState.boyfriendGroup, {x:currentPlayState.BF_X}, 0.8, {ease: FlxEase.cubeOut});
+                                            FlxTween.tween(currentPlayState.dadGroup, {x:currentPlayState.DAD_X}, 0.8, {ease: FlxEase.cubeOut,
+                                                onComplete: function(twn)
+                                                {
+                                                    currentPlayState.isCameraOnForcedPos = false;
+                                                }});
+
+        }
+    }
     if (curSong == "Demonic"){
     if (curStep % 2 == 0) {
 
         if ((curStep >= 368 && curStep <= 374) || (curStep >= 864 && curStep <= 875) || (curStep >= 1520 && curStep <= 1526)
-            || (curStep >= 2016 && curStep <= 2027) || (curStep >= 2016 && curStep <= 2027) || (curStep >= 2028 && curStep <= 2048)
+            || (curStep >= 2016 && curStep <= 2027) || (curStep >= 2016 && curStep <= 2027) || (curStep >= 2028 && curStep <= 2048) || (curStep >= 2272 && curStep <= 2282)
             || (curStep >= 2528 && curStep <= 2540) )
             currentPlayState.triggerEventNote("Add Camera Zoom", "0.2", "0.1", "");
         }
@@ -345,6 +593,10 @@ tween = FlxTween.tween(flashed, {alpha: 0.001}, 2, {onComplete: function(twn)
 function onEvent(name, value1, value2, value3)
     {
     switch (name){
+        case 'chromToggle':
+            var zooms = Std.parseFloat(value1) / 8;
+            FlxG.camera.zoom +=zooms;
+            camHUD.zoom +=zooms/2;
         case 'Set Cam Zoom':
             var zooms = Std.parseFloat(value1);
 					var time = Std.parseFloat(value2);
@@ -352,6 +604,23 @@ function onEvent(name, value1, value2, value3)
 					if(Math.isNaN(time)) time = Conductor.stepCrochet * 4 / 1000;
 
                     FlxTween.tween(currentPlayState, {defaultCamZoom: zooms}, time, {ease: FlxEase.cubeInOut});     
+                    case 'Add Camera Zoom':
+                    if (doTrolling){
+                    wiggleShit.waveAmplitude = 0.035;
+                    wiggleShit.waveFrequency = 50;
+                    }
+           /*        for (stuffer in currentPlayState.strumLineNotes.members){
+                        var x = stuffer.x;
+                        var y = stuffer.y;
+                        var angleOG = stuffer.angle;
+                        var angle = FlxG.random.float(1, 180);
+                        stuffer.angle = angle;
+                        var troll = FlxAngle.asRadians(stuffer.angle);
+                        stuffer.x += FlxG.random.float(-troll, troll) * 120;
+                        stuffer.y += FlxG.random.float(-troll, troll) * 120;
+
+                        FlxTween.tween(stuffer, {x: x, y: y, angle:angleOG}, Conductor.stepCrochet * 4 / 1000, {ease: FlxEase.cubeInOut});     
+                    }*/
     case 'Set Lights':
     
     var chars = [PlayState.instance.boyfriend, PlayState.instance.gf, PlayState.instance.dad];

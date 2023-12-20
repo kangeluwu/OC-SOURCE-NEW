@@ -1,0 +1,39 @@
+var theEnd;
+function onCreatePost(song){
+    theEnd = new FlxVideoSprite();
+    theEnd.blend = currentPlayState.blendModeFromString('screen');
+    theEnd.play('mods/videos/boom-1.mp4');
+    theEnd.cameras = [camHUD2];
+    theEnd.pause();
+    theEnd.alpha = 0.0001;
+    add(theEnd);
+
+}
+function onPauseUpdate(elapsed){
+    if (theEnd.bitmap.isPlaying)
+        theEnd.pause();
+}
+function update(elapsed){
+    if (curStep < 2084 && theEnd.bitmap.isPlaying)
+        theEnd.pause();
+}    
+function stepHit(step){
+    if (curStep == 2032){
+        FlxTween.tween(camHUD, {alpha: 0.001}, 1);
+    }
+    if (curStep == 2064){
+        camHUD2.flash(0x71ffffff,1);
+        var dar = currentPlayState.dadMap.get('darnell-d2-alt');
+        dar.debugMode = true;
+        dar.playAnim('shock',true);
+        currentPlayState.opponentCameraOffset[0] -= 350;
+        FlxTween.tween(currentPlayState, {defaultCamZoom: 2}, 2);
+    }
+    if (curStep >= 2064)
+        FlxG.camera.shake(0.03,1);
+
+    if (curStep == 2084){
+        theEnd.alpha = 1;
+        theEnd.resume();
+    }
+}

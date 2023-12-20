@@ -1,0 +1,69 @@
+var danger;
+function start(asiofjioacnioancioacs){
+    danger = new FlxSprite().loadGraphic(SUtil.getPath() + 'windose_data/stages/custom_Hscript_stages/forest/dangerRoom.png');
+    danger.scrollFactor.set();
+    danger.screenCenter();
+    danger.antialiasing = true;
+    danger.cameras = [camHUD2];
+    danger.alpha = 0.0001;
+    danger.setGraphicSize(Std.int(danger.width * 1.15));
+    addSprite(danger, BEHIND_NONE);
+}
+function stepHit(step)
+    {
+        if (step % 2 ==0){
+        if (step >= 520 && step < 528){
+            currentPlayState.camZooming = true;
+FlxG.camera.zoom += 0.1;
+camHUD.zoom += 0.05;
+        }
+    }
+    if (step == 1232){
+       camHUD.flash(BlackColor,1);
+    }
+    if (curStep == 2068){
+        FlxTween.tween(danger,{alpha:1},Conductor.stepCrochet * 6 / 1000);
+    }
+    }
+
+    function beatHit(beat)
+        {
+           
+            if (beat >= 68 && beat < 132){
+                currentPlayState.camZooming = true;
+FlxG.camera.zoom += 0.25;
+camHUD.zoom += 0.1;
+            }
+            if (beat >= 228 && beat < 308){
+                danger.alpha = 0.5;
+                currentPlayState.triggerEventNote('chromToggle','1','1','0.25');
+                            }
+                            if (beat >= 436 && beat < 500){
+                                danger.alpha = 0.5;
+                                currentPlayState.triggerEventNote('chromToggle','1','1','0.25');
+                                            }
+    if (beat % 2 ==0){
+            if (beat >= 132 && beat < 196){
+currentPlayState.triggerEventNote('chromToggle','1','1','0.3');
+            }
+            if (beat >= 372 && beat < 436){
+                currentPlayState.triggerEventNote('chromToggle','1','1','0.3');
+                            }
+    }
+    if (beat >= 148 && beat < 182){
+        currentPlayState.camZooming = true;
+FlxG.camera.zoom += 0.25;
+camHUD.zoom += 0.1;
+    }
+    if (danger.alpha == 0.5 && curStep < 2068)
+        FlxTween.tween(danger,{alpha:0.0001},Conductor.stepCrochet * 2 / 1000);
+        }
+        function sectionHit(section){
+           
+                if (section >= 1 && section < 13){
+                    currentPlayState.camZooming = true;
+    FlxG.camera.zoom += 0.25;
+    camHUD.zoom += 0.1;
+                }
+                
+        }
