@@ -149,11 +149,14 @@ class Main extends Sprite
 		}
 
 		errMsg += "\nUncaught Error: " + e.error + "\n> Crash Handler written by: sqirra-rng";
-
+		#if android
+		if (!FileSystem.exists(SUtil.getPath() + "crash"))
+			FileSystem.createDirectory(SUtil.getPath() + "crash");	
+		#else
 		if (!FileSystem.exists("./crash/"))
 			FileSystem.createDirectory("./crash/");
-
-		File.saveContent(path, errMsg + "\n");
+		#end
+		File.saveContent(SUtil.getPath() + path, errMsg + "\n");
 
 		Sys.println(errMsg);
 		Sys.println("Crash dump saved in " + Path.normalize(path));

@@ -275,6 +275,7 @@ var voicesStuff:String = '';
 				speed: 1,
 				composer: '',
 				songNameChinese: '测试',
+				mania:0,
 				stage: 'stage',
 				validScore: false
 			};

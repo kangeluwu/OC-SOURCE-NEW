@@ -31,7 +31,7 @@ typedef SwagSong =
 	var splashSkin:String;
 	var validScore:Bool;
 	var composer:String;
-	//var mania:Null<Int>;
+	var mania:Null<Int>;
 }
 
 class Song
@@ -56,9 +56,9 @@ class Song
 	{
 		
 		
-		//if (songJson.mania == null) {
-		//	songJson.mania = 0;
-		//}
+		if (songJson.mania == null) {
+			songJson.mania = 0;
+		}
 		if(songJson.events == null)
 		{
 			songJson.events = [];
@@ -91,7 +91,7 @@ class Song
 		this.bpm = bpm;
 	}
 
-	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
+	public static function loadFromJson(jsonInput:String, ?folder:String,oldModeOn:Bool = false):SwagSong
 	{
 		var rawJson = null;
 		
@@ -111,13 +111,13 @@ class Song
 			rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
 			#end
 		}
-
+if (!oldModeOn){
 		while (!rawJson.endsWith("}"))
 		{
 			rawJson = rawJson.substr(0, rawJson.length - 1);
 			// LOL GOING THROUGH THE BULLSHIT TO CLEAN IDK WHATS STRANGE
 		}
-
+	}
 		// FIX THE CASTING ON WINDOWS/NATIVE
 		// Windows???
 		// trace(songData);

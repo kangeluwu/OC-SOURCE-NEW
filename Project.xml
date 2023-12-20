@@ -178,7 +178,7 @@
 		<dependency name="WebKit.framework" />
 	</section>
 
-	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
+<!--haxelib name="hxcpp-debug-server" if="desktop"/ -->
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
