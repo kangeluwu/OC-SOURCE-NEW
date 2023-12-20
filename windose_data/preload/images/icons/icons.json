@@ -108,6 +108,12 @@
         "height": 150,
         "frameNames": ["", "", ""]
     },
+    "darnell-d3": {
+        "frames": [0, 0, 0],
+        "width": 150,
+        "height": 150,
+        "frameNames": ["", "", ""]
+    },
     "mom-d1": {
         "frames": [0, 0, 0],
         "width": 150,
