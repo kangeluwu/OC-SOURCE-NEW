@@ -116,7 +116,6 @@ class PluginManager {
 			@:privateAccess
 			cam._filters.push(value);
 		});
-        		interp.variables.set("SUtil", SUtil);
         interp.variables.set("SUtil", SUtil);
 		interp.variables.set("Conductor", Conductor);
 		interp.variables.set("FlxSprite", DynamicSprite);

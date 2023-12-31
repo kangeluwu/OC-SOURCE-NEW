@@ -866,15 +866,13 @@ function camerabgAlphaShits(cam:FlxCamera)
 		interp.variables.set('setAllHaxeVar', function (name:String, value:Dynamic) {
 			 setAllHaxeVar(name, value);
 		});
-		interp.variables.set('addHaxeLibrary', function (libName:String, ?libFolder:String = '',varName:String = '') {
+		interp.variables.set('addHaxeLibrary', function (libName:String, ?libFolder:String = '') {
 			try {
 				var str:String = '';
 				if(libFolder.length > 0)
 					str = libFolder + '.';
 
-				if (varName == null || varName == '')
-					varName = libName;
-				setAllHaxeVar(varName, Type.resolveClass(str + libName));
+				setAllHaxeVar(libName, Type.resolveClass(str + libName));
 			}
 			catch (e) {
 				Lib.application.window.alert(e.message, "ADD LIBRARY FAILED BRUH");
@@ -882,7 +880,9 @@ function camerabgAlphaShits(cam:FlxCamera)
 		});
 		//Fow Ending Cutscenes lol
 		interp.variables.set("endSong", endSong);
-
+        for (value in variables.keys()){
+			interp.variables.set(value, variables.get(value));
+		}
 		trace("set stuff");
 		try
 			{
