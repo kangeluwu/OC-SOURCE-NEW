@@ -1,119 +1,182 @@
-var train;
-var trainSound;
-var bgLimo;
-var dancers;
+var bg;
+var moon;
+var city;
+var street;
 var limo;
+var limoShadow;
+var dadShadow;
+var bfShadow;
+var blackSpr;
+var fastcar;
 function start(song) {
-    trace("poyo");
-    var bg1 = new FlxSprite(-100).loadGraphic(hscriptPath + 'limo.png');
-    bg1.scrollFactor.set(0.1, 0.1);
-    bg1.antialiasing = true;
-    addSprite(bg1, BEHIND_ALL);
-    var city = new FlxSprite(-10).loadGraphic(hscriptPath + 'city.png');
-    trace("woozy");
-    trace(":woozy-face:");
-    city.scrollFactor.set(0.3, 0.3);
-    city.antialiasing = true;
-    city.scale.set(0.85, 0.85);
-    city.updateHitbox();
-    trace(":POG:");
-    addSprite(city, BEHIND_ALL);
+    gf.alpha = 0;
+    currentPlayState.boyfriendGroup.y += 20;
   
-    train = new FlxSprite(2000, 360).loadGraphic(hscriptPath + 'train.png');
-    train.antialiasing = true;
-    addSprite(train, BEHIND_ALL);
-    trainSound = new FlxSound().loadEmbedded(hscriptPath + 'train_passes.ogg');
-    FlixG.sound.list.add(trainSound);
-    var street = new FlxSprite(-40, 50).loadGraphic(hscriptPath + 'street.png');
+    currentPlayState.dadGroup.x -= 200;
+    currentPlayState.boyfriendGroup.x += 200;
+    currentPlayState.boyfriendCameraOffset[0] -= 400;
+    currentPlayState.opponentCameraOffset[0] += 200;
+
+    bg = new FlxSprite(-700, -100).loadGraphic(hscriptPath + 'sky.png');
+    bg.scrollFactor.set(0.5, 0.45);
+    bg.antialiasing = true;
+    addSprite(bg, BEHIND_ALL);
+    moon = new FlxSprite(370, -70).loadGraphic(hscriptPath + 'moon.png');
+    moon.scale.set(0.7, 0.7);
+
+    moon.antialiasing = true;
+    moon.updateHitbox();
+    moon.scrollFactor.set(0.3, 0.3);
+    addSprite(moon, BEHIND_ALL);
+
+
+    city = new FlxSprite(-315, -170).loadGraphic(hscriptPath + 'city.png');
+    city.scale.set(0.75, 0.75);
+
+    city.updateHitbox();
+    city.scrollFactor.set(0.55, 0.23);
+    city.antialiasing = true;
+    addSprite(city, BEHIND_ALL);
+
+
+    street = new FlxSprite(-900, -500).loadGraphic(hscriptPath + 'street.png');
+    street.scale.set(1.2, 1.2);
+    street.updateHitbox();
     street.antialiasing = true;
     addSprite(street, BEHIND_ALL);
-    bgLimo = new FlxSprite(-200,480);
-    tex = FlxAtlasFrames.fromSparrow(hscriptPath + 'bgLimo.png', hscriptPath + 'bgLimo.xml');
-    bgLimo.frames = tex;
-    bgLimo.animation.addByPrefix('idle', 'background limo pink', 24, true);
-    bgLimo.animation.play('idle', true);
-    bgLimo.scrollFactor.set(0.4, 0.4);
-    bgLimo.antialiasing = true;
-    addSprite(bgLimo, BEHIND_ALL);
-    
-    limo = new FlxSprite(-120, 550);
-    limotex = FlxAtlasFrames.fromSparrow(hscriptPath + 'limoDrive.png', hscriptPath  + 'limoDrive.xml');
-    limo.frames = limotex;
-    limo.animation.addByPrefix('drive', 'Limo stage', 24, true);
-    limo.animation.play('drive', false);
+
+    limoShadow = new FlxSprite(-700, 700).loadGraphic(hscriptPath + 'shadows/car.png');
+
+    limoShadow.scale.set(0.7, 0.4);
+    limoShadow.updateHitbox();
+    limoShadow.antialiasing = true;
+    limoShadow.alpha = 0.75;
+
+    addSprite(limoShadow, BEHIND_ALL);
+
+ 
+    dadShadow = new FlxSprite(dad.x - 40, currentPlayState.dadGroup.y +720).loadGraphic(hscriptPath + 'shadows/circle.png');
+    dadShadow.scale.set(2, 0.6);
+    dadShadow.updateHitbox();
+    dadShadow.antialiasing = true;
+    dadShadow.alpha = 0.75;
+
+    addSprite(dadShadow, BEHIND_ALL);
+
+    bfShadow = new FlxSprite(boyfriend.x - 20, dadShadow.y - 30).loadGraphic(hscriptPath + 'shadows/circle.png');
+    bfShadow.scale.set(2, 0.6);
+    bfShadow.updateHitbox();
+    bfShadow.antialiasing = true;
+
+    bfShadow.alpha = 0.75;
+    addSprite(bfShadow, BEHIND_ALL);
+
+    limo = new FlxSprite(-700, 400).loadGraphic(hscriptPath + 'car.png');
+    limo.scale.set(0.7, 0.7);
+    limo.updateHitbox();
     limo.antialiasing = true;
-    PlayState.instance.addBehindDad(limo);
-   
-PlayState.instance.boyfriendGroup.x += 260;
-PlayState.instance.boyfriendGroup.y += 40;
-PlayState.instance.boyfriendCameraOffset[0] -= 200;
-PlayState.instance.boyfriendCameraOffset[1] += 40;
-    setDefaultZoom(1.05);
+    addSprite(limo, BEHIND_ALL);
+    setDefaultZoom(0.8);
+
+
+
+    fastcar = new FlxSprite(-300, 160).loadGraphic(hscriptPath + 'fastCarLol.png');
+    addSprite(fastcar, BEHIND_NONE);
+
+    blackSpr = currentPlayState.variables.get('createColorSprite')(FlxG.width*2,FlxG.height*2,BlackColor);
+    blackSpr.screenCenter();
+    blackSpr.scrollFactor.set();
+    addSprite(blackSpr, BEHIND_NONE);
+  resetVroomVroom();
 }
 
-var trainCooldown = 0;
-var trainCars = 8;
-var trainMoving = false;
-var trainFinishing = false;
-var trainFrameTiming = 0.0;
-var startedMoving = false;
-function beatHit(beat)
-{
-    if (!trainMoving) {
-        trainCooldown += 1;
-    }
-    if (beat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8) {
-        trainCooldown = FlxG.random.int(-4,0);
+
+var vroomVroomCanVroom = true;
+function resetVroomVroom() {
+    fastcar.x = -12600;
+    fastcar.y = FlxG.random.int(140,250) + 400;
+    fastcar.velocity.x = 0;
+    vroomVroomCanVroom = true;
+}
+function doVroomVroom() {
+    FlxG.sound.play(FNFAssets.getSound(hscriptPath + 'carPass' + FlxG.random.int(0,1)+'.ogg'));
+    fastcar.velocity.x = FlxG.random.int(170,220) / FlxG.elapsed;
+    vroomVroomCanVroom = false;
+    new FlxTimer().start(2, function(tmr) {
+        resetVroomVroom();
+    });
+}
+function beatHit(beat) {
+
+    if (FlxG.random.bool(10) && vroomVroomCanVroom) {
         doVroomVroom();
     }
-
 }
 
 function update(elapsed)
 {
-    if (trainMoving) {
-        trainFrameTiming += elapsed;
-        if (trainFrameTiming >= 1/24) {
-            updateVroomVroom();
-            trainFrameTiming = 0.0;
-        }
+    if (curSong == 'Stricken'){
+    switch (curDecStep){
+case 440:
+    blackSpr.alpha = 1;
+    case 441.5:
+    blackSpr.alpha = 0.01;
+    case 443:
+    blackSpr.alpha = 1;
+    case 444:
+        blackSpr.alpha = 0.01;
+        case 445.5:
+            blackSpr.alpha = 0.01;
+            case 447:
+                blackSpr.alpha = 0.01;
+
     }
+}
 }
 
 function stepHit(step)
 {
-
-}
-
-
-function doVroomVroom() {
-    trainMoving = true;
-    if (!trainSound.playing) {
-        trainSound.play(false);
+    switch (step){
+        case 4:
+            currentPlayState.defaultCamZoom = 2.3;
+            FlxTween.tween(blackSpr,{alpha: 0.00001},5.7);
+            FlxTween.tween(currentPlayState,{defaultCamZoom: 0.8},5.7);
+            case 60:
+                blackSpr.alpha = 1;
+                case 64:
+                    currentPlayState.defaultCamZoom = 0.8;
+                blackSpr.alpha = 0.001;
+                FlxG.camera.flash(OGcolor,1);
+                case 320:
+                    FlxG.camera.flash(BlackColor,1);
+                    case 448:
+                    FlxG.camera.flash(BlackColor,1);
+                    case 832:
+                        FlxG.camera.flash(BlackColor,1);
     }
 }
-function updateVroomVroom() {
-    if (trainSound.time >= 4700) {
-        startedMoving = true;
-    }
-    if (startedMoving) {
-        train.x -= 400;
-        if (train.x < -2000 && !trainFinishing) {
-            train.x = -1150;
-            trainCars -= 1;
-            if (trainCars <= 0) {
-                trainFinishing = true;
-            }
-        }
-        if (train.x < -4000 && trainFinishing) {
-            resetVroomVroom();
-        }
-    }
+
+function playerTwoTurn()
+{
 }
-function resetVroomVroom() {
-    train.x = 2000;
-    trainMoving = false;
-    trainCars = 8;
-    trainFinishing = false;
-    startedMoving = false;
+
+function playerTwoMiss()
+{
 }
+
+function playerTwoSing()
+{
+}
+
+function playerOneTurn()
+{
+}
+
+function playerOneMiss()
+{
+}
+
+function playerOneSing()
+{
+}
+

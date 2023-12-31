@@ -267,6 +267,12 @@ class Paths
 		var inst = returnSound('songs', songKey);
 		return inst;
 	}
+	inline static public function songStuffer(song:String,fileName:String = 'Inst'):Any
+		{
+			var songKey:String = '${formatToSongPath(song)}/$fileName';
+			var voices = returnSound('songs', songKey);
+			return voices;
+		}
 		//used for vanilla/M+ engines
 		//给原版和M+引擎用的LOL我也不知道为什么
 	inline static public function musicinst(song:String, ?library:String):Any

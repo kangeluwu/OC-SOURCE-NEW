@@ -1,0 +1,8 @@
+function start(song){
+    currentPlayState.variables.set('createColorSprite', function (width,height,color){
+        var sprite = new FlxSprite().makeGraphic(width,height,color);
+        return sprite;
+    });
+    currentPlayState.variables.set('curDecStep',currentPlayState.curDecStep);
+
+}

@@ -1,90 +1,90 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"anim": "idle",
 			"fps": 24,
-			"name": "Pico Idle Dance",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Pico Idle Dance"
 		},
 		{
+			"loop": false,
 			"offsets": [
 				76,
 				24
 			],
-			"loop": false,
-			"anim": "singUP",
 			"fps": 24,
-			"name": "pico Up note0",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "pico Up note0"
 		},
 		{
+			"loop": false,
 			"offsets": [
 				56,
 				-77
 			],
-			"loop": false,
-			"anim": "singDOWN",
 			"fps": 24,
-			"name": "Pico Down Note0",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Pico Down Note0"
 		},
 		{
+			"loop": false,
 			"offsets": [
 				232,
 				-8
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "reload",
-			"indices": [],
-			"name": "Pico Gun Charge0"
+			"fps": 24,
+			"name": "Pico Gun Charge0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				543,
 				12
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "shoot",
-			"indices": [],
-			"name": "Pico Fire"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				90,
-				-11
-			],
-			"anim": "singLEFT",
 			"fps": 24,
-			"name": "Pico NOTE LEFT0",
+			"name": "Pico Fire",
 			"indices": []
 		},
 		{
 			"offsets": [
+				90,
+				-11
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Pico NOTE LEFT0"
+		},
+		{
+			"loop": false,
+			"offsets": [
 				-3,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "Pico Note Right0"
+			"fps": 24,
+			"name": "Pico Note Right0",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/womanlol/pico-d1",
 	"position": [
 		0,
-		0
+		300
 	],
-	"healthicon": "picoc-d1",
+	"healthicon": "picoc",
 	"flip_x": true,
 	"healthbar_colors": [
 		40,

@@ -14,6 +14,7 @@ using StringTools;
 
 typedef SwagSong =
 {
+	var songFileNames:Null<Array<String>>;
 	var song:String;
 	var notes:Array<SwagSection>;
 	var songNameChinese:String;
@@ -31,13 +32,15 @@ typedef SwagSong =
 	var splashSkin:String;
 	var validScore:Bool;
 	var composer:String;
-	var mania:Null<Int>;
+	//var mania:Null<Int>;
 }
 
 class Song
 {
 	public var uiType:String = 'normal';
 	public var song:String;
+	public var songFileNames:Array<String> = ['Inst','Voices'];
+	public var basedOldMode:Bool = false;
 	public var songNameChinese:String = '';
 	public var composer:String = null;
 	public var notes:Array<SwagSection>;
@@ -56,9 +59,9 @@ class Song
 	{
 		
 		
-		if (songJson.mania == null) {
-			songJson.mania = 0;
-		}
+		//if (songJson.mania == null) {
+		//	songJson.mania = 0;
+		//}
 		if(songJson.events == null)
 		{
 			songJson.events = [];
@@ -84,14 +87,15 @@ class Song
 		}
 	}
 
-	public function new(song, notes, bpm)
+	public function new(song, notes, bpm, basedOldMode:Bool = false)
 	{
 		this.song = song;
 		this.notes = notes;
 		this.bpm = bpm;
+		this.basedOldMode = basedOldMode;
 	}
 
-	public static function loadFromJson(jsonInput:String, ?folder:String,oldModeOn:Bool = false):SwagSong
+	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
 		var rawJson = null;
 		
@@ -111,13 +115,13 @@ class Song
 			rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
 			#end
 		}
-if (!oldModeOn){
+
 		while (!rawJson.endsWith("}"))
 		{
 			rawJson = rawJson.substr(0, rawJson.length - 1);
 			// LOL GOING THROUGH THE BULLSHIT TO CLEAN IDK WHATS STRANGE
 		}
-	}
+	
 		// FIX THE CASTING ON WINDOWS/NATIVE
 		// Windows???
 		// trace(songData);
@@ -138,6 +142,7 @@ if (!oldModeOn){
 		if(jsonInput != 'events') StageData.loadDirectory(songJson);
 		onLoadJson(songJson);
 		if (songJson.song != null){
+			if (songJson.songFileNames == null) songJson.songFileNames = ['Inst','Voices'];
 		if (songJson.uiType == null) {
 
 			songJson.uiType = switch (songJson.song.toLowerCase()) {
