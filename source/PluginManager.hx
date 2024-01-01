@@ -116,6 +116,14 @@ class PluginManager {
 			@:privateAccess
 			cam._filters.push(value);
 		});
+        interp.variables.set('getCameraShaders', function(cam){
+            var cams = [];
+			@:privateAccess
+            cams = cam._filters;
+			return cams;
+		});
+        		interp.variables.set("Map", haxe.ds.StringMap);
+                
         interp.variables.set("SUtil", SUtil);
 		interp.variables.set("Conductor", Conductor);
 		interp.variables.set("FlxSprite", DynamicSprite);
@@ -204,9 +212,16 @@ interp.variables.set("mobile", false);
 		}
     public static function addVarsToInterpEx<T:InterpEx>(interp:T):T {
         interp.variables.set("SUtil", SUtil);
+        interp.variables.set("Map", haxe.ds.StringMap);
         interp.variables.set('pushCameraShader', function(cam,value){
 			@:privateAccess
 			cam._filters.push(value);
+		});
+        interp.variables.set('getCameraShaders', function(cam){
+            var cams = [];
+			@:privateAccess
+            cams = cam._filters;
+			return cams;
 		});
 		interp.variables.set("Conductor", Conductor);
 		interp.variables.set("FlxSprite", DynamicSprite);
